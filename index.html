@@ -67,16 +67,23 @@ h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,5
 
 /* ---------- Topbar / nav ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
-.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:60px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap;flex:none}
 .brand svg{flex:none}
 .seg{display:flex;gap:2px;background:var(--paper-2);border:1px solid var(--line);border-radius:99px;padding:4px}
 .seg button{font:inherit;font-size:13.5px;font-weight:500;color:var(--ink-soft);background:none;border:none;padding:7px 15px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:color .2s,background .25s,box-shadow .25s}
 .seg button:hover{color:var(--ink)}
 .seg button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+.contact-links{display:flex;align-items:center;gap:7px;flex:none}
+.contact-label{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);padding-right:1px}
+.contact-btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 13px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .2s,background .25s,border-color .25s,box-shadow .25s,transform .25s}
+.contact-btn svg{flex:none}
+.contact-btn:hover{color:var(--ink);border-color:var(--sprout);box-shadow:var(--shadow);transform:translateY(-1px)}
+.contact-btn.primary{background:var(--sprout-soft);color:var(--green);border-color:transparent}
+[data-theme="dark"] .contact-btn.primary{color:var(--sprout)}
 .theme-btn{flex:none;width:40px;height:40px;border-radius:99px;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--ink);display:grid;place-items:center;transition:.25s}
 .theme-btn:hover{box-shadow:var(--shadow);border-color:var(--sprout)}
-.nav-scroll{overflow-x:auto;scrollbar-width:none}.nav-scroll::-webkit-scrollbar{display:none}
+.nav-scroll{overflow-x:auto;scrollbar-width:none;flex:1;min-width:170px}.nav-scroll::-webkit-scrollbar{display:none}
 
 /* ---------- Panels ---------- */
 main{padding:46px 0 30px;min-height:60vh}
@@ -212,6 +219,10 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:34px 0 60px;colo
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer .mono{font-size:12px}
 
+@media(max-width:980px){
+  .contact-label{display:none}
+  .contact-btn{padding:0 11px}
+}
 @media(max-width:880px){
   .mh-grid{grid-template-columns:1fr;gap:24px}
   .g-3,.g-2{grid-template-columns:1fr}
@@ -219,7 +230,15 @@ footer .mono{font-size:12px}
   .layer-row{grid-template-columns:30px 1fr;gap:6px 12px}
   .layer-eg{grid-column:2}
   .palette{grid-template-columns:1fr}
+  .topbar-in{flex-wrap:wrap;padding:8px 0}
   .brand span{display:none}
+  .nav-scroll{order:4;flex-basis:100%;min-width:0}
+  .contact-links{margin-left:auto}
+}
+@media(max-width:520px){
+  .contact-btn{width:38px;padding:0;justify-content:center}
+  .contact-btn svg{margin:0}
+  .contact-btn{font-size:0;gap:0}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms !important;transition-duration:.08s !important}
@@ -301,6 +320,17 @@ footer .mono{font-size:12px}
       <span>The Living System</span>
     </div>
     <div class="nav-scroll"><div class="seg" id="seg" role="tablist"></div></div>
+    <div class="contact-links" aria-label="Contact links">
+      <span class="contact-label">Contact</span>
+      <a class="contact-btn primary" href="mailto:ponelson@gmail.com" aria-label="Email Peter Nelson at ponelson@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4.5 7l7.5 6 7.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Email
+      </a>
+      <a class="contact-btn" href="https://www.linkedin.com/in/ponelson" target="_blank" rel="noopener noreferrer" aria-label="Open Peter Nelson's LinkedIn profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M11 18v-4.6c0-2.4 3.5-2.7 3.5.1V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="6.5" cy="6.25" r="1.25" fill="currentColor"/><path d="M4.5 3.5h15v17h-15z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        LinkedIn
+      </a>
+    </div>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"></button>
   </div>
 </div>

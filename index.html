@@ -302,6 +302,43 @@ footer .mono{font-size:12px}
   .map-pin{width:42px;height:42px;border-radius:15px;font-size:22px}.map-pin small{display:none}
 }
 
+/* ---------- Craft polish: typography + focus ---------- */
+h1.title,.lede h2,.section-h,.map-head h3,.trad-name{text-wrap:balance}
+.ethos,.lede p,.section-sub,.m-body,.trad-philo,.tp-b{text-wrap:pretty}
+:where(a,button,[tabindex]):focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:10px}
+[data-theme="dark"] :where(a,button,[tabindex]):focus-visible{outline-color:var(--sprout)}
+.map-pin:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+
+/* ---------- Traditions ---------- */
+.trad{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 32px 30px 36px;margin-bottom:18px;box-shadow:var(--shadow);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s}
+.trad:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.trad::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ta);opacity:.9}
+.trad-green{--ta:var(--green);--ta-soft:var(--sprout-soft)}
+.trad-loam{--ta:var(--loam);--ta-soft:var(--loam-soft)}
+.trad-pollen{--ta:var(--pollen);--ta-soft:var(--pollen-soft)}
+.trad-head{display:flex;gap:22px;align-items:center;margin-bottom:24px}
+.trad-emblem{flex:none;width:92px;height:92px;border-radius:24px;display:grid;place-items:center;background:var(--ta-soft);color:var(--ta);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.trad:hover .trad-emblem{transform:rotate(-3deg) scale(1.04)}
+.trad-emblem svg{width:58px;height:58px;display:block}
+.trad-era{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ta);margin-bottom:7px}
+.trad-name{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(24px,3vw,33px);letter-spacing:-.018em;line-height:1.03}
+.trad-philo{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-soft);font-size:18px;line-height:1.4;margin-top:9px;max-width:54ch}
+.trad-body{display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:start}
+.trad-principles{list-style:none;display:flex;flex-direction:column;gap:17px}
+.trad-principles li{padding-left:16px;border-left:2px solid var(--ta-soft)}
+.tp-h{display:block;font-weight:600;font-size:15.5px;margin-bottom:3px}
+.tp-b{display:block;color:var(--ink-soft);font-size:15px}
+.trad-side{display:flex;flex-direction:column;gap:12px}
+.trad-note{background:var(--paper-2);border:1px solid var(--line-2);border-radius:var(--r-sm);padding:15px 17px}
+.tn-k{display:block;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ta);margin-bottom:6px}
+.trad-note p{color:var(--ink-soft);font-size:14.5px;line-height:1.45}
+.eg-line{font-family:"DM Mono",monospace;font-size:12.5px;color:var(--ink-faint);margin-top:8px;letter-spacing:.01em}
+@media(max-width:880px){
+  .trad{padding:24px 22px 24px 26px}
+  .trad-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .trad-body{grid-template-columns:1fr;gap:20px}
+}
+
 </style>
 </head>
 <body>
@@ -530,6 +567,119 @@ const ROOF_SYSTEMS = [
   ["Fabric & light pots","Air-prune roots and drain freely, keep roots cooler, and stay light enough to move as the sun shifts."],
   ["Green-roof trays","Shallow modular trays engineered to sit on a membrane and spread load — the most building-friendly option."],
   ["Lightweight media","Never garden soil. Blend compost with coir and perlite or pumice: it holds water and weighs a fraction as much."]
+];
+
+/* ============================================================
+   TRADITIONS — design lineages, forestry, flower design
+============================================================ */
+const TRADITIONS = [
+  {
+    key:"english", accent:"green",
+    name:"The English Garden",
+    era:"Cottage informality · the 18th-century landscape park",
+    philo:"Follow the genius of the place. Improve on nature — but never let the hand show.",
+    principles:[
+      ["Studied informality","The cottage garden crowds roses, foxgloves, delphiniums and self-seeders into generous, spilling drifts: abundance carefully made to look accidental."],
+      ["The mixed border","Gertrude Jekyll planted like a painter — long borders graded by colour and height, hot tones cooling along their length, so the bed reads as one continuous composition."],
+      ["The borrowed countryside","Capability Brown swept the parterres away for serpentine lakes, clumped trees and rolling turf. A sunken ha-ha fences the livestock out invisibly, so the park seems to flow straight into the fields."],
+      ["Bones beneath the loose","Clipped box, yew and hedging give the wildness its structure. The romance only holds because something firm is holding it."]
+    ],
+    signature:["Signature move","The herbaceous border — a long, deep bed orchestrated in colour drifts, cresting in high summer and read end-to-end like a phrase of music."],
+    palette:["Palette","Rose · delphinium · foxglove · lupin · hardy geranium · clematis — box & yew for the bones"]
+  },
+  {
+    key:"japanese", accent:"loam",
+    name:"The Japanese Garden",
+    era:"Stroll, tea & dry-landscape (karesansui) gardens",
+    philo:"Suggest, never state. A few stones and a raked field of gravel can hold an entire mountain range.",
+    principles:[
+      ["Shakkei — borrowed scenery","A distant mountain or a neighbour's tree is deliberately framed and pulled into the view, so the garden seems to reach far beyond its own wall."],
+      ["Ma — the charged pause","Empty space is not what's left over; it is the most active part of the design. Yohaku-no-bi: the beauty of what has been left out."],
+      ["Miegakure — hide & reveal","The path conceals a view and gives it back a step later. Stepping stones set the exact pace at which the garden is allowed to unfold."],
+      ["Wabi-sabi","Moss, weathering and asymmetry are sought, not corrected. Beauty lives in the imperfect, the humble and the impermanent."]
+    ],
+    signature:["Signature move","The dry garden — raked gravel standing in for water, a few carefully weighted stones for islands or peaks, asymmetry throughout, and almost nothing else."],
+    palette:["Palette","Cloud-pruned pine (niwaki) · Japanese maple · clipped azalea · moss · bamboo · iris at the water's edge"]
+  },
+  {
+    key:"french", accent:"pollen",
+    name:"The French Château Garden",
+    era:"Le Nôtre & the jardin à la française",
+    philo:"Order imposed on the land as a demonstration of reason. The garden is geometry — read from the house above.",
+    principles:[
+      ["The grand axis","A single dominant line runs from the château to the horizon. Everything is arranged symmetrically around it and resolves toward one distant vanishing point."],
+      ["Parterre de broderie","Low clipped box is embroidered into scrolls and arabesques over coloured gravel — a carpet designed to be read from the windows of the floor above."],
+      ["Forced perspective & water","Canals and reflecting basins double the sky; allées and pools are subtly stretched so the view reads grander than the ground truly is."],
+      ["Bosquets & topiary","Beyond the open parterres lie bosquets — formal 'rooms' cut from clipped woodland — and yew shaped into cones and obelisks. Nature is admitted only on geometry's terms."]
+    ],
+    signature:["Signature move","The embroidered parterre on axis — box scrollwork, raked gravel and a mirror-still basin, composed to be taken in at a single sweep from the terrace above."],
+    palette:["Palette","Clipped box & yew · pleached lime & hornbeam allées · gravel · seasonal bedding · still water"]
+  }
+];
+
+const TRAD_EMBLEM = {
+  // English — loose, asymmetric cottage stems
+  english:`<svg viewBox="0 0 84 84" fill="none" aria-hidden="true">
+    <path d="M14 74 H70" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+    <path d="M24 72 C21 56 27 48 24 34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="24" cy="29" r="5" fill="var(--ta-soft)" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M42 73 C45 50 39 40 43 22" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="43" cy="17" r="6.5" fill="var(--ta-soft)" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M61 72 C58 58 65 50 60 38" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="60" cy="33" r="4.2" fill="var(--ta-soft)" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M24 54 q-7 -3 -10 -9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M43 50 q8 -3 11 -10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
+  // Japanese — raked gravel ripples around an off-centre stone
+  japanese:`<svg viewBox="0 0 84 84" fill="none" aria-hidden="true">
+    <path d="M52 50 a18 18 0 1 0 -0.1 0" stroke="currentColor" stroke-width="2" opacity=".55"/>
+    <path d="M52 50 a27 27 0 1 0 -0.1 0" stroke="currentColor" stroke-width="2" opacity=".38"/>
+    <path d="M52 50 a36 36 0 1 0 -0.1 0" stroke="currentColor" stroke-width="2" opacity=".22"/>
+    <path d="M44 56 c6 4 14 4 20 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <ellipse cx="52" cy="50" rx="9" ry="7.5" fill="var(--ta-soft)" stroke="currentColor" stroke-width="2.4"/>
+  </svg>`,
+  // French — symmetric parterre scroll about a central axis
+  french:`<svg viewBox="0 0 84 84" fill="none" aria-hidden="true">
+    <path d="M42 12 V72" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 4" opacity=".5"/>
+    <path d="M42 20 C30 26 22 36 30 46 C36 52 42 46 42 40" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M42 20 C54 26 62 36 54 46 C48 52 42 46 42 40" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M42 44 C32 50 26 60 34 66 C39 69 42 64 42 58" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M42 44 C52 50 58 60 50 66 C45 69 42 64 42 58" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <circle cx="42" cy="40" r="3" fill="var(--ta-soft)" stroke="currentColor" stroke-width="2"/>
+  </svg>`
+};
+
+const FORESTRY = [
+  ["Succession","Bare ground runs through pioneers — birch, alder, pine — that shelter the slower hardwoods coming up behind. The forester reads where a stand sits on that arc and works with it."],
+  ["Continuous cover","Instead of clear-felling, single trees or small groups are taken so the canopy is never fully opened. The wood regenerates in its own shade, the soil and the view never laid bare."],
+  ["Thinning","Crowded young stands are thinned to release the best 'crop' trees — light and room to put on clean, straight timber rather than competing one another to a standstill."],
+  ["Coppice & pollard","Cut certain broadleaves to the base (coppice) or above browsing height (pollard) and they resprout for centuries — a renewable harvest that also floods the floor with light and woodland flowers."],
+  ["Mixed & uneven-aged","A spread of species and ages is far more resilient to storm, pest and disease than a single-species, single-age block. Diversity is the insurance policy."],
+  ["Deadwood & edges","Standing snags, fallen logs and soft woodland edges (ecotones) carry a huge share of the life. What looks untidy is doing the most ecological work."]
+];
+
+const FOREST_LAYERS = [
+  ["1","Canopy","The tall dominants — oak, beech, pine — that set the light regime for everything below"],
+  ["2","Understory","Shade-tolerant trees biding their time — holly, hornbeam, young hardwoods"],
+  ["3","Shrub","Hazel, hawthorn, elder — the coppice layer and the berry larder"],
+  ["4","Field","Bluebell, fern, wood anemone — the spring flush before the canopy closes over"],
+  ["5","Floor","Leaf litter, fungi and the mycorrhizal web trading nutrients between roots"]
+];
+
+const FLOWER_TYPES = [
+  {t:"Line flowers",b:"Tall spikes that set the height, the direction and the outer frame of an arrangement.",eg:"Delphinium · snapdragon · gladiolus · stock"},
+  {t:"Form flowers",b:"Distinctive silhouettes that arrest the eye — used sparingly, as the stars of the piece.",eg:"Lily · iris · orchid · protea · anthurium"},
+  {t:"Mass flowers",b:"Rounded, solid blooms that build the body and visual weight of the design.",eg:"Rose · peony · carnation · chrysanthemum"},
+  {t:"Filler",b:"Airy small-flowered stems and foliage that knit the rest together and carry the negative space.",eg:"Gypsophila · waxflower · statice · foliage"}
+];
+
+const FLOWER_PRINCIPLES = [
+  ["Proportion","A classic arrangement stands about one-and-a-half times the height — or width — of its container. The fastest route to a composition that simply looks right."],
+  ["Balance","Symmetry reads as formal and calm; asymmetry, with weight offset rather than mirrored, reads livelier and more modern. Both are balanced — only one is even."],
+  ["Focal point","One area of greatest weight — the largest or boldest blooms, set low and central — gives the eye an anchor to keep returning to."],
+  ["Rhythm","Repeat a colour or form, and grade flowers from tight bud to full bloom, to move the eye through the piece instead of letting it stall."],
+  ["Colour harmony","Monochromatic for serenity, analogous (neighbours on the wheel) for ease, complementary (opposites) for vibration and contrast."],
+  ["Negative space","The gaps are part of the design. Cram every stem and the arrangement flattens; restraint lets each flower actually be seen."]
 ];
 
 /* ============================================================
@@ -810,7 +960,7 @@ document.getElementById('factors').innerHTML = FACTORS.map(([k,v])=>
 ============================================================ */
 const TABS = [
   ["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],
-  ["landscape","Landscape"],["rooftop","Rooftop"]
+  ["landscape","Landscape"],["traditions","Traditions"],["rooftop","Rooftop"]
 ];
 const seg = document.getElementById('seg');
 seg.innerHTML = TABS.map((t,i)=>`<button role="tab" data-tab="${t[0]}" aria-selected="${i===0}">${t[1]}</button>`).join('');
@@ -1014,10 +1164,10 @@ function renderRooftop(){
   const sys=ROOF_SYSTEMS.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
   return `
   <div class="lede">
-    <div class="kicker">A real rooftop · Manhattan</div>
-    <h2 class="serif">130 E 12th Street — gardening in the sky.</h2>
-    <div class="addr mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.7 7-12a7 7 0 10-14 0c0 5.3 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span><b>East Village / NoHo</b> · New York 10003 · USDA Zone&nbsp;7b</span></div>
-    <p>A pre-war building near Union Square. Up on the roof, the rules change completely — the constraints aren't a footnote, they're the whole design. And one of them comes first.</p>
+    <div class="kicker">A Manhattan rooftop</div>
+    <h2 class="serif">Gardening in the sky.</h2>
+    <div class="addr mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.7 7-12a7 7 0 10-14 0c0 5.3 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span><b>New York City</b> · USDA Zone&nbsp;7b</span></div>
+    <p>Up on a pre-war roof the rules change completely — the constraints aren't a footnote, they're the whole design. And one of them comes first.</p>
   </div>
 
   <div class="callout" style="margin-bottom:8px">
@@ -1079,8 +1229,87 @@ function renderRooftop(){
   </div>`;
 }
 
+/* ---- TRADITIONS ---- */
+function renderTraditions(){
+  const trads = TRADITIONS.map(t=>`
+    <article class="trad trad-${t.accent}">
+      <div class="trad-head">
+        <div class="trad-emblem">${TRAD_EMBLEM[t.key]}</div>
+        <div class="trad-intro">
+          <div class="trad-era">${t.era}</div>
+          <h3 class="trad-name">${t.name}</h3>
+          <p class="trad-philo">${t.philo}</p>
+        </div>
+      </div>
+      <div class="trad-body">
+        <ul class="trad-principles">
+          ${t.principles.map(([h,b])=>`<li><span class="tp-h">${h}</span><span class="tp-b">${b}</span></li>`).join('')}
+        </ul>
+        <div class="trad-side">
+          <div class="trad-note"><span class="tn-k">${t.signature[0]}</span><p>${t.signature[1]}</p></div>
+          <div class="trad-note"><span class="tn-k">${t.palette[0]}</span><p>${t.palette[1]}</p></div>
+        </div>
+      </div>
+    </article>`).join('');
+
+  const forestPrinciples = FORESTRY.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
+  const forestLayers = FOREST_LAYERS.map(([n,nm,eg])=>`<div class="layer-row"><span class="layer-n mono">${n}</span><span class="layer-name">${nm}</span><span class="layer-eg">${eg}</span></div>`).join('');
+  const flowerTypes = FLOWER_TYPES.map(f=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${f.t}</div><div class="m-body">${f.b}</div><div class="eg-line">${f.eg}</div></div>`).join('');
+  const flowerPrinciples = FLOWER_PRINCIPLES.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
+
+  return `
+  <div class="lede">
+    <div class="kicker">How the great traditions composed a garden</div>
+    <h2 class="serif">Three answers to one question: what should we do with the land?</h2>
+    <p>England hid the hand and let nature seem to win. Japan removed everything but the essential and let emptiness speak. France imposed pure geometry as a show of reason. Underneath all three sit the same two crafts — how a forest is shaped over time, and how flowers are arranged in space.</p>
+  </div>
+
+  ${trads}
+
+  <div class="section">
+    <h3 class="section-h serif">Forestry — designing the wood itself</h3>
+    <p class="section-sub">Before any of these gardens, there is the forester's art: shaping a wood across decades you may not live to see. The same vertical layering runs from a wild forest straight into the food forest a few tabs back.</p>
+    <div class="grid g-3">${forestPrinciples}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The five layers of a woodland</h3>
+    <p class="section-sub">A natural forest occupies every height at once — the structure the English landscape park imitates and the food forest borrows wholesale.</p>
+    <div class="layers">${forestLayers}</div>
+  </div>
+
+  <div class="section">
+    <div class="callout">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 0-9 4-12-5 0-8 2-8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 21c0-4 0-6-3-8 3.5 0 5 1.5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <div>
+        <h4>The forester's long horizon.</h4>
+        <p>An oak planted for timber will be felled by someone not yet born. Continuous-cover forestry, mixed ages and natural regeneration are all ways of designing for a result you will never personally harvest — the most patient form of garden design there is.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Flower design — composition in the hand</h3>
+    <p class="section-sub">The garden's principles, scaled down to a single arrangement. Western floristry sorts flowers into four working roles.</p>
+    <div class="grid g-2">${flowerTypes}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The principles of arrangement</h3>
+    <p class="section-sub">The same grammar the landscape tab used for a whole garden — proportion, balance, a focal point, rhythm, palette and negative space — working at the scale of a vase.</p>
+    <div class="grid g-3">${flowerPrinciples}</div>
+  </div>
+
+  <div class="section">
+    <div class="card" style="border-left:3px solid var(--loam)">
+      <div class="m-title serif" style="font-size:19px;font-weight:500;margin-bottom:6px">The Japanese counterpoint — ikebana</div>
+      <div class="m-body">Where Western arrangement builds toward mass and abundance, <em>ikebana</em> does the opposite: a few stems on three lines — <span class="mono" style="font-size:13px">shin</span> (heaven), <span class="mono" style="font-size:13px">soe</span> (man) and <span class="mono" style="font-size:13px">hikae</span> (earth) — held in asymmetric tension. Line over mass, the empty space as important as the flower. The same <em>ma</em> that governs the dry garden, brought indoors.</div>
+    </div>
+  </div>`;
+}
+
 /* ---- ROUTER ---- */
-const RENDERERS = {etymology:renderEtymology, companions:renderCompanions, farm:renderFarm, landscape:renderLandscape, rooftop:renderRooftop};
+const RENDERERS = {etymology:renderEtymology, companions:renderCompanions, farm:renderFarm, landscape:renderLandscape, traditions:renderTraditions, rooftop:renderRooftop};
 let current="etymology";
 function show(tab){
   current=tab;

@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Living System — A Field Guide to Companion Planting & Permaculture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F4EE; --paper-2:#EDEBE1; --panel:#FBFAF6;
+  --ink:#1F241C; --ink-soft:#566052; --ink-faint:#8A917F;
+  --line:rgba(31,36,28,.12); --line-2:rgba(31,36,28,.07);
+  --green:#2F5D34; --green-2:#4E7A3F; --sprout:#7FA64E; --sprout-soft:#E4ECD4;
+  --loam:#6B4E37; --loam-2:#9A7A57; --loam-soft:#EDE3D6;
+  --pollen:#CF9A30; --pollen-soft:#F4E6C4;
+  --sky:#E7EDEC;
+  --shadow:0 1px 2px rgba(31,36,28,.04),0 8px 30px rgba(31,36,28,.06);
+  --shadow-lift:0 2px 6px rgba(31,36,28,.07),0 18px 50px rgba(31,36,28,.11);
+  --r:18px; --r-sm:12px;
+  --maxw:1120px;
+}
+[data-theme="dark"]{
+  --paper:#13160F; --paper-2:#191D14; --panel:#1C2117;
+  --ink:#ECE9DC; --ink-soft:#A7AC99; --ink-faint:#727867;
+  --line:rgba(236,233,220,.13); --line-2:rgba(236,233,220,.07);
+  --green:#6E9B5A; --green-2:#83AE63; --sprout:#A6CC6E; --sprout-soft:#283019;
+  --loam:#C49B72; --loam-2:#9A7A57; --loam-soft:#272016;
+  --pollen:#E3B654; --pollen-soft:#33290F;
+  --sky:#1A2020;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.4);
+  --shadow-lift:0 2px 8px rgba(0,0,0,.4),0 22px 60px rgba(0,0,0,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  transition:background .5s ease,color .5s ease;
+}
+.serif{font-family:"Fraunces",Georgia,serif}
+.mono{font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+a{color:inherit}
+::selection{background:var(--sprout-soft);color:var(--ink)}
+
+/* ---------- Masthead ---------- */
+.masthead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.mh-grid{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:30px;align-items:center;padding:46px 0 38px}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:500}
+[data-theme="dark"] .eyebrow{color:var(--sprout)}
+h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.015em;margin:14px 0 16px;font-optical-sizing:auto}
+.title em{font-style:italic;color:var(--green)}
+[data-theme="dark"] .title em{color:var(--sprout)}
+.ethos{font-size:18px;color:var(--ink-soft);max-width:46ch}
+.ethos b{color:var(--ink);font-weight:600}
+.factors{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.factor{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.02em;padding:5px 10px;border:1px solid var(--line);border-radius:99px;color:var(--ink-soft);cursor:default;transition:.25s;background:var(--panel)}
+.factor:hover{border-color:var(--sprout);color:var(--ink);box-shadow:var(--shadow)}
+.factor b{color:var(--green);font-weight:500}
+[data-theme="dark"] .factor b{color:var(--sprout)}
+
+/* strata hero svg */
+.hero-svg{width:100%;height:auto;display:block;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;background:var(--sky)}
+
+/* ---------- Topbar / nav ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap}
+.brand svg{flex:none}
+.seg{display:flex;gap:2px;background:var(--paper-2);border:1px solid var(--line);border-radius:99px;padding:4px}
+.seg button{font:inherit;font-size:13.5px;font-weight:500;color:var(--ink-soft);background:none;border:none;padding:7px 15px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:color .2s,background .25s,box-shadow .25s}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+.theme-btn{flex:none;width:40px;height:40px;border-radius:99px;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--ink);display:grid;place-items:center;transition:.25s}
+.theme-btn:hover{box-shadow:var(--shadow);border-color:var(--sprout)}
+.nav-scroll{overflow-x:auto;scrollbar-width:none}.nav-scroll::-webkit-scrollbar{display:none}
+
+/* ---------- Panels ---------- */
+main{padding:46px 0 30px;min-height:60vh}
+.panel{display:none;animation:rise .55s cubic-bezier(.2,.7,.2,1)}
+.panel.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lede{max-width:60ch;margin-bottom:30px}
+.lede h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em;line-height:1.08;margin-bottom:12px}
+.lede p{color:var(--ink-soft);font-size:18px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+[data-theme="dark"] .kicker{color:var(--sprout)}
+.kicker::before{content:"";width:22px;height:1px;background:currentColor}
+.section{margin:54px 0}
+.section-h{font-family:"Fraunces",serif;font-size:24px;font-weight:500;letter-spacing:-.01em;margin-bottom:6px}
+.section-sub{color:var(--ink-soft);max-width:62ch;margin-bottom:24px;font-size:16px}
+
+/* filter chips */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font:inherit;font-size:13.5px;font-weight:500;padding:7px 15px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);cursor:pointer;transition:.22s}
+.chip:hover{color:var(--ink);border-color:var(--sprout)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--sprout);color:#13160F;border-color:var(--sprout)}
+
+/* generic card grid */
+.grid{display:grid;gap:14px}
+.g-2{grid-template-columns:repeat(2,1fr)}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--line)}
+
+/* etymology */
+.ety-card{cursor:default}
+.ety-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:4px}
+.ety-word{font-family:"Fraunces",serif;font-size:23px;font-weight:500}
+.ety-tag{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);padding:3px 8px;border-radius:99px;white-space:nowrap}
+.ety-gloss{color:var(--ink-soft);font-style:italic;font-family:"Fraunces",serif;font-size:15px;margin-bottom:14px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px}
+.link{display:inline-flex;flex-direction:column;gap:1px;padding:5px 9px;border-radius:9px;background:var(--paper-2);border:1px solid var(--line-2)}
+.link .lang{font-family:"DM Mono",monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+.link .form{font-size:14px}
+.link.final{background:var(--sprout-soft);border-color:transparent}
+.link.final .lang{color:var(--green)}
+[data-theme="dark"] .link.final .lang{color:var(--sprout)}
+.arrow{color:var(--ink-faint);flex:none}
+
+/* mechanism / list cards */
+.mech .m-h{display:flex;align-items:center;gap:11px;margin-bottom:9px}
+.dotmark{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--sprout-soft);color:var(--green)}
+[data-theme="dark"] .dotmark{color:var(--sprout)}
+.m-title{font-weight:600;font-size:17px}
+.m-body{color:var(--ink-soft);font-size:15.5px}
+sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-weight:500;cursor:help;padding-left:2px}
+[data-theme="dark"] sup.fn{color:var(--sprout)}
+
+/* guild table-ish */
+.guild-card .g-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.guild-card h4{font-family:"Fraunces",serif;font-weight:500;font-size:19px}
+.season-tag{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.s-spring{background:var(--sprout-soft);color:var(--green)}
+.s-summer{background:var(--pollen-soft);color:var(--pollen)}
+.s-fall{background:var(--loam-soft);color:var(--loam)}
+[data-theme="dark"] .s-spring{color:var(--sprout)} [data-theme="dark"] .s-fall{color:var(--loam)}
+.members{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.member{font-size:13px;padding:4px 10px;border-radius:99px;background:var(--paper-2);border:1px solid var(--line-2)}
+.guild-why{color:var(--ink-soft);font-size:15px}
+.anti{border-left:3px solid var(--loam-2)}
+.anti .dotmark{background:var(--loam-soft);color:var(--loam)}
+
+/* nutrition pairs */
+.nut .pair{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:18px;font-weight:500;margin-bottom:8px;flex-wrap:wrap}
+.nut .plus{color:var(--pollen);font-size:22px}
+.nut p{color:var(--ink-soft);font-size:15px}
+
+/* footnotes */
+.footnotes{margin-top:30px;padding:22px;border-radius:var(--r);background:var(--paper-2);border:1px solid var(--line)}
+.footnotes h5{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.fn-row{display:flex;gap:11px;margin-bottom:9px;font-size:14.5px;color:var(--ink-soft)}
+.fn-num{font-family:"DM Mono",monospace;color:var(--green);flex:none;font-weight:500}
+[data-theme="dark"] .fn-num{color:var(--sprout)}
+
+/* layers (food forest) */
+.layers{display:flex;flex-direction:column;gap:8px}
+.layer-row{display:grid;grid-template-columns:34px 150px 1fr;gap:16px;align-items:center;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);transition:.25s}
+.layer-row:hover{transform:translateX(4px);border-color:var(--sprout)}
+.layer-n{font-family:"DM Mono",monospace;font-size:13px;color:var(--green);font-weight:500}
+[data-theme="dark"] .layer-n{color:var(--sprout)}
+.layer-name{font-weight:600;font-size:15.5px}
+.layer-eg{color:var(--ink-soft);font-size:14.5px}
+
+/* zones */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.zone{position:relative;padding:20px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.zone .zn{position:absolute;top:-8px;right:6px;font-family:"Fraunces",serif;font-size:62px;font-weight:500;color:var(--line);line-height:1;user-select:none}
+.zone h4{font-weight:600;font-size:16px;margin-bottom:5px;position:relative}
+.zone p{color:var(--ink-soft);font-size:14.5px;position:relative}
+
+/* rotation sequence */
+.rotation{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:6px}
+.rot-step{flex:1 1 160px;background:var(--panel);border:1px solid var(--line);padding:16px 18px;position:relative}
+.rot-step:first-child{border-radius:var(--r-sm) 0 0 var(--r-sm)}
+.rot-step:last-child{border-radius:0 var(--r-sm) var(--r-sm) 0}
+.rot-step+.rot-step{border-left:none}
+.rot-step .rs-n{font-family:"DM Mono",monospace;font-size:11px;color:var(--pollen);letter-spacing:.08em}
+.rot-step h5{font-size:15px;margin:4px 0 4px}
+.rot-step p{font-size:13.5px;color:var(--ink-soft)}
+
+/* callout / safety */
+.callout{display:flex;gap:16px;padding:22px 24px;border-radius:var(--r);background:var(--pollen-soft);border:1px solid color-mix(in srgb,var(--pollen) 40%,transparent)}
+.callout svg{flex:none;color:var(--pollen)}
+.callout h4{font-weight:600;margin-bottom:4px}
+.callout p{color:var(--ink-soft);font-size:15px}
+[data-theme="dark"] .callout{color:var(--ink)}
+
+/* two-col prose blocks */
+.prose-card h4{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:500;font-size:19px;margin-bottom:7px}
+.prose-card .idx{font-family:"DM Mono",monospace;font-size:13px;color:var(--green)}
+[data-theme="dark"] .prose-card .idx{color:var(--sprout)}
+.prose-card p{color:var(--ink-soft);font-size:15px}
+.prose-card .aside{margin-top:9px;font-size:13.5px;color:var(--ink-faint);font-style:italic;font-family:"Fraunces",serif}
+
+/* address bar */
+.addr{display:inline-flex;align-items:center;gap:9px;font-family:"DM Mono",monospace;font-size:13px;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);padding:8px 14px;border-radius:99px;margin-bottom:20px}
+.addr b{color:var(--ink)}
+
+/* palette good/bad */
+.palette{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pal h5{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;margin-bottom:10px}
+.pal ul{list-style:none}
+.pal li{font-size:14.5px;color:var(--ink-soft);padding:5px 0;border-bottom:1px solid var(--line-2)}
+.pal li:last-child{border:none}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding:34px 0 60px;color:var(--ink-faint);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .mono{font-size:12px}
+
+@media(max-width:880px){
+  .mh-grid{grid-template-columns:1fr;gap:24px}
+  .g-3,.g-2{grid-template-columns:1fr}
+  .zones{grid-template-columns:1fr}
+  .layer-row{grid-template-columns:30px 1fr;gap:6px 12px}
+  .layer-eg{grid-column:2}
+  .palette{grid-template-columns:1fr}
+  .brand span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;transition-duration:.08s !important}
+  .grow{transform:none !important;opacity:1 !important}
+}
+/* grow animation for hero */
+.grow{transform-box:fill-box;transform-origin:bottom center;transform:scaleY(0);opacity:0;animation:grow .9s cubic-bezier(.2,.8,.25,1) forwards}
+@keyframes grow{to{transform:scaleY(1);opacity:1}}
+.draw{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.1s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade-in{opacity:0;animation:fadein .8s ease forwards}
+@keyframes fadein{to{opacity:1}}
+
+/* ---------- Interactive concept maps ---------- */
+.concept-map{padding:0;overflow:hidden;background:var(--panel)}
+.map-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:22px 24px;border-bottom:1px solid var(--line)}
+.map-head h3{font-family:"Fraunces",serif;font-weight:500;font-size:24px;letter-spacing:-.01em;margin-bottom:4px}
+.map-head p{color:var(--ink-soft);font-size:15.5px;max-width:64ch}
+.map-badge{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--green);border:1px solid var(--line);background:var(--paper-2);border-radius:99px;padding:5px 10px;white-space:nowrap}
+[data-theme="dark"] .map-badge{color:var(--sprout)}
+.map-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.75fr);min-height:470px}
+.map-stage{position:relative;min-height:470px;background:linear-gradient(180deg,var(--sky),var(--paper-2));overflow:hidden;border-right:1px solid var(--line)}
+.map-stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.map-stage .drift{opacity:.22}
+.map-pin{position:absolute;left:calc(var(--x) * 1%);top:calc(var(--y) * 1%);transform:translate(-50%,-50%);width:48px;height:48px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);background:color-mix(in srgb,var(--panel) 86%,transparent);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer;color:var(--ink);font-size:24px;line-height:1;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s,background .25s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.map-pin:hover{transform:translate(-50%,-54%) scale(1.06);box-shadow:var(--shadow-lift);border-color:var(--sprout)}
+.map-pin[aria-pressed="true"]{background:var(--sprout-soft);border-color:var(--sprout);box-shadow:0 0 0 4px color-mix(in srgb,var(--sprout) 18%,transparent),var(--shadow-lift)}
+.map-pin small{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:6px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.04em;white-space:nowrap;color:var(--ink-soft);background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px solid var(--line);border-radius:99px;padding:2px 7px;opacity:0;pointer-events:none;transition:.2s}
+.map-pin:hover small,.map-pin[aria-pressed="true"] small{opacity:1}
+.map-info{padding:24px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(180deg,var(--panel),var(--paper-2))}
+.map-detail{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);min-height:184px;animation:rise .35s cubic-bezier(.2,.7,.2,1)}
+.map-detail .map-icon{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:var(--sprout-soft);font-size:25px;margin-bottom:12px}
+.map-detail h4{font-family:"Fraunces",serif;font-size:22px;font-weight:500;line-height:1.1;margin-bottom:7px}
+.map-detail p{color:var(--ink-soft);font-size:15px}
+.map-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.map-tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line-2);border-radius:99px;padding:4px 8px}
+.map-list{display:grid;gap:7px}
+.map-list button{font:inherit;text-align:left;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);border-radius:12px;padding:9px 11px;cursor:pointer;transition:.2s}
+.map-list button:hover{color:var(--ink);border-color:var(--sprout);transform:translateX(2px)}
+.map-list button[aria-current="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+[data-theme="dark"] .map-list button[aria-current="true"]{background:var(--sprout);color:#13160F;border-color:var(--sprout)}
+.map-note{font-size:13.5px;color:var(--ink-faint);font-style:italic;font-family:"Fraunces",serif}
+.map-path{stroke:var(--green);stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.45;stroke-dasharray:10 12}
+.map-bed{fill:var(--loam-soft);stroke:var(--loam-2);stroke-width:1.5}
+.map-water{fill:color-mix(in srgb,var(--sky) 66%,var(--sprout-soft));stroke:var(--line)}
+.map-lawn{fill:var(--sprout-soft);stroke:var(--line)}
+.map-hedge{fill:var(--green);opacity:.18;stroke:var(--green);stroke-width:1.5}
+.map-building{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.map-label{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;fill:var(--ink-faint)}
+.map-animal{font-size:22px;dominant-baseline:middle;text-anchor:middle}
+@media(max-width:880px){
+  .map-head{display:block}.map-badge{display:inline-flex;margin-top:12px}
+  .map-grid{grid-template-columns:1fr}.map-stage{border-right:none;border-bottom:1px solid var(--line);min-height:390px}.map-info{padding:18px}
+  .map-pin{width:42px;height:42px;border-radius:15px;font-size:22px}.map-pin small{display:none}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
+  <div class="wrap mh-grid">
+    <div>
+      <div class="eyebrow">A Field Guide · Temperate Northeast · Zone 7b</div>
+      <h1 class="title serif">The Living <em>System</em></h1>
+      <p class="ethos"><b>Feed the soil, not the plants.</b> Everything below grows from that one idea — companion planting, no-till permaculture, a working farm, a designed landscape, a Manhattan roof.</p>
+      <div class="factors" id="factors"></div>
+    </div>
+    <svg class="hero-svg" id="heroSvg" viewBox="0 0 560 380" role="img" aria-label="Cross-section of a food forest above layered soil with worms"></svg>
+  </div>
+</header>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 0-9 4-12-5 0-8 2-8 7" stroke="var(--green)" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21c0-4 0-6-3-8 3.5 0 5 1.5 5 5" stroke="var(--sprout)" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21v-2" stroke="var(--loam)" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <span>The Living System</span>
+    </div>
+    <div class="nav-scroll"><div class="seg" id="seg" role="tablist"></div></div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"></button>
+  </div>
+</div>
+
+<!-- ============ MAIN ============ -->
+<main class="wrap" id="main"></main>
+
+<footer><div class="wrap">
+  <div>Built as one quiet system. Companion-planting claims carry an evidence footnote — half the canon is folklore, and it's marked as such.</div>
+  <div class="mono">FEED THE SOIL → NOT THE PLANTS</div>
+</div></footer>
+
+<script>
+/* ============================================================
+   DATA
+============================================================ */
+const FACTORS = [
+  ["TIME","seasons & succession"],["SPACE","area & plant spacing"],["TEMP","heat / cold"],
+  ["WIND","frequency & velocity"],["RAIN","frequency & velocity"],["FROST","first & last date"],
+  ["SOIL","sand · clay · loam"],["pH","6.0–7.0 for most"],["NPK","leaf · root · vigor"]
+];
+
+const ETY = [
+  {w:"Tomato",t:"Vegetable",g:"the swelling fruit",c:[["Nahuatl","tomatl"],["Spanish","tomate"],["English","tomato"]]},
+  {w:"Potato",t:"Vegetable",g:"two roots, one word",c:[["Taíno","batata"],["Quechua","papa"],["Spanish","patata"],["English","potato"]]},
+  {w:"Avocado",t:"Fruit & Tree",g:"from a word for 'testicle'",c:[["Nahuatl","āhuacatl"],["Spanish","aguacate"],["English","avocado"]]},
+  {w:"Squash",t:"Vegetable",g:"'eaten green / raw'",c:[["Narragansett","askútasquash"],["English","squash"]]},
+  {w:"Maize",t:"Vegetable",g:"corn = any grain; maize is the plant",c:[["Taíno","mahís"],["Spanish","maíz"],["English","maize"]]},
+  {w:"Bean",t:"Vegetable",g:"old Germanic stock",c:[["P-Germanic","*baunō"],["Old English","bēan"],["English","bean"]]},
+  {w:"Pea",t:"Vegetable",g:"a backwards word — 'pease' misread as plural",c:[["Greek","píson"],["Latin","pisum"],["Old English","pise"],["English","pea"]]},
+  {w:"Carrot",t:"Vegetable",g:"the horn-shaped root",c:[["Greek","karōton"],["Latin","carota"],["French","carotte"],["English","carrot"]]},
+  {w:"Onion",t:"Vegetable",g:"'a single pearl / unity'",c:[["Latin","uniō"],["Anglo-Norman","union"],["English","onion"]]},
+  {w:"Garlic",t:"Herb",g:"literally 'spear-leek'",c:[["Old English","gār + lēac"],["Old English","gārlēac"],["English","garlic"]]},
+  {w:"Leek",t:"Vegetable",g:"the ancestral allium word",c:[["P-Germanic","*laukaz"],["Old English","lēac"],["English","leek"]]},
+  {w:"Cabbage",t:"Vegetable",g:"from 'head'",c:[["Latin","caput"],["Old French","caboche"],["English","cabbage"]]},
+  {w:"Kale",t:"Vegetable",g:"the northern form of 'cole'",c:[["Latin","caulis"],["Old Norse","kál"],["English","kale"]]},
+  {w:"Broccoli",t:"Vegetable",g:"'little shoots' (plural)",c:[["Latin","broccus"],["Italian","brocco"],["Italian","broccolo"],["English","broccoli"]]},
+  {w:"Cauliflower",t:"Vegetable",g:"'cabbage-flower'",c:[["Latin","caulis + flōs"],["Italian","cavolfiore"],["English","cauliflower"]]},
+  {w:"Lettuce",t:"Vegetable",g:"named for its milky sap",c:[["Latin","lactūca"],["Old French","laitues"],["English","lettuce"]]},
+  {w:"Spinach",t:"Vegetable",g:"travelled the Silk Road",c:[["Persian","aspanākh"],["Arabic","isfānākh"],["Old Spanish","espinaca"],["English","spinach"]]},
+  {w:"Beet",t:"Vegetable",g:"plain Latin root",c:[["Latin","bēta"],["Old English","bete"],["English","beet"]]},
+  {w:"Radish",t:"Vegetable",g:"simply 'the root'",c:[["Latin","rādīx"],["Old English","rǣdic"],["English","radish"]]},
+  {w:"Turnip",t:"Vegetable",g:"'turned' (round) + neep",c:[["Latin","nāpus"],["English","neep"],["English","turn-neep"],["English","turnip"]]},
+  {w:"Cucumber",t:"Vegetable",g:"straight from Latin",c:[["Latin","cucumis"],["Old French","cocombre"],["English","cucumber"]]},
+  {w:"Pumpkin",t:"Vegetable",g:"'ripened by the sun'",c:[["Greek","pépōn"],["Latin","pepō"],["French","pompon"],["English","pumpkin"]]},
+  {w:"Pepper",t:"Vegetable",g:"the spice that named a continent's trade",c:[["Sanskrit","pippalī"],["Greek","péperi"],["Latin","piper"],["English","pepper"]]},
+  {w:"Chili",t:"Vegetable",g:"unrelated to 'pepper' — a New-World word",c:[["Nahuatl","chīlli"],["Spanish","chile"],["English","chili"]]},
+  {w:"Aubergine",t:"Vegetable",g:"eggplant's long eastern road",c:[["Sanskrit","vātiṅgaṇa"],["Persian","bādingān"],["Arabic","al-bādhinjān"],["Catalan","albergínia"],["French","aubergine"]]},
+  {w:"Zucchini",t:"Vegetable",g:"'little gourd'",c:[["Italian","zucca"],["Italian","zucchino"],["English","zucchini"]]},
+  {w:"Asparagus",t:"Vegetable",g:"the sprouting stalk",c:[["Greek","aspáragos"],["Latin","asparagus"],["English","asparagus"]]},
+  {w:"Artichoke",t:"Vegetable",g:"'the earth-thorn'",c:[["Arabic","al-kharshūf"],["Spanish","alcarchofa"],["Italian","articiocco"],["English","artichoke"]]},
+  {w:"Celery",t:"Vegetable",g:"from a wild marsh herb",c:[["Greek","sélinon"],["Lombard","seleri"],["French","céleri"],["English","celery"]]},
+  {w:"Basil",t:"Herb",g:"'the royal herb'",c:[["Greek","basilikón"],["Latin","basilicum"],["English","basil"]]},
+  {w:"Rosemary",t:"Herb",g:"'dew of the sea' (re-spelled by folk etymology)",c:[["Latin","rōs marīnus"],["Old French","rosmarin"],["English","rosemary"]]},
+  {w:"Sage",t:"Herb",g:"from 'to heal / save'",c:[["Latin","salvia"],["Old French","sauge"],["English","sage"]]},
+  {w:"Comfrey",t:"Herb",g:"'knit together' — the healing plant",c:[["Latin","confirma"],["Old French","cunfirie"],["English","comfrey"]]},
+  {w:"Apple",t:"Fruit & Tree",g:"once meant any fruit at all",c:[["P-Germanic","*aplaz"],["Old English","æppel"],["English","apple"]]},
+  {w:"Pear",t:"Fruit & Tree",g:"plain and old",c:[["Latin","pirum"],["Old English","peru"],["English","pear"]]},
+  {w:"Marigold",t:"Fruit & Tree",g:"'Mary's gold'",c:[["Old English","golde"],["English","Mary + gold"],["English","marigold"]]},
+  {w:"Cow",t:"Animal",g:"the deep Indo-European root for cattle",c:[["P-Germanic","*kūz"],["Old English","cū"],["English","cow"]]},
+  {w:"Pig",t:"Animal",g:"origin genuinely obscure",c:[["Middle English","pigge"],["English","pig"]]},
+  {w:"Hen",t:"Animal",g:"'the female of the cock'",c:[["P-Germanic","*hanjō"],["Old English","henn"],["English","hen"]]},
+  {w:"Rooster",t:"Animal",g:"American coinage: 'one that roosts'",c:[["English","roost"],["American Eng.","rooster"]]},
+  {w:"Worm",t:"Animal",g:"once meant 'serpent / dragon'",c:[["P-Germanic","*wurmiz"],["Old English","wyrm"],["English","worm"]]}
+];
+
+const MECH = [
+  {t:"Nitrogen fixation",i:"N",fn:1,b:"Legumes — beans, peas, clover, vetch — host <em>rhizobia</em> bacteria in root nodules that pull nitrogen out of the air. As those roots die back, the nitrogen feeds whatever grows nearby."},
+  {t:"Trap cropping",i:"T",fn:1,b:"A sacrificial plant draws pests off the crop you care about: nasturtium hoards aphids, blue hubbard squash decoys cucumber beetles, mustard pulls in harlequin bugs."},
+  {t:"Allelopathy",i:"A",fn:1,b:"Some plants release chemicals that suppress competitors. Rye and sunflower residue smother weeds; black walnut's juglone poisons tomatoes and apples — a companion effect working in reverse."},
+  {t:"Nurse & shade plants",i:"S",fn:1,b:"A taller crop shelters a tender one. Corn or staked tomatoes shade lettuce through summer, slowing the heat-stress that makes greens bolt to seed."},
+  {t:"Living mulch",i:"M",fn:1,b:"Sprawling ground-cover crops shade the soil, hold moisture, and smother weeds. Squash plays this role in the Three Sisters; clover does it under taller plants."},
+  {t:"Pollinator attraction",i:"P",fn:1,b:"Flowering companions — borage, phacelia, sweet alyssum — pull in bees and hoverflies, measurably lifting fruit set on the vegetables beside them."},
+  {t:"Insectary habitat",i:"I",fn:1,b:"Tiny umbel and daisy flowers (dill, fennel, yarrow, alyssum) feed and shelter the predators — ladybugs, lacewings, parasitic wasps — that hunt your pests for free."},
+  {t:"Aromatic masking",i:"R",fn:3,b:"The classic claim that strong-smelling alliums, basil, and marigold confuse pests by scent. Mostly folklore — though densely grown French marigold genuinely suppresses root-knot nematodes when tilled into the soil.<sup class='fn'>2</sup>"},
+  {t:"Dynamic accumulators",i:"D",fn:2,b:"Deep-rooted comfrey, borage, and yarrow are said to mine subsoil minerals and return them when chopped down as mulch. Comfrey's potassium really is high; the broader claim is largely unproven."}
+];
+
+const GUILDS = [
+  {n:"Three Sisters",s:"summer",m:["Corn","Beans","Squash"],fn:1,w:"The canonical guild. Corn is the trellis, beans fix nitrogen and climb it, squash sprawls below as living mulch. Each solves a problem for the others."},
+  {n:"Beans + Corn",s:"summer",m:["Pole beans","Sweet corn"],fn:1,w:"The core of the trio on its own: free vertical support in exchange for nitrogen. Solid mechanism, not lore."},
+  {n:"Lettuce under tall crops",s:"summer",m:["Lettuce","Tomato / Corn"],fn:1,w:"Afternoon shade from the taller plant keeps lettuce cool and stops it bolting in heat. Real, physical, reliable."},
+  {n:"Marigold + Tomato",s:"summer",m:["French marigold","Tomato","Pepper"],fn:2,w:"Grown thickly and worked into the soil, French marigold suppresses root-knot nematodes. The 'repels everything' version is overstated."},
+  {n:"Carrot + Onion",s:"spring",m:["Carrot","Onion","Leek"],fn:2,w:"Alternating rows is said to confuse carrot fly and onion fly by scent. A real but modest, situational effect."},
+  {n:"Brassicas + Dill / Nasturtium",s:"spring",m:["Cabbage","Dill","Nasturtium"],fn:2,w:"Dill's flowers host predators of cabbage worms; nasturtium acts as an aphid trap. Two solid mechanisms bundled into one bed."},
+  {n:"Cucumber + Borage",s:"summer",m:["Cucumber","Borage","Nasturtium"],fn:2,w:"Borage is a pollinator magnet that lifts cucumber fruit set; nasturtium pulls aphids away. The 'flavor' folklore around borage is unproven."},
+  {n:"Strawberry + Borage",s:"spring",m:["Strawberry","Borage"],fn:2,w:"A traditional pairing — borage draws pollinators to the berries and is rumoured to strengthen the plants. Pollination effect is plausible; the rest is lore."},
+  {n:"Tomato + Basil",s:"summer",m:["Tomato","Basil"],fn:3,w:"Beloved on the plate and in the bed, but the 'better-tasting tomatoes' claim has no evidence. Basil may slightly deter thrips. Harmless to try."},
+  {n:"Asparagus + Tomato",s:"spring",m:["Asparagus","Tomato"],fn:2,w:"Tomato is said to deter asparagus beetle while asparagus discourages root nematodes. Partly supported, partly traditional."}
+];
+
+const ANTI = [
+  {n:"Black walnut → nightshades",m:["Walnut","Tomato","Potato"],fn:1,w:"Juglone from walnut roots is genuinely toxic to tomatoes, peppers, and potatoes. Keep a wide berth."},
+  {n:"Fennel → almost everything",m:["Fennel"],fn:2,w:"Allelopathic to many neighbours. Give it its own corner."},
+  {n:"Alliums → legumes",m:["Onion","Garlic","Beans","Peas"],fn:2,w:"Onions and garlic are widely reported to stunt beans and peas. Worth separating."}
+];
+
+const NUTRI = [
+  {a:"Plant iron",b:"Vitamin C",p:"Pair spinach, lentils, or beans with lemon, peppers, or tomato. Vitamin C converts plant (non-heme) iron into a form your gut absorbs far better. The companion logic, on a plate."},
+  {a:"Carotenoids",b:"Fat",p:"Carrots, kale, and tomato carry fat-soluble pigments — beta-carotene, lutein, lycopene. A little olive oil or avocado is what actually lets your body take them up."},
+  {a:"Tomato",b:"Heat + oil",p:"Cooking tomato in oil breaks down cell walls and frees lycopene. A cooked sauce delivers more of it than a raw slice — preparation as synergy."},
+  {a:"Turmeric",b:"Black pepper",p:"Piperine in pepper dramatically raises absorption of turmeric's curcumin. A tiny pinch changes everything."},
+  {a:"Brassicas",b:"Mustard / time",p:"Chop broccoli or cabbage and let it rest, or add a little raw mustard. The enzyme myrosinase needs that moment to build cancer-protective sulforaphane."},
+  {a:"Garlic",b:"A 10-minute rest",p:"Crush garlic and wait before heating. The pause lets allicin form and survive the pan, where rushing it into hot oil destroys the benefit."}
+];
+
+const SOIL = [
+  {t:"Feed the soil, not the plants",b:"You aren't fertilising a plant — you're growing a living web of bacteria, fungi, and worms that feeds the plant for you. Build the biology and the plants take care of themselves."},
+  {t:"Don't till",b:"Inverting soil shreds fungal networks and burns through organic matter in a flush. Keep the structure intact and let roots and worms do the cultivating. Disturb only where you plant."},
+  {t:"Keep it covered",b:"Bare soil is a wound; mulch is the bandage. A top layer of straw, leaves, or wood chips moderates temperature, holds water, suppresses weeds, and feeds the soil as it breaks down."},
+  {t:"Compost the kitchen",b:"Roughly 4 parts brown to 1 part green by volume is a good working ratio — the underlying target is a carbon-to-nitrogen balance near 25–30 : 1.<sup class='fn'>★</sup> Browns are carbon (leaves, straw, cardboard); greens are nitrogen (scraps, grass, manure)."},
+  {t:"Cover crops",b:"Off-season living roots: legumes (clover, vetch, fava) fix nitrogen; rye and oats build biomass and choke weeds; daikon radish drills through compaction; buckwheat is a fast pollinator smother-crop."},
+  {t:"Mind the pH",b:"Most vegetables want 6.0–7.0. Blueberries demand acid (4.5–5.5); brassicas prefer it limed toward 7 to fend off clubroot. Test before you guess."},
+  {t:"Read the N-P-K",b:"Nitrogen drives leaves and green growth, phosphorus builds roots, flowers, and fruit, potassium gives whole-plant vigour and disease resistance. Too much N = all leaf, no harvest."},
+  {t:"Let the worms work",b:"Worm castings are a premium fertiliser and their tunnels aerate and drain the bed. A small vermicompost bin closes the loop straight from the kitchen."}
+];
+
+const NOTILL = [
+  ["Sheet mulch","Cardboard, then compost, then mulch, layered straight over grass. Smothers weeds and builds a bed without a single shovel of digging."],
+  ["Chop-and-drop","Cut comfrey or a cover crop and leave it where it falls. It becomes mulch that feeds the soil in place."],
+  ["Back to Eden","A deep blanket of wood chips — fungal-dominant, moisture-holding, weed-suppressing. You plant into the compost layer beneath."],
+  ["Broadfork","Aerate and relieve compaction by levering the soil open without inverting or mixing the layers."],
+  ["Roller-crimp","Flatten a mature cover crop into a mat and plant directly through the residue. No tillage, instant mulch."]
+];
+
+const LAYERS = [
+  ["1","Canopy","Full-size fruit & nut trees — chestnut, standard apple, walnut (mind the juglone)"],
+  ["2","Understory","Dwarf & semi-dwarf fruit — apple, pear, plum, peach"],
+  ["3","Shrub","Currant, gooseberry, blueberry, hazelnut"],
+  ["4","Herbaceous","Comfrey, rhubarb, herbs, and most vegetables"],
+  ["5","Ground cover","Strawberry, white clover, creeping thyme"],
+  ["6","Rhizosphere","The root layer — garlic, onion, potato, Jerusalem artichoke"],
+  ["7","Vertical","Climbers using the rest as trellis — grape, hardy kiwi, hops, pole beans"]
+];
+
+const ANIMALS = [
+  {n:"Pigs",r:"The cultivators",b:"Rooting clears brush and turns the soil. Run them first to open new ground — then move them on before they overwork it."},
+  {n:"Cows",r:"The mowers & fertilisers",b:"Tight rotational 'mob' grazing trims pasture, tramples litter into the ground, and drops manure that builds topsoil."},
+  {n:"Sheep",r:"The orchard mowers",b:"Graze close and gently under fruit trees where a mower can't go — and hand you wool as the bonus crop."},
+  {n:"Dogs",r:"The guardians & herders",b:"Livestock-guardian breeds deter predators; herding breeds move stock between paddocks. The system's security and logistics."},
+  {n:"Hens",r:"The sanitation crew",b:"Follow the grazers a few days behind to scratch apart manure, eat fly larvae and ticks, and break parasite cycles. Eggs and fertiliser as a bonus."},
+  {n:"Roosters",r:"The sentries",b:"Flock protection and alarm calls against hawks — and, of course, the dawn alarm clock the whole farm runs on."},
+  {n:"Ducks & geese",r:"The slug patrol",b:"Ducks devour slugs and snails without scratching up beds. 'Weeder geese' eat grass and spare the crops."},
+  {n:"Bees",r:"The yield multiplier",b:"Hives lift fruit and vegetable set across the entire system — the quietest, highest-leverage animal you can keep. Honey and wax follow."}
+];
+
+const ZONES = [
+  ["0","Home","The house itself — kitchen, hearth, where you live and observe."],
+  ["1","Daily","Steps from the door: herbs, salad greens, the most intensive beds. Visited every day."],
+  ["2","Frequent","Main vegetable gardens, compost, berry bushes, the henhouse. Tended a few times a week."],
+  ["3","Farm","Orchards, pasture, larger livestock, staple crops. Walked weekly."],
+  ["4","Semi-wild","Foraging, timber, hardy grazing. Light-touch, minimal management."],
+  ["5","Wild","Left untouched — habitat and teacher. You manage nothing and learn everything."]
+];
+
+const ROTATION = [
+  ["01","Pigs open","Root through scrub and turn the ground, then move on."],
+  ["02","Grazers feed","Cows and sheep mow the regrowth and manure the paddock."],
+  ["03","Hens sanitise","Three days behind, they scatter the manure and eat the parasites."],
+  ["04","Rest & regrow","The paddock recovers, deeper-rooted and richer than before."]
+];
+
+const LANDSCAPE = [
+  {x:"01",t:"The bones",p:"Evergreens, hedges, paths, and walls are the architecture — they hold the composition together when everything else dies back in winter.",a:"the built-ins and millwork of a room"},
+  {x:"02",t:"Layering",p:"Canopy → understory → shrub → perennial → groundcover: the ornamental twin of the food forest. Swap in serviceberry for the canopy, blueberry for the shrub layer, strawberry as groundcover, and it feeds you too.",a:"a room composed in depth, not on one plane"},
+  {x:"03",t:"Massing & repetition",p:"Plant in drifts and odd numbers; repeat a few species rather than one of everything. Restraint reads as intention.",a:"a tight, repeated material palette"},
+  {x:"04",t:"Focal points",p:"One specimen tree, an urn, a bench at the end of a view. Give the eye somewhere to land and a path to get there.",a:"the single statement piece"},
+  {x:"05",t:"Palette",p:"Design with foliage first, flowers second — silver, burgundy, chartreuse leaves do the year-round work; bloom is punctuation.",a:"texture and tone over loud colour"},
+  {x:"06",t:"Texture contrast",p:"Set fine against bold: fennel, grasses, and asparagus fern beside rhubarb, squash leaves, and hosta. Contrast is what stops a planting reading flat.",a:"linen against velvet"},
+  {x:"07",t:"Negative space",p:"Lawn, gravel, a clean bed edge — rest for the eye. Don't fill every inch; the pause is part of the composition.",a:"the empty wall that makes the rest work"},
+  {x:"08",t:"Seasonal succession",p:"Something must be doing work every season: spring blossom from serviceberry, summer fruit, autumn fire from blueberry and persimmon, winter structure from kale and evergreen herbs.",a:"a room that changes with the light"},
+  {x:"09",t:"Edible as ornamental",p:"Rainbow chard, purple kale, architectural artichoke, scarlet runner bean up an obelisk, a fig as sculpture, an espaliered apple as a living wall. Beauty that also feeds.",a:"form and function refusing to choose"}
+];
+
+const ROOF_CONSTRAINTS = [
+  {t:"Wind",b:"The dominant force this high up. It desiccates leaves and topples plants and pots. Answer it with windbreaks (lattice, hardy shrubs), low sturdy plants, and weighted or secured containers."},
+  {t:"Reflected heat",b:"The membrane and parapet bounce heat back — a summer solar oven. Wonderful for peppers and figs, brutal on greens and roots. Use light-coloured pots, deep mulch, and some afternoon shade."},
+  {t:"Sun hours",b:"Open sky usually means 8+ hours of direct sun. Watch the roof across a full day before you commit beds — parapets and water towers throw long shadows."},
+  {t:"Water",b:"Almost never a spigot up there. Plan a hose riser or haul-in, drip irrigation, and self-watering reservoirs — and make sure drainage protects the membrane, never pools on it."}
+];
+
+const ROOF_SYSTEMS = [
+  ["Self-watering planters","Sub-irrigated (SIP / EarthBox-style) reservoirs buffer the wind-and-heat drying that kills roof gardens. The first choice this exposed."],
+  ["Fabric & light pots","Air-prune roots and drain freely, keep roots cooler, and stay light enough to move as the sun shifts."],
+  ["Green-roof trays","Shallow modular trays engineered to sit on a membrane and spread load — the most building-friendly option."],
+  ["Lightweight media","Never garden soil. Blend compost with coir and perlite or pumice: it holds water and weighs a fraction as much."]
+];
+
+/* ============================================================
+   INTERACTIVE CONCEPT MAPS
+============================================================ */
+const CONCEPT_MAPS = {
+  companion:{
+    title:"Companion garden map",
+    badge:"click the creatures + beds",
+    intro:"A cozy raised-bed garden that makes the invisible mechanisms visible: shade, nitrogen, living mulch, trap crops, pollinators, and bad-neighbour separation.",
+    note:"Tip: click a bed or animal to see the ecological job it is doing.",
+    svg:`<svg viewBox="0 0 900 560" role="img" aria-label="Companion planting garden map with raised beds, paths, pollinator border, compost, and animals">
+      <defs>
+        <pattern id="dots-comp" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="4" cy="5" r="1.4" fill="var(--ink-faint)" opacity=".22"/><circle cx="15" cy="14" r="1" fill="var(--ink-faint)" opacity=".17"/></pattern>
+      </defs>
+      <rect width="900" height="560" rx="28" fill="var(--sky)"/>
+      <path d="M80 478 C210 400 190 288 336 280 C496 270 486 166 744 126" class="map-path"/>
+      <rect x="38" y="38" width="824" height="484" rx="34" fill="url(#dots-comp)" opacity=".32"/>
+      <rect x="90" y="86" width="250" height="148" rx="28" class="map-bed"/>
+      <rect x="398" y="88" width="246" height="150" rx="28" class="map-bed"/>
+      <rect x="108" y="300" width="224" height="142" rx="28" class="map-bed"/>
+      <rect x="418" y="316" width="258" height="132" rx="28" class="map-bed"/>
+      <path d="M694 96 C792 120 822 204 790 282 C758 360 694 404 728 484" class="map-water"/>
+      <path d="M52 66 C94 44 176 48 236 64 C176 84 112 92 52 66Z" class="map-hedge"/>
+      <path d="M72 474 C144 494 210 496 286 470 C236 524 124 532 72 474Z" class="map-hedge"/>
+      <circle cx="768" cy="405" r="48" fill="var(--pollen-soft)" stroke="var(--pollen)" opacity=".85"/>
+      <text x="215" y="77" class="map-label" text-anchor="middle">three sisters</text>
+      <text x="522" y="79" class="map-label" text-anchor="middle">tomato guild</text>
+      <text x="220" y="292" class="map-label" text-anchor="middle">cool greens</text>
+      <text x="546" y="308" class="map-label" text-anchor="middle">brassica bed</text>
+      <text x="760" y="476" class="map-label" text-anchor="middle">pollinator pond</text>
+      <text x="760" y="404" class="map-animal">🐝</text><text x="735" y="430" class="map-animal">🦋</text><text x="795" y="432" class="map-animal">🐞</text>
+      <text x="166" y="155" class="map-animal">🌽</text><text x="216" y="164" class="map-animal">🫘</text><text x="264" y="176" class="map-animal">🎃</text>
+      <text x="472" y="160" class="map-animal">🍅</text><text x="524" y="174" class="map-animal">🌿</text><text x="582" y="154" class="map-animal">🌼</text>
+      <text x="164" y="365" class="map-animal">🥬</text><text x="238" y="352" class="map-animal">🌻</text><text x="292" y="390" class="map-animal">🪱</text>
+      <text x="476" y="374" class="map-animal">🥦</text><text x="544" y="360" class="map-animal">🌿</text><text x="614" y="388" class="map-animal">🌺</text>
+    </svg>`,
+    points:[
+      {id:"sisters",x:24,y:29,icon:"🌽",label:"Three Sisters",tags:["trellis","nitrogen","mulch"],body:"Corn gives vertical structure, beans climb and fix nitrogen, squash shades the soil as living mulch. One bed demonstrates three companion mechanisms at once."},
+      {id:"tomato",x:58,y:31,icon:"🍅",label:"Tomato guild",tags:["aroma","nematodes","harvest"],body:"Tomato, basil, and French marigold sit together as a practical-plus-traditional guild. The strongest claim is marigold against root-knot nematodes; the basil flavor myth is mostly charm."},
+      {id:"greens",x:25,y:67,icon:"🥬",label:"Nurse shade",tags:["shade","bolting","microclimate"],body:"Lettuce and greens live beside taller sunflowers or corn so afternoon shade slows bolting. This is companion planting as architecture, not mysticism."},
+      {id:"brassica",x:61,y:68,icon:"🥦",label:"Brassica bed",tags:["insectary","trap crop","predators"],body:"Dill and tiny umbel flowers host parasitic wasps and lacewings, while nasturtium works as an aphid trap. The cute flowers are actually pest-management infrastructure."},
+      {id:"pond",x:84,y:74,icon:"🐝",label:"Pollinator edge",tags:["bees","hoverflies","habitat"],body:"Alyssum, borage, marigold, and shallow water pull in bees, hoverflies, butterflies, and ladybugs. The border is a living workforce for the whole garden."},
+      {id:"walnut",x:83,y:22,icon:"🌳",label:"Keep-apart corner",tags:["allelopathy","juglone","separation"],body:"Allelopathy belongs on the map too. Walnut, fennel, and other difficult neighbours get isolated so their chemistry does not punish tomatoes, apples, beans, or peas."}
+    ]
+  },
+  farm:{
+    title:"Permaculture farm map",
+    badge:"zones · layers · animal flow",
+    intro:"A whole-system view: the house at Zone 0, daily gardens nearby, food forest and pasture beyond, and animals moving in sequence to turn vegetation into soil fertility.",
+    note:"The dotted path shows management frequency: daily near the house, lighter touch toward the wild edge.",
+    svg:`<svg viewBox="0 0 900 560" role="img" aria-label="Permaculture farm map with zones, food forest, paddocks, animals, pond, and wild edge">
+      <rect width="900" height="560" rx="28" fill="var(--sky)"/>
+      <ellipse cx="450" cy="285" rx="398" ry="226" class="map-lawn"/>
+      <ellipse cx="450" cy="285" rx="300" ry="168" fill="var(--paper-2)" stroke="var(--line)"/>
+      <ellipse cx="450" cy="285" rx="204" ry="112" fill="var(--sprout-soft)" stroke="var(--line)"/>
+      <ellipse cx="450" cy="285" rx="114" ry="62" fill="var(--panel)" stroke="var(--line)"/>
+      <rect x="402" y="248" width="96" height="68" rx="16" class="map-building"/>
+      <path d="M448 320 C438 360 404 392 340 420 C260 456 180 476 100 490" class="map-path"/>
+      <path d="M508 250 C598 208 704 194 818 206" class="map-path"/>
+      <path d="M118 112 C196 54 334 52 414 110 C302 132 206 138 118 112Z" class="map-hedge"/>
+      <path d="M640 74 C744 78 826 128 842 226 C774 174 704 144 640 74Z" class="map-hedge"/>
+      <path d="M86 354 C142 324 216 338 238 398 C188 424 122 426 86 354Z" class="map-water"/>
+      <rect x="512" y="140" width="122" height="88" rx="22" class="map-bed"/>
+      <rect x="646" y="244" width="142" height="98" rx="24" fill="var(--loam-soft)" stroke="var(--loam-2)"/>
+      <rect x="616" y="376" width="156" height="92" rx="24" fill="var(--loam-soft)" stroke="var(--loam-2)" opacity=".8"/>
+      <text x="450" y="243" class="map-label" text-anchor="middle">zone 0</text>
+      <text x="530" y="320" class="map-label">zone 1 kitchen garden</text>
+      <text x="580" y="136" class="map-label">zone 2 food forest</text>
+      <text x="718" y="237" class="map-label">zone 3 pasture</text>
+      <text x="690" y="372" class="map-label">rotational paddocks</text>
+      <text x="205" y="102" class="map-label">zone 4/5 wild edge</text>
+      <text x="424" y="283" class="map-animal">🏡</text><text x="540" y="196" class="map-animal">🍎</text><text x="582" y="198" class="map-animal">🫐</text><text x="626" y="196" class="map-animal">🍓</text>
+      <text x="704" y="294" class="map-animal">🐄</text><text x="742" y="294" class="map-animal">🐑</text><text x="664" y="420" class="map-animal">🐖</text><text x="710" y="424" class="map-animal">🐔</text><text x="752" y="418" class="map-animal">🐕</text>
+      <text x="152" y="386" class="map-animal">🦆</text><text x="186" y="390" class="map-animal">🐸</text><text x="276" y="96" class="map-animal">🦉</text>
+    </svg>`,
+    points:[
+      {id:"z0",x:50,y:51,icon:"🏡",label:"Zone 0 home",tags:["observe","kitchen","daily loop"],body:"The house is the command center. Kitchen scraps, water, tools, and observation all start here, so the most demanding plants belong closest to the door."},
+      {id:"z1",x:58,y:57,icon:"🌿",label:"Zone 1 kitchen garden",tags:["herbs","salad","daily"],body:"Herbs, salad greens, seed trays, and compost live in the highest-touch area. The map makes the rule simple: frequency of use determines distance."},
+      {id:"forest",x:64,y:35,icon:"🍎",label:"Food forest",tags:["7 layers","perennial","habitat"],body:"Canopy, understory, shrubs, herbs, groundcover, roots, and climbers stack like a woodland. Each layer catches light and offers food, flowers, shelter, or fertility."},
+      {id:"paddocks",x:79,y:76,icon:"🐔",label:"Animal rotation",tags:["pigs","grazers","hens"],body:"Pigs open ground, cows and sheep mow and manure, hens follow to scratch larvae and spread fertility, then the paddock rests. Animal cuteness becomes soil work."},
+      {id:"pond",x:18,y:69,icon:"🦆",label:"Wet edge",tags:["ducks","water","beneficials"],body:"A pond or wet swale adds frog, duck, dragonfly, and pollinator habitat. It is also a climate buffer, giving the farm a cool, biodiverse edge."},
+      {id:"wild",x:29,y:18,icon:"🦉",label:"Wild zone",tags:["zone 5","teacher","habitat"],body:"The wild edge is not neglected; it is intentionally unmanaged. Owls, native flowers, deadwood, and insects teach the system what balance looks like."}
+    ]
+  },
+  landscape:{
+    title:"Designed foodscape map",
+    badge:"composition you can click",
+    intro:"The landscape tab becomes a garden plan: bones, massing, repetition, focal point, edible ornament, negative space, texture contrast, and seasonal succession are each placed on the ground.",
+    note:"Use it like an interior-design board, but outside: structure first, palette second, flowers last.",
+    svg:`<svg viewBox="0 0 900 560" role="img" aria-label="Designed edible landscape map with hedges, paths, focal bench, drifts, negative lawn, orchard, and texture contrast">
+      <rect width="900" height="560" rx="28" fill="var(--sky)"/>
+      <path d="M92 92 H808 V468 H92Z" fill="var(--paper-2)" stroke="var(--line)"/>
+      <path d="M108 108 H792 V148 H108Z" class="map-hedge"/>
+      <path d="M108 412 H792 V452 H108Z" class="map-hedge"/>
+      <ellipse cx="452" cy="286" rx="206" ry="122" class="map-lawn"/>
+      <path d="M452 154 C436 214 390 248 312 270 C218 298 174 352 154 446" class="map-path"/>
+      <path d="M452 154 C468 224 518 248 606 272 C700 300 746 354 764 446" class="map-path"/>
+      <circle cx="452" cy="152" r="44" fill="var(--pollen-soft)" stroke="var(--pollen)"/>
+      <rect x="394" y="118" width="116" height="22" rx="11" fill="var(--loam-soft)" stroke="var(--loam-2)"/>
+      <path d="M172 180 C244 140 326 160 350 224 C282 248 214 236 172 180Z" fill="var(--sprout-soft)" stroke="var(--green)" opacity=".75"/>
+      <path d="M552 202 C634 156 734 182 748 268 C664 286 594 264 552 202Z" fill="var(--pollen-soft)" stroke="var(--pollen)" opacity=".8"/>
+      <path d="M170 348 C230 316 314 322 350 382 C276 420 208 410 170 348Z" fill="var(--loam-soft)" stroke="var(--loam-2)" opacity=".88"/>
+      <path d="M560 348 C624 320 718 324 748 392 C684 422 610 418 560 348Z" fill="var(--sprout-soft)" stroke="var(--green)" opacity=".72"/>
+      <text x="452" y="108" class="map-label" text-anchor="middle">focal bench + urn</text>
+      <text x="452" y="286" class="map-label" text-anchor="middle">negative space</text>
+      <text x="246" y="170" class="map-label" text-anchor="middle">repeated drifts</text>
+      <text x="650" y="206" class="map-label" text-anchor="middle">edible ornament</text>
+      <text x="254" y="380" class="map-label" text-anchor="middle">texture contrast</text>
+      <text x="650" y="382" class="map-label" text-anchor="middle">seasonal colour</text>
+      <text x="138" y="130" class="map-animal">🌲</text><text x="190" y="130" class="map-animal">🌲</text><text x="242" y="130" class="map-animal">🌲</text>
+      <text x="452" y="154" class="map-animal">🪑</text><text x="616" y="238" class="map-animal">🥬</text><text x="668" y="238" class="map-animal">🌶️</text><text x="714" y="238" class="map-animal">🫘</text>
+      <text x="222" y="206" class="map-animal">🌸</text><text x="272" y="208" class="map-animal">🌸</text><text x="316" y="218" class="map-animal">🌸</text>
+      <text x="224" y="384" class="map-animal">🌾</text><text x="276" y="376" class="map-animal">🍃</text><text x="322" y="392" class="map-animal">🌿</text>
+      <text x="628" y="390" class="map-animal">🫐</text><text x="684" y="392" class="map-animal">🍂</text><text x="724" y="388" class="map-animal">🐦</text>
+    </svg>`,
+    points:[
+      {id:"bones",x:20,y:23,icon:"🌲",label:"Bones",tags:["hedge","evergreen","winter"],body:"Evergreens, clipped hedges, paths, and walls are the garden's millwork. They hold the design when flowers disappear and winter exposes the structure."},
+      {id:"focal",x:50,y:28,icon:"🪑",label:"Focal point",tags:["bench","view","arrival"],body:"A bench, urn, or specimen tree gives the eye somewhere to land. The path is designed to create a small moment of arrival."},
+      {id:"negative",x:50,y:52,icon:"🟢",label:"Negative space",tags:["pause","lawn","gravel"],body:"The open lawn or gravel court is not empty; it is visual rest. The pause makes the lush planting read as deliberate instead of cluttered."},
+      {id:"drifts",x:28,y:38,icon:"🌸",label:"Massing",tags:["repetition","restraint","drifts"],body:"Three or five repeated drifts feel calmer than one of everything. Repetition creates rhythm the same way a repeated fabric or finish does indoors."},
+      {id:"edible",x:73,y:42,icon:"🥬",label:"Edible ornament",tags:["chard","kale","beans"],body:"Rainbow chard, purple kale, runner beans, fig, and espaliered apple are used as ornament first and harvest second. Beauty and food do not need separate beds."},
+      {id:"texture",x:28,y:72,icon:"🌾",label:"Texture contrast",tags:["fine","bold","layering"],body:"Fine grasses and fennel look better beside bold rhubarb, hosta, or squash leaves. Contrast is what stops a bed from becoming a green blur."},
+      {id:"succession",x:74,y:72,icon:"🫐",label:"Seasonal succession",tags:["spring","summer","fall"],body:"Serviceberry blossom, summer fruit, autumn blueberry fire, evergreen herbs, and winter kale keep the composition alive across the year."}
+    ]
+  },
+  rooftop:{
+    title:"Manhattan rooftop map",
+    badge:"wind · load · water · sun",
+    intro:"A roof garden has a different grammar: protected edges, self-watering planters, light media, clear egress, no membrane punctures, and sturdy crops placed out of the wind.",
+    note:"This is conceptual, not a structural plan. The safety callout still rules the design.",
+    svg:`<svg viewBox="0 0 900 560" role="img" aria-label="Conceptual Manhattan rooftop garden map with planters, windbreaks, water, and safety zones">
+      <rect width="900" height="560" rx="28" fill="var(--sky)"/>
+      <rect x="78" y="72" width="744" height="408" rx="34" fill="var(--panel)" stroke="var(--line)"/>
+      <rect x="106" y="104" width="688" height="352" rx="24" fill="var(--paper-2)" stroke="var(--line)"/>
+      <path d="M106 140 H794" stroke="var(--green)" stroke-width="16" opacity=".16"/><path d="M140 104 V456" stroke="var(--green)" stroke-width="16" opacity=".16"/>
+      <rect x="190" y="152" width="150" height="86" rx="24" class="map-bed"/><rect x="370" y="152" width="150" height="86" rx="24" class="map-bed"/><rect x="550" y="152" width="150" height="86" rx="24" class="map-bed"/>
+      <rect x="190" y="306" width="150" height="86" rx="24" class="map-bed"/><rect x="370" y="306" width="150" height="86" rx="24" class="map-bed"/><rect x="550" y="306" width="150" height="86" rx="24" class="map-bed"/>
+      <path d="M120 454 H780" class="map-path"/>
+      <circle cx="742" cy="392" r="36" class="map-water"/><rect x="720" y="90" width="54" height="54" rx="14" class="map-building"/>
+      <text x="450" y="128" class="map-label" text-anchor="middle">windbreak edge</text><text x="450" y="452" class="map-label" text-anchor="middle">clear egress path</text>
+      <text x="265" y="198" class="map-animal">🌶️</text><text x="446" y="198" class="map-animal">🍅</text><text x="626" y="198" class="map-animal">🌿</text>
+      <text x="265" y="352" class="map-animal">🍓</text><text x="446" y="352" class="map-animal">🌼</text><text x="626" y="352" class="map-animal">🫑</text>
+      <text x="742" y="392" class="map-animal">💧</text><text x="748" y="118" class="map-animal">⚖️</text><text x="144" y="170" class="map-animal">🌬️</text><text x="760" y="460" class="map-animal">🚪</text>
+    </svg>`,
+    points:[
+      {id:"wind",x:16,y:30,icon:"🌬️",label:"Windbreak",tags:["desiccation","lattice","low crops"],body:"Wind is the dominant roof force. Lattice, parapets, shrubs, and low plant choices protect leaves and keep containers from becoming sails."},
+      {id:"sip",x:30,y:35,icon:"🌶️",label:"Self-watering beds",tags:["reservoir","heat","buffer"],body:"Sub-irrigated planters buffer the heat-and-wind drying cycle. Peppers, eggplant, herbs, and tomatoes all do better when the water supply is steady."},
+      {id:"herbs",x:69,y:35,icon:"🌿",label:"Mediterranean herbs",tags:["rosemary","thyme","lavender"],body:"Rosemary, thyme, oregano, sage, and lavender suit the hot, bright, lean rooftop microclimate — provided winter and wind protection are solved."},
+      {id:"water",x:82,y:70,icon:"💧",label:"Water point",tags:["drip","reservoir","no pooling"],body:"A roof garden needs planned water: hose access, drip irrigation, or reservoirs. Drainage must never pool against or puncture the membrane."},
+      {id:"load",x:83,y:22,icon:"⚖️",label:"Load-safe zone",tags:["engineer","pavers","light media"],body:"Keep the structural logic visible. Use lightweight media, spread loads, protect the membrane, and confirm capacity before installing anything heavy."},
+      {id:"egress",x:84,y:82,icon:"🚪",label:"Clear egress",tags:["fire path","access","maintenance"],body:"The best roof garden still loses if it blocks access. Leave a readable, beautiful path for fire egress, maintenance, and everyday movement."}
+    ]
+  }
+};
+
+function renderConceptMap(key){
+  const m=CONCEPT_MAPS[key];
+  return `<div class="section">
+    <div class="card concept-map" data-map="${key}">
+      <div class="map-head"><div><h3>${m.title}</h3><p>${m.intro}</p></div><span class="map-badge">${m.badge}</span></div>
+      <div class="map-grid">
+        <div class="map-stage">
+          ${m.svg}
+          ${m.points.map(pt=>`<button class="map-pin" data-point="${pt.id}" style="--x:${pt.x};--y:${pt.y}" aria-label="${pt.label}" aria-pressed="false"><span>${pt.icon}</span><small>${pt.label}</small></button>`).join('')}
+        </div>
+        <div class="map-info">
+          <div class="map-detail" aria-live="polite"></div>
+          <div class="map-list" aria-label="Map points">
+            ${m.points.map(pt=>`<button data-point="${pt.id}" aria-current="false"><span class="mono" style="font-size:11px;color:var(--green);margin-right:6px">${pt.icon}</span>${pt.label}</button>`).join('')}
+          </div>
+          <div class="map-note">${m.note}</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function activateMaps(root=document){
+  root.querySelectorAll('.concept-map').forEach(card=>{
+    const key=card.dataset.map;
+    const data=CONCEPT_MAPS[key];
+    if(!data || card.dataset.ready==='true') return;
+    card.dataset.ready='true';
+    const detail=card.querySelector('.map-detail');
+    const pins=[...card.querySelectorAll('.map-pin')];
+    const list=[...card.querySelectorAll('.map-list button')];
+    function select(id){
+      const pt=data.points.find(p=>p.id===id) || data.points[0];
+      pins.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.point===pt.id)));
+      list.forEach(b=>b.setAttribute('aria-current',String(b.dataset.point===pt.id)));
+      detail.innerHTML=`<div class="map-icon">${pt.icon}</div><h4>${pt.label}</h4><p>${pt.body}</p><div class="map-tags">${pt.tags.map(t=>`<span class="map-tag">${t}</span>`).join('')}</div>`;
+    }
+    card.addEventListener('click',e=>{
+      const b=e.target.closest('[data-point]');
+      if(!b || !card.contains(b)) return;
+      select(b.dataset.point);
+    });
+    select(data.points[0].id);
+  });
+}
+
+</script>
+
+<script>
+/* ============================================================
+   HERO SVG — food forest above layered soil
+============================================================ */
+(function(){
+  const g = (t,a={})=>{const e=document.createElementNS("http://www.w3.org/2000/svg",t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const svg = document.getElementById('heroSvg');
+  const W=560,H=380,ground=232;
+  // sky
+  svg.appendChild(g('rect',{x:0,y:0,width:W,height:ground,fill:'var(--sky)'}));
+  // soil horizons
+  const horizons=[['var(--loam-2)',ground,18,.55],['var(--loam)',ground+18,40,.9],['var(--loam)',ground+58,H-(ground+58),.6]];
+  // mulch
+  svg.appendChild(g('rect',{x:0,y:ground,width:W,height:14,fill:'var(--loam)','opacity':.85}));
+  svg.appendChild(g('rect',{x:0,y:ground+14,width:W,height:46,fill:'var(--loam)','opacity':.95}));
+  svg.appendChild(g('rect',{x:0,y:ground+60,width:W,height:H-ground-60,fill:'var(--loam-2)','opacity':.65}));
+  // ground line
+  svg.appendChild(g('rect',{x:0,y:ground-2,width:W,height:2.5,fill:'var(--green)','opacity':.4}));
+
+  function leaf(cx,cy,r,fill,delay){const c=g('circle',{cx,cy,r,fill});c.classList.add('grow');c.style.animationDelay=delay+'s';return c;}
+  function tree(x,trunkH,canopyR,fill,delay){
+    const grp=g('g',{});
+    const tr=g('rect',{x:x-3.5,y:ground-trunkH,width:7,height:trunkH,rx:3,fill:'var(--loam)'});
+    tr.classList.add('grow');tr.style.animationDelay=delay+'s';
+    grp.appendChild(tr);
+    grp.appendChild(leaf(x,ground-trunkH-canopyR*0.55,canopyR,fill,delay+.15));
+    grp.appendChild(leaf(x-canopyR*0.7,ground-trunkH-canopyR*0.15,canopyR*0.72,fill,delay+.25));
+    grp.appendChild(leaf(x+canopyR*0.7,ground-trunkH-canopyR*0.15,canopyR*0.72,fill,delay+.3));
+    return grp;
+  }
+  // 1 canopy tree
+  svg.appendChild(tree(96,120,46,'var(--green)',.1));
+  // 2 understory tree
+  svg.appendChild(tree(212,78,34,'var(--green-2)',.35));
+  // 3 shrubs
+  [320,360].forEach((x,i)=>svg.appendChild(tree(x,30,20,'var(--green-2)',.55+i*.08)));
+  // 4 herbaceous / 5 groundcover clumps
+  for(let i=0;i<10;i++){
+    const x=30+i*54+((i%2)*10);
+    const cl=g('g',{});
+    const h=14+(i%3)*7;
+    const blade=(dx,col,d)=>{const p=g('path',{d:`M${x+dx} ${ground} Q ${x+dx-4} ${ground-h} ${x+dx-1} ${ground-h-6}`,stroke:col,'stroke-width':3,fill:'none','stroke-linecap':'round'});p.classList.add('grow');p.style.animationDelay=d+'s';return p;};
+    cl.appendChild(blade(-4,'var(--sprout)',.6+i*.04));
+    cl.appendChild(blade(0,'var(--green-2)',.66+i*.04));
+    cl.appendChild(blade(4,'var(--sprout)',.72+i*.04));
+    svg.appendChild(cl);
+  }
+  // 6 roots descending
+  [96,212,320].forEach((x,i)=>{
+    const r=g('path',{d:`M${x} ${ground} C ${x-6} ${ground+22} ${x+8} ${ground+34} ${x-4} ${ground+58}`,stroke:'var(--loam-2)','stroke-width':2,fill:'none','stroke-linecap':'round','opacity':.8});
+    r.classList.add('draw');r.style.animationDelay=(.9+i*.15)+'s';
+    svg.appendChild(r);
+  });
+  // 7 vine on canopy
+  const vine=g('path',{d:`M96 ${ground} C 70 ${ground-40} 120 ${ground-70} 88 ${ground-118}`,stroke:'var(--sprout)','stroke-width':2.4,fill:'none','stroke-linecap':'round'});
+  vine.classList.add('draw');vine.style.animationDelay='.6s';svg.appendChild(vine);
+  // worms
+  function worm(x,y,d){const w=g('path',{d:`M${x} ${y} q 6 -6 12 0 q 6 6 12 0`,stroke:'var(--pollen)','stroke-width':3.4,fill:'none','stroke-linecap':'round'});w.classList.add('fade-in');w.style.animationDelay=d+'s';return w;}
+  svg.appendChild(worm(150,ground+34,1.3));
+  svg.appendChild(worm(400,ground+26,1.45));
+  svg.appendChild(worm(260,ground+48,1.6));
+  // sun
+  const sun=g('circle',{cx:486,cy:54,r:26,fill:'var(--pollen)','opacity':.85});sun.classList.add('fade-in');sun.style.animationDelay='.2s';svg.appendChild(sun);
+})();
+
+/* ============================================================
+   FACTOR CHIPS
+============================================================ */
+document.getElementById('factors').innerHTML = FACTORS.map(([k,v])=>
+  `<span class="factor" title="${v}"><b>${k}</b> · ${v}</span>`).join('');
+
+/* ============================================================
+   NAV + PANELS
+============================================================ */
+const TABS = [
+  ["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],
+  ["landscape","Landscape"],["rooftop","Rooftop"]
+];
+const seg = document.getElementById('seg');
+seg.innerHTML = TABS.map((t,i)=>`<button role="tab" data-tab="${t[0]}" aria-selected="${i===0}">${t[1]}</button>`).join('');
+
+const main = document.getElementById('main');
+
+function esc(s){return s;}
+function fnSup(n){return `<sup class="fn" title="See evidence note ${n}">${n}</sup>`;}
+
+/* ---- ETYMOLOGY ---- */
+function renderEtymology(){
+  const types=["All","Vegetable","Herb","Fruit & Tree","Animal"];
+  return `
+  <div class="lede">
+    <div class="kicker">Where the words came from</div>
+    <h2 class="serif">Every plant carries its history in its name.</h2>
+    <p>A tomato is an Aztec word, a pea is a grammatical accident, an avocado is a euphemism. Each card traces the full journey, language by language — and the cast is the same one you'll meet in every other tab.</p>
+  </div>
+  <div class="filters" id="etyFilters">
+    ${types.map((t,i)=>`<button class="chip" data-f="${t}" aria-pressed="${i===0}">${t}</button>`).join('')}
+  </div>
+  <div class="grid g-3" id="etyGrid"></div>`;
+}
+function paintEty(filter="All"){
+  const grid=document.getElementById('etyGrid');
+  const items=ETY.filter(e=>filter==="All"||e.t===filter);
+  grid.innerHTML=items.map(e=>{
+    const chain=e.c.map((l,i)=>{
+      const last=i===e.c.length-1;
+      const node=`<span class="link ${last?'final':''}"><span class="lang">${l[0]}</span><span class="form serif">${l[1]}</span></span>`;
+      const arr=last?'':`<svg class="arrow" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+      return node+arr;
+    }).join('');
+    return `<div class="card ety-card">
+      <div class="ety-top"><span class="ety-word serif">${e.w}</span><span class="ety-tag">${e.t}</span></div>
+      <div class="ety-gloss">“${e.g}”</div>
+      <div class="chain">${chain}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ---- COMPANIONS ---- */
+function renderCompanions(){
+  const mech=MECH.map(m=>`
+    <div class="card mech">
+      <div class="m-h"><span class="dotmark mono">${m.i}</span><span class="m-title">${m.t}${fnSup(m.fn)}</span></div>
+      <div class="m-body">${m.b}</div>
+    </div>`).join('');
+  const guildCards=(arr,anti=false)=>arr.map(gd=>`
+    <div class="card guild-card ${anti?'anti':''}">
+      <div class="g-head"><h4 class="serif">${gd.n}${fnSup(gd.fn)}</h4>
+      ${anti?'':`<span class="season-tag s-${gd.s}">${gd.s}</span>`}</div>
+      <div class="members">${gd.m.map(x=>`<span class="member">${x}</span>`).join('')}</div>
+      <div class="guild-why">${gd.w}</div>
+    </div>`).join('');
+  const nut=NUTRI.map(n=>`
+    <div class="card nut">
+      <div class="pair"><span>${n.a}</span><span class="plus">+</span><span>${n.b}</span></div>
+      <p>${n.p}</p>
+    </div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Why plants help each other — and so does food</div>
+    <h2 class="serif">Companion planting works for nine real reasons.</h2>
+    <p>Not magic, not mostly folklore — mechanisms. Below, each effect is explained and every claim carries an evidence note, because a fair amount of the traditional canon doesn't survive a controlled trial. The plants that help each other in the bed echo the foods that help each other on the plate.</p>
+  </div>
+
+  ${renderConceptMap('companion')}
+
+  <div class="section">
+    <h3 class="section-h serif">The mechanisms</h3>
+    <p class="section-sub">How one plant actually changes life for its neighbour.</p>
+    <div class="grid g-3">${mech}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Guilds & pairings, by season</h3>
+    <p class="section-sub">Filter to the season you're planting. Evidence notes are marked.</p>
+    <div class="filters" id="seasonFilters">
+      ${["All","Spring","Summer","Fall"].map((s,i)=>`<button class="chip" data-s="${s.toLowerCase()}" aria-pressed="${i===0}">${s}</button>`).join('')}
+    </div>
+    <div class="grid g-2" id="guildGrid"></div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Bad neighbours</h3>
+    <p class="section-sub">Companion logic running in reverse — keep these apart.</p>
+    <div class="grid g-3">${guildCards(ANTI,true)}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The same idea, on the plate</h3>
+    <p class="section-sub">Foods that unlock each other — the nutritional rhyme to companion planting.</p>
+    <div class="grid g-3">${nut}</div>
+  </div>
+
+  <div class="footnotes">
+    <h5>Evidence notes</h5>
+    <div class="fn-row"><span class="fn-num">1</span><div><b>Solid.</b> Supported by agronomic research or a well-understood mechanism. Plant on it.</div></div>
+    <div class="fn-row"><span class="fn-num">2</span><div><b>Moderate.</b> A real but situational effect, or partial evidence. Results vary with conditions.</div></div>
+    <div class="fn-row"><span class="fn-num">3</span><div><b>Traditional.</b> Folklore with little controlled evidence — usually harmless, occasionally charming, rarely proven.</div></div>
+  </div>`;
+}
+function paintGuilds(season="all"){
+  const grid=document.getElementById('guildGrid');
+  const items=GUILDS.filter(g=>season==="all"||g.s===season);
+  grid.innerHTML=items.map(gd=>`
+    <div class="card guild-card">
+      <div class="g-head"><h4 class="serif">${gd.n}${fnSup(gd.fn)}</h4>
+      <span class="season-tag s-${gd.s}">${gd.s}</span></div>
+      <div class="members">${gd.m.map(x=>`<span class="member">${x}</span>`).join('')}</div>
+      <div class="guild-why">${gd.w}</div>
+    </div>`).join('') || `<p style="color:var(--ink-soft)">Nothing in that season — try another.</p>`;
+}
+
+/* ---- FARM ---- */
+function renderFarm(){
+  const soil=SOIL.map(s=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${s.t}</div><div class="m-body">${s.b}</div></div>`).join('');
+  const notill=NOTILL.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
+  const layers=LAYERS.map(([n,nm,eg])=>`<div class="layer-row"><span class="layer-n mono">${n}</span><span class="layer-name">${nm}</span><span class="layer-eg">${eg}</span></div>`).join('');
+  const animals=ANIMALS.map(a=>`<div class="card"><div class="g-head"><h4 class="serif" style="font-size:19px;font-weight:500">${a.n}</h4></div><div class="mono" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin:4px 0 9px">${a.r}</div><div class="m-body">${a.b}</div></div>`).join('');
+  const zones=ZONES.map(([n,t,p])=>`<div class="zone"><span class="zn serif">${n}</span><h4>Zone ${n} · ${t}</h4><p>${p}</p></div>`).join('');
+  const rot=ROTATION.map(([n,t,p])=>`<div class="rot-step"><span class="rs-n">${n}</span><h5>${t}</h5><p>${p}</p></div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Building a whole farm — illustrative, romantic, Northeast</div>
+    <h2 class="serif">A farm is a stack of relationships, top to bottom.</h2>
+    <p>Soil biology at the base, seven layers of plants above it, and a cast of animals that clear, mow, fertilise, guard, and wake you up — each following the last around the land. Scaled here as an illustrative ideal, not a stocking plan.</p>
+  </div>
+
+  ${renderConceptMap('farm')}
+
+  <div class="section">
+    <h3 class="section-h serif">First, the soil</h3>
+    <p class="section-sub">Everything starts here. Feed the living web and the plants follow.</p>
+    <div class="grid g-2">${soil}</div>
+    <div class="footnotes"><div class="fn-row"><span class="fn-num">★</span><div>The “4 : 1 browns-to-greens” rule is measured by volume; the real chemical target is a carbon-to-nitrogen ratio around 25–30 : 1. Too many greens and the pile goes slimy and sour; too many browns and it simply sits there.</div></div></div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">No-till, in practice</h3>
+    <p class="section-sub">Five ways to build and tend beds without ever inverting the soil.</p>
+    <div class="grid g-3">${notill}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The seven layers of a food forest</h3>
+    <p class="section-sub">Stack plants the way a forest does — every height occupied, every niche working.</p>
+    <div class="layers">${layers}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The ecological rule of three</h3>
+    <p class="section-sub">Try to make every planting serve three roles at once — and let fertility come from the system, never the bag.</p>
+    <div class="grid g-2">
+      <div class="card"><div class="m-title" style="margin-bottom:6px">Three jobs per plant</div><div class="m-body"><b>① Wildlife & habitat</b>, <b>② food</b> — fruit, vegetable, herb — and <b>③ a flower</b> for pollinators. The best choices do all three.</div></div>
+      <div class="card"><div class="m-title" style="margin-bottom:6px">Three sources of fertility</div><div class="m-body"><b>Trees</b> mine deep minerals and drop leaf litter, <b>fungi</b> (mycorrhizae) trade nutrients with roots, and <b>animals</b> cycle everything through manure. Soil is built, not bought.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">The animal guild</h3>
+    <p class="section-sub">Each animal is a job. Together they're a closed loop of clearing, fertility, and protection.</p>
+    <div class="grid g-2">${animals}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Follow the leader</h3>
+    <p class="section-sub">The rotation that turns animals into soil — each species cleaning up after the last.</p>
+    <div class="rotation">${rot}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Zones 0–5</h3>
+    <p class="section-sub">Permaculture organises land by how often you touch it — intensive by the door, wild at the edge.</p>
+    <div class="zones">${zones}</div>
+  </div>`;
+}
+
+/* ---- LANDSCAPE ---- */
+function renderLandscape(){
+  const cards=LANDSCAPE.map(l=>`
+    <div class="card prose-card">
+      <h4 class="serif"><span class="idx mono">${l.x}</span>${l.t}</h4>
+      <p>${l.p}</p>
+      <div class="aside">≈ ${l.a}</div>
+    </div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Landscape gardening as composition</div>
+    <h2 class="serif">A garden is an interior, turned inside out.</h2>
+    <p>The same instincts that furnish a room — structure, massing, palette, negative space, a single focal point — design a landscape. Here they're pointed at <em>foodscaping</em>: every ornamental principle with an edible plant that can play the part.</p>
+  </div>
+  ${renderConceptMap('landscape')}
+  <div class="grid g-3">${cards}</div>`;
+}
+
+/* ---- ROOFTOP ---- */
+function renderRooftop(){
+  const cons=ROOF_CONSTRAINTS.map(c=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${c.t}</div><div class="m-body">${c.b}</div></div>`).join('');
+  const sys=ROOF_SYSTEMS.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">A real rooftop · Manhattan</div>
+    <h2 class="serif">130 E 12th Street — gardening in the sky.</h2>
+    <div class="addr mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.7 7-12a7 7 0 10-14 0c0 5.3 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span><b>East Village / NoHo</b> · New York 10003 · USDA Zone&nbsp;7b</span></div>
+    <p>A pre-war building near Union Square. Up on the roof, the rules change completely — the constraints aren't a footnote, they're the whole design. And one of them comes first.</p>
+  </div>
+
+  <div class="callout" style="margin-bottom:8px">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <div>
+      <h4>Before a single pot: load, permission, and the membrane.</h4>
+      <p>Saturated soil, water, containers, and people add up fast — a filled raised bed can weigh hundreds of pounds. Confirm the roof's load rating with a <b>structural engineer</b> and get written sign-off from building management (and, as a renter, the landlord) before placing anything. Keep fire egress clear, never puncture the waterproofing, and set containers on pavers or sleepers so the membrane can drain. This part isn't optional.</p>
+    </div>
+  </div>
+
+  ${renderConceptMap('rooftop')}
+
+  <div class="section">
+    <h3 class="section-h serif">The microclimate of a Manhattan roof</h3>
+    <p class="section-sub">Four forces decide what lives up here.</p>
+    <div class="grid g-2">${cons}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">Weight-smart systems</h3>
+    <p class="section-sub">Light, self-watering, and gentle on the building.</p>
+    <div class="grid g-2">${sys}</div>
+  </div>
+
+  <div class="section">
+    <h3 class="section-h serif">What thrives, what struggles</h3>
+    <p class="section-sub">A crop palette tuned to a hot, windy, sun-drenched 7b roof.</p>
+    <div class="palette">
+      <div class="card pal">
+        <h5><span style="color:var(--green)">▲</span> Thrives up high</h5>
+        <ul>
+          <li>Mediterranean herbs — rosemary, thyme, oregano, sage, lavender</li>
+          <li>Peppers & eggplant — they love the reflected heat</li>
+          <li>Cherry & grape tomatoes, caged low and staked against wind</li>
+          <li>Bush beans, chard, alliums; kale in the cool shoulders</li>
+          <li>Strawberries, and a fig in a pot (wrapped for winter)</li>
+          <li>Pollinator flowers — alyssum, marigold, borage</li>
+        </ul>
+      </div>
+      <div class="card pal">
+        <h5><span style="color:var(--loam)">▼</span> Fights you up here</h5>
+        <ul>
+          <li>Tall heirloom tomatoes — the wind snaps and shreds them</li>
+          <li>Large tender greens in midsummer — they scorch and bolt</li>
+          <li>Anything thirsty without a self-watering reservoir</li>
+          <li>Top-heavy or shallow-rooted plants in light pots — they blow over</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="card" style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:1;min-width:240px">
+        <div class="m-title" style="margin-bottom:6px">The season, up here</div>
+        <div class="m-body">Zone 7b runs from a last frost around <span class="mono" style="font-size:14px">mid-April</span> to a first frost in <span class="mono" style="font-size:14px">early–mid November</span>. The warm membrane microclimate stretches both shoulders — use it to start early and push late, while the wind makes any cold snap <em>feel</em> sharper than the ground below.</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---- ROUTER ---- */
+const RENDERERS = {etymology:renderEtymology, companions:renderCompanions, farm:renderFarm, landscape:renderLandscape, rooftop:renderRooftop};
+let current="etymology";
+function show(tab){
+  current=tab;
+  main.innerHTML = `<section class="panel active">${RENDERERS[tab]()}</section>`;
+  activateMaps(main);
+  const tb=document.querySelector('.topbar');
+  if(window.scrollY>tb.offsetTop) window.scrollTo({top:tb.offsetTop,behavior:'smooth'});
+  // hooks
+  if(tab==="etymology"){
+    paintEty();
+    document.getElementById('etyFilters').addEventListener('click',e=>{
+      const b=e.target.closest('.chip'); if(!b)return;
+      document.querySelectorAll('#etyFilters .chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true'); paintEty(b.dataset.f);
+    });
+  }
+  if(tab==="companions"){
+    paintGuilds();
+    document.getElementById('seasonFilters').addEventListener('click',e=>{
+      const b=e.target.closest('.chip'); if(!b)return;
+      document.querySelectorAll('#seasonFilters .chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true'); paintGuilds(b.dataset.s);
+    });
+  }
+}
+seg.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b)return;
+  document.querySelectorAll('#seg button').forEach(x=>x.setAttribute('aria-selected','false'));
+  b.setAttribute('aria-selected','true');
+  show(b.dataset.tab);
+});
+
+/* ---- THEME ---- */
+const root=document.documentElement, tBtn=document.getElementById('themeBtn');
+const sun='<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+const moon='<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8 8 0 119.5 4a6.3 6.3 0 0010.5 10.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
+function setTheme(t){root.setAttribute('data-theme',t);tBtn.innerHTML=t==='dark'?sun:moon;}
+setTheme(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+tBtn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+
+/* boot */
+show('etymology');
+</script>
+</body>
+</html>

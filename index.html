@@ -65,6 +65,11 @@ h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,5
 /* strata hero svg */
 .hero-svg{width:100%;height:auto;display:block;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;background:var(--sky)}
 
+/* ---------- Contact strip ---------- */
+.contact-strip{position:relative;z-index:60;background:var(--panel);border-bottom:1px solid var(--line)}
+.contact-strip-in{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-height:48px}
+.contact-strip .contact-links{gap:8px}
+
 /* ---------- Topbar / nav ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:60px}
@@ -224,6 +229,7 @@ footer .mono{font-size:12px}
   .contact-btn{padding:0 11px}
 }
 @media(max-width:880px){
+  .contact-strip .contact-links{margin-left:0}
   .mh-grid{grid-template-columns:1fr;gap:24px}
   .g-3,.g-2{grid-template-columns:1fr}
   .zones{grid-template-columns:1fr}
@@ -236,6 +242,7 @@ footer .mono{font-size:12px}
   .contact-links{margin-left:auto}
 }
 @media(max-width:520px){
+  .contact-strip-in{justify-content:center}
   .contact-btn{width:38px;padding:0;justify-content:center}
   .contact-btn svg{margin:0}
   .contact-btn{font-size:0;gap:0}
@@ -299,6 +306,23 @@ footer .mono{font-size:12px}
 </head>
 <body>
 
+<!-- ============ CONTACT ============ -->
+<div class="contact-strip">
+  <div class="wrap contact-strip-in">
+    <div class="contact-links" aria-label="Contact links">
+      <span class="contact-label">Contact</span>
+      <a class="contact-btn primary" href="mailto:ponelson@gmail.com" aria-label="Email Peter Nelson at ponelson@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4.5 7l7.5 6 7.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Email
+      </a>
+      <a class="contact-btn" href="https://www.linkedin.com/in/ponelson" target="_blank" rel="noopener noreferrer" aria-label="Open Peter Nelson's LinkedIn profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M11 18v-4.6c0-2.4 3.5-2.7 3.5.1V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="6.5" cy="6.25" r="1.25" fill="currentColor"/><path d="M4.5 3.5h15v17h-15z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ============ MASTHEAD ============ -->
 <header class="masthead">
   <div class="wrap mh-grid">
@@ -320,17 +344,6 @@ footer .mono{font-size:12px}
       <span>The Living System</span>
     </div>
     <div class="nav-scroll"><div class="seg" id="seg" role="tablist"></div></div>
-    <div class="contact-links" aria-label="Contact links">
-      <span class="contact-label">Contact</span>
-      <a class="contact-btn primary" href="mailto:ponelson@gmail.com" aria-label="Email Peter Nelson at ponelson@gmail.com">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4.5 7l7.5 6 7.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Email
-      </a>
-      <a class="contact-btn" href="https://www.linkedin.com/in/ponelson" target="_blank" rel="noopener noreferrer" aria-label="Open Peter Nelson's LinkedIn profile">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M11 18v-4.6c0-2.4 3.5-2.7 3.5.1V18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="6.5" cy="6.25" r="1.25" fill="currentColor"/><path d="M4.5 3.5h15v17h-15z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        LinkedIn
-      </a>
-    </div>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"></button>
   </div>
 </div>

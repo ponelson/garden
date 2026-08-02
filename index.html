@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Living System · A Field Guide to Companion Planting &amp; Permaculture</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700;8..60,900&display=swap" rel="stylesheet">
 <style>
-:root{
+:root{--sans:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;--serif:'Source Serif 4',ui-serif,Georgia,serif;--mono:'JetBrains Mono','SF Mono',Menlo,monospace;--wm-glass:rgba(255,255,255,.72);--wm-shadow2:0 8px 28px rgba(0,0,0,.08);
   --paper:#F5F4EE; --paper-2:#EDEBE1; --panel:#FBFAF6;
   --ink:#1F241C; --ink-soft:#566052; --ink-faint:#8A917F;
   --line:rgba(31,36,28,.12); --line-2:rgba(31,36,28,.07);
@@ -42,8 +40,8 @@ body{
   font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;
   transition:background .5s ease,color .5s ease;
 }
-.serif{font-family:"Fraunces",Georgia,serif}
-.mono{font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.serif{font-family:"Source Serif 4",Georgia,serif}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 a{color:inherit}
 ::selection{background:var(--sprout-soft);color:var(--ink)}
@@ -53,7 +51,7 @@ a{color:inherit}
 .mh-grid{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:30px;align-items:center;padding:46px 0 30px}
 .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:500}
 [data-theme="dark"] .eyebrow{color:var(--sprout)}
-h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.015em;margin:14px 0 16px;font-optical-sizing:auto}
+h1.title{font-family:"Source Serif 4",serif;font-weight:500;font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.015em;margin:14px 0 16px;font-optical-sizing:auto}
 .title em{font-style:italic;color:var(--green)}
 [data-theme="dark"] .title em{color:var(--sprout)}
 .ethos{font-size:18px;color:var(--ink-soft);max-width:46ch}
@@ -63,7 +61,7 @@ h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,5
 /* ---------- Factors (interactive) ---------- */
 .factor-strip{border-bottom:1px solid var(--line);background:var(--paper-2)}
 .factors{display:flex;flex-wrap:wrap;gap:7px;padding:16px 0}
-.factor{display:inline-flex;align-items:center;gap:7px;font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.02em;padding:7px 13px;border:1px solid var(--line);border-radius:99px;color:var(--ink-soft);cursor:pointer;transition:.22s;background:var(--panel);font-weight:400}
+.factor{display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.02em;padding:7px 13px;border:1px solid var(--line);border-radius:99px;color:var(--ink-soft);cursor:pointer;transition:.22s;background:var(--panel);font-weight:400}
 .factor:hover{border-color:var(--sprout);color:var(--ink);box-shadow:var(--shadow);transform:translateY(-1px)}
 .factor b{color:var(--green);font-weight:500}
 [data-theme="dark"] .factor b{color:var(--sprout)}
@@ -76,13 +74,13 @@ h1.title{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(34px,5vw,5
 .fp-in{padding:4px 0 24px}
 .fp-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);animation:rise .4s cubic-bezier(.2,.7,.2,1)}
 .fp-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.fp-title{font-family:"Fraunces",serif;font-size:23px;font-weight:500}
-.fp-stat{font-family:"DM Mono",monospace;font-size:12px;padding:4px 10px;border-radius:99px;background:var(--sprout-soft);color:var(--green)}
+.fp-title{font-family:"Source Serif 4",serif;font-size:23px;font-weight:500}
+.fp-stat{font-family:"JetBrains Mono",monospace;font-size:12px;padding:4px 10px;border-radius:99px;background:var(--sprout-soft);color:var(--green)}
 [data-theme="dark"] .fp-stat{color:var(--sprout)}
 .fp-body{color:var(--ink-soft);font-size:16px;max-width:70ch;margin-bottom:16px}
 .fp-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
 .fp-row{background:var(--paper-2);border:1px solid var(--line-2);border-radius:var(--r-sm);padding:12px 14px}
-.fp-k{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
+.fp-k{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
 .fp-v{font-size:14.5px;color:var(--ink)}
 
 /* ---------- Topbar ---------- */
@@ -102,13 +100,13 @@ main{padding:46px 0 30px;min-height:60vh}
 .panel{animation:rise .55s cubic-bezier(.2,.7,.2,1)}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .lede{max-width:62ch;margin-bottom:30px}
-.lede h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em;line-height:1.08;margin-bottom:12px}
+.lede h2{font-family:"Source Serif 4",serif;font-weight:500;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em;line-height:1.08;margin-bottom:12px}
 .lede p{color:var(--ink-soft);font-size:18px}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
 [data-theme="dark"] .kicker{color:var(--sprout)}
 .kicker::before{content:"";width:22px;height:1px;background:currentColor}
 .section{margin:54px 0}
-.section-h{font-family:"Fraunces",serif;font-size:24px;font-weight:500;letter-spacing:-.01em;margin-bottom:6px}
+.section-h{font-family:"Source Serif 4",serif;font-size:24px;font-weight:500;letter-spacing:-.01em;margin-bottom:6px}
 .section-sub{color:var(--ink-soft);max-width:64ch;margin-bottom:24px;font-size:16px}
 
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
@@ -126,25 +124,25 @@ main{padding:46px 0 30px;min-height:60vh}
 /* ---------- Etymology ---------- */
 .ety-top{display:flex;align-items:center;gap:11px;margin-bottom:9px}
 .emoji{font-size:27px;line-height:1;flex:none;filter:saturate(1.05)}
-.ety-word{font-family:"Fraunces",serif;font-size:22px;font-weight:500;flex:1}
-.ety-tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);padding:3px 8px;border-radius:99px;white-space:nowrap}
-.habit{display:inline-flex;align-items:center;gap:6px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-2);margin-bottom:11px}
+.ety-word{font-family:"Source Serif 4",serif;font-size:22px;font-weight:500;flex:1}
+.ety-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line);padding:3px 8px;border-radius:99px;white-space:nowrap}
+.habit{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-2);margin-bottom:11px}
 .habit::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--sprout)}
 .habit.h-tree::before{background:var(--green);border-radius:50% 50% 20% 20%}
 .habit.h-shrub::before{background:var(--green-2);border-radius:50%}
 .habit.h-vine::before{background:var(--sprout);border-radius:2px 8px 2px 8px}
 .habit.h-under{background:var(--loam-soft);color:var(--loam);border-color:transparent;font-weight:500}
 .habit.h-under::before{background:var(--loam);border-radius:0 0 50% 50%}
-.ety-gloss{color:var(--ink-soft);font-style:italic;font-family:"Fraunces",serif;font-size:15px;margin-bottom:13px}
+.ety-gloss{color:var(--ink-soft);font-style:italic;font-family:"Source Serif 4",serif;font-size:15px;margin-bottom:13px}
 .chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px}
 .link{display:inline-flex;flex-direction:column;gap:1px;padding:5px 9px;border-radius:9px;background:var(--paper-2);border:1px solid var(--line-2)}
-.link .lang{font-family:"DM Mono",monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+.link .lang{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
 .link .form{font-size:14px}
 .link.final{background:var(--sprout-soft);border-color:transparent}
 .link.final .lang{color:var(--green)}
 [data-theme="dark"] .link.final .lang{color:var(--sprout)}
 .arrow{color:var(--ink-faint);flex:none}
-.ety-note{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink-faint);font-family:"Fraunces",serif;font-style:italic}
+.ety-note{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink-faint);font-family:"Source Serif 4",serif;font-style:italic}
 
 /* ---------- Mechanisms / general ---------- */
 .m-h{display:flex;align-items:center;gap:11px;margin-bottom:9px}
@@ -152,12 +150,12 @@ main{padding:46px 0 30px;min-height:60vh}
 [data-theme="dark"] .dotmark{color:var(--sprout)}
 .m-title{font-weight:600;font-size:17px}
 .m-body{color:var(--ink-soft);font-size:15.5px}
-sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-weight:500;cursor:help;padding-left:2px}
+sup.fn{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--green);font-weight:500;cursor:help;padding-left:2px}
 [data-theme="dark"] sup.fn{color:var(--sprout)}
 
 .g-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
-.guild-card h4{font-family:"Fraunces",serif;font-weight:500;font-size:19px}
-.season-tag{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.guild-card h4{font-family:"Source Serif 4",serif;font-weight:500;font-size:19px}
+.season-tag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap}
 .s-spring{background:var(--sprout-soft);color:var(--green)}
 .s-summer{background:var(--pollen-soft);color:var(--pollen)}
 .s-fall{background:var(--loam-soft);color:var(--loam)}
@@ -167,27 +165,27 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 .guild-why{color:var(--ink-soft);font-size:15px}
 .anti{border-left:3px solid var(--loam-2)}
 
-.nut .pair{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:18px;font-weight:500;margin-bottom:8px;flex-wrap:wrap}
+.nut .pair{display:flex;align-items:center;gap:10px;font-family:"Source Serif 4",serif;font-size:18px;font-weight:500;margin-bottom:8px;flex-wrap:wrap}
 .nut .plus{color:var(--pollen);font-size:22px}
 .nut p{color:var(--ink-soft);font-size:15px}
 
 .footnotes{margin-top:30px;padding:22px;border-radius:var(--r);background:var(--paper-2);border:1px solid var(--line)}
-.footnotes h5{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.footnotes h5{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
 .fn-row{display:flex;gap:11px;margin-bottom:9px;font-size:14.5px;color:var(--ink-soft)}
-.fn-num{font-family:"DM Mono",monospace;color:var(--green);flex:none;font-weight:500}
+.fn-num{font-family:"JetBrains Mono",monospace;color:var(--green);flex:none;font-weight:500}
 [data-theme="dark"] .fn-num{color:var(--sprout)}
 
 .layers{display:flex;flex-direction:column;gap:8px}
 .layer-row{display:grid;grid-template-columns:34px 160px 1fr;gap:16px;align-items:center;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);transition:.25s}
 .layer-row:hover{transform:translateX(4px);border-color:var(--sprout)}
-.layer-n{font-family:"DM Mono",monospace;font-size:13px;color:var(--green);font-weight:500}
+.layer-n{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);font-weight:500}
 [data-theme="dark"] .layer-n{color:var(--sprout)}
 .layer-name{font-weight:600;font-size:15.5px}
 .layer-eg{color:var(--ink-soft);font-size:14.5px}
 
 .zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .zone{position:relative;padding:20px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);overflow:hidden}
-.zone .zn{position:absolute;top:-8px;right:6px;font-family:"Fraunces",serif;font-size:62px;font-weight:500;color:var(--line);line-height:1;user-select:none}
+.zone .zn{position:absolute;top:-8px;right:6px;font-family:"Source Serif 4",serif;font-size:62px;font-weight:500;color:var(--line);line-height:1;user-select:none}
 .zone h4{font-weight:600;font-size:16px;margin-bottom:5px;position:relative}
 .zone p{color:var(--ink-soft);font-size:14.5px;position:relative}
 
@@ -196,7 +194,7 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 .rot-step:first-child{border-radius:var(--r-sm) 0 0 var(--r-sm)}
 .rot-step:last-child{border-radius:0 var(--r-sm) var(--r-sm) 0}
 .rot-step+.rot-step{border-left:none}
-.rot-step .rs-n{font-family:"DM Mono",monospace;font-size:11px;color:var(--pollen);letter-spacing:.08em}
+.rot-step .rs-n{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--pollen);letter-spacing:.08em}
 .rot-step h5{font-size:15px;margin:4px 0}
 .rot-step p{font-size:13.5px;color:var(--ink-soft)}
 
@@ -207,13 +205,13 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 .callout.warn{background:var(--rust-soft);border-color:color-mix(in srgb,var(--rust) 40%,transparent)}
 .callout.warn svg{color:var(--rust)}
 
-.prose-card h4{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:500;font-size:19px;margin-bottom:7px}
-.prose-card .idx{font-family:"DM Mono",monospace;font-size:13px;color:var(--green)}
+.prose-card h4{display:flex;align-items:center;gap:10px;font-family:"Source Serif 4",serif;font-weight:500;font-size:19px;margin-bottom:7px}
+.prose-card .idx{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green)}
 [data-theme="dark"] .prose-card .idx{color:var(--sprout)}
 .prose-card p{color:var(--ink-soft);font-size:15px}
-.prose-card .aside{margin-top:9px;font-size:13.5px;color:var(--ink-faint);font-style:italic;font-family:"Fraunces",serif}
+.prose-card .aside{margin-top:9px;font-size:13.5px;color:var(--ink-faint);font-style:italic;font-family:"Source Serif 4",serif}
 
-.addr{display:inline-flex;align-items:center;gap:9px;font-family:"DM Mono",monospace;font-size:13px;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);padding:8px 14px;border-radius:99px;margin-bottom:20px}
+.addr{display:inline-flex;align-items:center;gap:9px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);padding:8px 14px;border-radius:99px;margin-bottom:20px}
 .addr b{color:var(--ink)}
 
 .palette{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -224,17 +222,17 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 
 /* ---------- Tables (compost) ---------- */
 .tbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:14.5px}
-.tbl th{text-align:left;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);padding:13px 16px;background:var(--paper-2);border-bottom:1px solid var(--line);font-weight:500}
+.tbl th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);padding:13px 16px;background:var(--paper-2);border-bottom:1px solid var(--line);font-weight:500}
 .tbl td{padding:13px 16px;border-bottom:1px solid var(--line-2);color:var(--ink-soft);vertical-align:top}
 .tbl tr:last-child td{border-bottom:none}
 .tbl td b{color:var(--ink);font-weight:600}
-.tbl .num{font-family:"DM Mono",monospace;color:var(--ink);white-space:nowrap}
+.tbl .num{font-family:"JetBrains Mono",monospace;color:var(--ink);white-space:nowrap}
 .tblscroll{overflow-x:auto}
 
 /* thermometer */
 .thermo{display:flex;flex-direction:column;gap:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .tband{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 18px;align-items:center}
-.tband .tt{font-family:"DM Mono",monospace;font-size:13px;font-weight:500}
+.tband .tt{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500}
 .tband .tb{font-size:14.5px}
 .t-hot{background:color-mix(in srgb,var(--rust) 20%,var(--panel));color:var(--ink)}
 .t-work{background:color-mix(in srgb,var(--pollen) 22%,var(--panel));color:var(--ink)}
@@ -246,7 +244,7 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 .lasagna{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
 .lrow{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:15px 18px;align-items:center;transition:.25s}
 .lrow:hover{transform:translateX(4px)}
-.lrow .ld{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;opacity:.85}
+.lrow .ld{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;opacity:.85}
 .lrow .lt{font-size:14.5px}
 .lrow .lt b{font-weight:600}
 .l-mulch{background:color-mix(in srgb,var(--pollen) 26%,var(--panel))}
@@ -257,7 +255,7 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 
 /* recipe bars */
 .mix{display:flex;height:38px;border-radius:10px;overflow:hidden;border:1px solid var(--line);margin:12px 0 10px}
-.mix span{display:grid;place-items:center;font-family:"DM Mono",monospace;font-size:11.5px;color:#1F241C}
+.mix span{display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:#1F241C}
 .mixkey{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--ink-soft)}
 .mixkey i{display:inline-flex;align-items:center;gap:6px;font-style:normal}
 .mixkey i::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--k)}
@@ -272,7 +270,7 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 /* ---------- Maps ---------- */
 .mapwrap{margin:8px 0 30px}
 .map-cap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.map-hint{font-family:"DM Mono",monospace;font-size:12px;color:var(--ink-faint)}
+.map-hint{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-faint)}
 .mapframe{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg,#EAF2E2 0%,#E4EEDA 45%,#DCEAD0 100%)}
 [data-theme="dark"] .mapframe{border-color:rgba(0,0,0,.4)}
 .map-svg{display:block;width:100%;height:auto}
@@ -304,7 +302,7 @@ sup.fn{font-family:"DM Mono",monospace;font-size:10px;color:var(--green);font-we
 .map-info{display:flex;gap:14px;align-items:flex-start;margin-top:14px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);min-height:66px}
 .mi-dot{width:14px;height:14px;border-radius:50%;flex:none;margin-top:6px}
 .mi-key{font-size:18px;font-weight:500}
-.mi-role{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-left:10px}
+.mi-role{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);margin-left:10px}
 .mi-body{color:var(--ink-soft);font-size:14.5px;margin-top:2px}
 .map-default{display:flex;align-items:center;gap:11px;color:var(--ink-faint);font-size:14.5px}
 .mi-pulse{width:9px;height:9px;border-radius:50%;background:var(--sprout);animation:s-pulse 1.8s ease-in-out infinite}
@@ -332,6 +330,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   *{animation-duration:.001ms !important;transition-duration:.08s !important}
   .grow{transform:none !important;opacity:1 !important}
 }
+
+  :root{--wm-ink:#111114;--paper:#f5f5f7;--paper-2:#eef0f3;--panel:rgba(255,255,255,.72);--ink:#111114;--ink-soft:#303540;--ink-faint:#6b6f7b;--line:rgba(0,0,0,.09);--line-2:rgba(0,0,0,.06);--sky:#eaf3ff;}
+
+  /* ===== world_models re-skin (chrome only; content untouched) ===== */
+  html{background:#eff2f6;}
+  body{background:radial-gradient(circle at 15% 0%, #eaf3ff 0, rgba(234,243,255,0) 38%),radial-gradient(circle at 80% 8%, #fff0df 0, rgba(255,240,223,0) 32%),linear-gradient(180deg,#fbfbfd 0,#f5f5f7 45%,#eff2f6 100%) !important;background-attachment:fixed !important;color:var(--wm-ink,#111114);}
+  body{font-family:var(--sans) !important;line-height:1.45;}
+  h1,h2,h3,h4,h5,h6,.serif,.title,h1.title,.fp-title,.lede h2,.display,.big,.fp-title,.fp-card h3{font-family:var(--serif) !important;}
+  code,kbd,pre,samp,th,.mono,.factor,.kicker,.eyebrow,.fp-k,.fp-stat,[class*="mono"],.chip,.ety-tag,.season-tag,.seg,.theme-btn{font-family:var(--mono) !important;}
+  .fp-card,.card,.callout,.zone,.member,.habit,.footnotes{background:var(--wm-glass) !important;backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);box-shadow:var(--wm-shadow2);border:1px solid rgba(0,0,0,.09);}
 </style>
 </head>
 <body>
@@ -1207,6 +1215,417 @@ function buildLandscapeMap(){
 </script>
 <script>
 /* ============================================================
+   CUSTOM GLYPHS - hand-drawn icons for items with no true emoji
+   viewBox 0 0 24 24, cute flat style, fixed palette
+============================================================ */
+const ICONS = {
+/* ---- ROOTS & VEGETABLES ---- */
+beet:`<path d="M12 8 q-2 -4 -4 -5 q0 3 2 5z" fill="#5C8A41"/><path d="M12 8 q2 -4 4 -5 q0 3 -2 5z" fill="#46703A"/><path d="M12 8 C 6 9 6 16 12 20 C 18 16 18 9 12 8z" fill="#9E3B63"/><path d="M12 20 q0 3 0 3" stroke="#9E3B63" stroke-width="1.2" stroke-linecap="round"/><path d="M10 12 q2 2 4 1" stroke="#C05A80" stroke-width="1" fill="none" opacity=".6"/>`,
+radish:`<path d="M12 7 q-2 -4 -5 -5 q1 4 3 6z" fill="#5C8A41"/><path d="M12 7 q2 -4 5 -5 q-1 4 -3 6z" fill="#46703A"/><path d="M12 7 C 6 8 6 14 10 18 q2 3 4 0 C 18 14 18 8 12 7z" fill="#D6455A"/><path d="M10 16 q2 3 4 0 q0 4 -2 5 q-2 -1 -2 -5z" fill="#F3EBDD"/>`,
+turnip:`<path d="M12 8 q-2 -4 -5 -5 q1 4 3 6z" fill="#5C8A41"/><path d="M12 8 q2 -4 5 -5 q-1 4 -3 6z" fill="#46703A"/><path d="M12 8 C 6 9 6 17 12 20 C 18 17 18 9 12 8z" fill="#EFEAF2"/><path d="M12 8 C 8 8 6 10 6 12 q6 3 12 0 C 18 10 16 8 12 8z" fill="#8E5FA8"/><path d="M12 20 q0 2 0 2" stroke="#EFEAF2" stroke-width="1.2"/>`,
+leek:`<path d="M9 20 q0 -8 1 -12 q2 -4 2 -6 q0 2 2 6 q1 4 1 12z" fill="#F3EFE6"/><path d="M10 8 q-3 -4 -3 -7 q3 2 4 6z" fill="#5C8A41"/><path d="M14 8 q3 -4 3 -7 q-3 2 -4 6z" fill="#46703A"/><path d="M12 8 q0 -5 0 -7 q0 5 0 7z" fill="#6E9B5A"/><path d="M9 14 q3 1 6 0" stroke="#d8d2c2" stroke-width=".8"/>`,
+cabbage:`<circle cx="12" cy="13" r="8" fill="#7FA68C"/><path d="M12 5 C 6 6 5 12 8 18 q4 3 8 0 C 19 12 18 6 12 5z" fill="#8FB89A"/><path d="M12 6 q-4 3 -3 9 q3 3 6 0 q1 -6 -3 -9z" fill="#A9CBB0"/><path d="M12 7 q-2 4 0 9 q2 -5 0 -9z" fill="#7FA68C"/>`,
+kale:`<circle cx="12" cy="13" r="3" fill="#3F6B4A"/>${[0,60,120,180,240,300].map(a=>`<path transform="rotate(${a} 12 13)" d="M12 13 q-3 -6 0 -9 q3 3 0 9z" fill="${a%120?'#4E7A3F':'#3F6B4A'}"/>`).join('')}`,
+lettuce:`<circle cx="12" cy="14" r="3" fill="#9DC06B"/>${[20,80,140,200,260,320].map(a=>`<path transform="rotate(${a} 12 13)" d="M12 13 q-4 -5 -1 -8 q4 3 1 8z" fill="#B9C36A"/>`).join('')}`,
+spinach:`<path d="M12 20 q-1 -8 -1 -10" stroke="#46703A" stroke-width="1.4"/><path d="M11 13 q-6 -1 -7 -6 q6 0 8 5z" fill="#46703A"/><path d="M13 11 q6 -2 7 -7 q-6 0 -8 6z" fill="#5C8A41"/><path d="M12 16 q-5 1 -6 5 q5 0 7 -4z" fill="#5C8A41"/>`,
+celery:`<path d="M9 21 q-1 -8 0 -12 M12 21 q0 -9 0 -13 M15 21 q1 -8 0 -12" stroke="#AFC57A" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M9 9 q-2 -4 -1 -6 M12 8 q0 -4 0 -6 M15 9 q2 -4 1 -6" stroke="#7FA64E" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M8 20 q4 1 8 0" stroke="#8FA560" stroke-width="1.2"/>`,
+cauliflower:`<path d="M5 12 q-1 -6 4 -6 q0 4 -1 6z" fill="#5C8A41"/><path d="M19 12 q1 -6 -4 -6 q0 4 1 6z" fill="#46703A"/>${[[9,10],[15,10],[12,8],[10,13],[14,13],[12,12]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.2" fill="#F3EFE6"/>`).join('')}<path d="M8 14 q4 4 8 0 l0 3 q-4 3 -8 0z" fill="#7FA64E"/>`,
+zucchini:`<path d="M6 18 C 4 14 8 7 13 6 C 18 5 20 9 17 13 C 14 17 9 20 6 18z" fill="#4E7A3F"/><path d="M8 15 C 7 12 11 9 14 8" stroke="#7FA64E" stroke-width="1" fill="none" opacity=".6"/><path d="M14 6 q2 -2 3 0 q-1 2 -3 1z" fill="#EAB949"/>`,
+squash:`<path d="M11 4 q3 0 3 4 l0 4 q4 1 4 6 q0 5 -4 5 q-4 0 -4 -5 q0 -4 0 -6 l0 -4 q0 -4 1 -4z" fill="#D9A45A"/><ellipse cx="14" cy="18" rx="4" ry="5" fill="#E3B573"/><rect x="11.5" y="3" width="1.6" height="3" rx=".8" fill="#7A5230"/>`,
+pumpkin:`<ellipse cx="12" cy="14" rx="9" ry="7" fill="#E5792E"/><path d="M12 7 q-3 3 -3 7 q0 4 3 7 M12 7 q3 3 3 7 q0 4 -3 7 M8 8 q-2 4 0 12 M16 8 q2 4 0 12" stroke="#C7621F" stroke-width="1" fill="none" opacity=".7"/><rect x="11" y="4" width="2" height="4" rx="1" fill="#5C8A41"/>`,
+asparagus:`${[9,12,15].map(x=>`<path d="M${x} 21 q-1 -9 0 -14" stroke="#5C8A41" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="${x}" cy="5" r="1.5" fill="#6E9B5A"/>`).join('')}<path d="M8 18 q4 2 8 0" stroke="#C24E5A" stroke-width="1.4" fill="none"/>`,
+artichoke:`<path d="M12 21 q0 -5 0 -7" stroke="#46703A" stroke-width="1.6"/><path d="M12 15 q-7 -1 -8 -7 q5 1 8 4z" fill="#7FA64E"/><path d="M12 15 q7 -1 8 -7 q-5 1 -8 4z" fill="#5C8A41"/><ellipse cx="12" cy="9" rx="5" ry="7" fill="#5C8A41"/><path d="M9 6 q3 3 6 0 M9 10 q3 3 6 0 M9 14 q3 2 6 0" stroke="#46703A" stroke-width="1" fill="none"/><path d="M12 3 q-2 3 0 5 q2 -2 0 -5z" fill="#9457A0"/>`,
+rhubarb:`<path d="M10 21 q-1 -7 0 -10 M13 21 q1 -7 1 -10" stroke="#C24E5A" stroke-width="2.2" stroke-linecap="round"/><path d="M12 11 C 5 10 4 4 7 3 C 10 2 12 5 12 8 C 12 5 14 2 17 3 C 20 4 19 10 12 11z" fill="#4E7A3F"/><path d="M9 6 q3 3 6 0" stroke="#3F6B4A" stroke-width=".8" fill="none"/>`,
+/* ---- NUTS ---- */
+walnut:`<circle cx="12" cy="12" r="8" fill="#9A6B45"/><path d="M12 4 v16" stroke="#7A5230" stroke-width="1.4"/><path d="M8 8 q2 4 0 8 M16 8 q-2 4 0 8 M10 6 q1 6 0 12 M14 6 q-1 6 0 12" stroke="#7A5230" stroke-width="1" fill="none" opacity=".7"/>`,
+chestnut:`<path d="M12 5 C 5 6 5 18 12 20 C 19 18 19 6 12 5z" fill="#8A5A34"/><path d="M12 5 C 8 5 6 8 6 11 q6 3 12 0 C 18 8 16 5 12 5z" fill="#A6774B"/><path d="M12 20 q-1 2 0 3 q1 -1 0 -3z" fill="#EFE6D2"/><path d="M10 9 q2 1 4 0" stroke="#6b4522" stroke-width=".8"/>`,
+hazelnut:`<circle cx="12" cy="14" r="6" fill="#B98A57"/><path d="M12 8 q-6 -4 -8 0 q3 3 8 2z" fill="#7FA64E"/><path d="M12 8 q6 -4 8 0 q-3 3 -8 2z" fill="#5C8A41"/><path d="M12 14 q-2 2 0 4 q2 -2 0 -4z" fill="#9A6B45" opacity=".6"/>`,
+almond:`<path d="M12 3 C 7 8 6 15 12 21 C 18 15 17 8 12 3z" fill="#C79A6A"/><path d="M12 6 C 9 10 9 15 12 19" stroke="#A6774B" stroke-width="1" fill="none"/><path d="M10 9 q2 -1 4 0 M9 13 q3 -1 6 0" stroke="#A6774B" stroke-width=".7" opacity=".6"/>`,
+pecan:`<ellipse cx="12" cy="12" rx="5" ry="8" fill="#8A5A34"/><path d="M12 4 v16" stroke="#6b4522" stroke-width="1"/><path d="M9 7 q1 5 0 10 M15 7 q-1 5 0 10" stroke="#A6774B" stroke-width=".9" fill="none"/>`,
+pistachio:`<path d="M6 8 q0 -3 3 -3 q9 0 9 8 q0 6 -6 6 q-6 0 -6 -6z" fill="#D8C08A"/><path d="M9 7 q7 0 7 6 q0 4 -4 4" fill="none" stroke="#B98A57" stroke-width="1"/><ellipse cx="12" cy="13" rx="4" ry="5" fill="#A7C05A"/><path d="M12 9 q-1 4 0 8" stroke="#7FA64E" stroke-width="1"/>`,
+/* ---- SPICES ---- */
+cinnamon:`<rect x="6" y="5" width="5" height="15" rx="2.5" fill="#A6774B" transform="rotate(-10 8 12)"/><rect x="12" y="5" width="5" height="15" rx="2.5" fill="#8A5A34" transform="rotate(8 15 12)"/><ellipse cx="8" cy="6" rx="2.5" ry="1.4" fill="#7A5230" transform="rotate(-10 8 6)"/><ellipse cx="15" cy="6" rx="2.5" ry="1.4" fill="#6b4522" transform="rotate(8 15 6)"/>`,
+'black pepper':`${[[9,11],[13,9],[15,13],[11,14],[13,13]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2.3" fill="#4A3A2E"/><circle cx="${x-.6}" cy="${y-.6}" r=".7" fill="#7a6656"/>`).join('')}`,
+clove:`<path d="M12 10 l-1 10 q1 1 2 0z" fill="#6E4A32"/>${[0,72,144,216,288].map(a=>`<ellipse transform="rotate(${a} 12 7)" cx="12" cy="4" rx="1.6" ry="2.4" fill="#8A5A34"/>`).join('')}<circle cx="12" cy="7" r="1.6" fill="#A6774B"/>`,
+nutmeg:`<ellipse cx="12" cy="12" rx="6" ry="8" fill="#9A6B45"/><path d="M9 6 q2 6 0 12 M13 6 q-1 6 1 12 M12 5 q-1 7 0 14" stroke="#7A5230" stroke-width=".8" fill="none" opacity=".7"/>`,
+ginger:`<path d="M5 13 q0 -3 3 -3 q2 0 3 -2 q1 -2 3 -1 q3 0 3 3 q2 1 1 4 q0 3 -3 3 q-2 2 -5 1 q-3 0 -3 -3 q-2 -1 -2 -3z" fill="#D9B382"/><path d="M9 9 q0 -2 1 -3 M15 11 q2 0 3 1" stroke="#B98A57" stroke-width="1.4" stroke-linecap="round"/><circle cx="11" cy="13" r="1" fill="#B98A57"/>`,
+turmeric:`<path d="M5 13 q0 -3 3 -3 q2 0 3 -2 q1 -2 3 -1 q3 0 3 3 q2 1 1 4 q0 3 -3 3 q-2 2 -5 1 q-3 0 -3 -3 q-2 -1 -2 -3z" fill="#E39B3B"/><ellipse cx="9" cy="8" rx="2" ry="1.4" fill="#D97B22"/><path d="M15 11 q2 0 3 1" stroke="#C7621F" stroke-width="1.2" stroke-linecap="round"/>`,
+cumin:`${[[9,-14],[12,-2],[15,12]].map(([x,r])=>`<g transform="rotate(${r} ${x} 12)"><path d="M${x} 5 q1.4 7 0 14 q-1.4 -7 0 -14z" fill="#B98A57"/><path d="M${x} 6 q0 6 0 12" stroke="#8A6A3D" stroke-width=".6"/></g>`).join('')}`,
+coriander:`<circle cx="9" cy="13" r="4" fill="#D8C89A"/><circle cx="16" cy="10" r="3.4" fill="#CBB985"/><path d="M6 12 q3 3 6 0 M13 9 q3 2 6 0" stroke="#A6905A" stroke-width=".7" fill="none" opacity=".7"/>`,
+mustard:`${[[8,11],[12,9],[15,12],[10,14],[13,14],[11,11]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2" fill="#E3B93F"/><circle cx="${x-.5}" cy="${y-.5}" r=".7" fill="#F0D477"/>`).join('')}`,
+cardamom:`<path d="M12 3 C 7 7 7 16 12 21 C 17 16 17 7 12 3z" fill="#8FB45A"/><path d="M12 3 q0 9 0 18" stroke="#6E9B4A" stroke-width=".9"/><path d="M9 8 q3 2 6 0" stroke="#6E9B4A" stroke-width=".8" fill="none"/><circle cx="10.5" cy="12" r="1" fill="#4a3a2e"/><circle cx="13" cy="14" r="1" fill="#4a3a2e"/>`,
+saffron:`<path d="M9 4 q-2 8 -1 16 M12 3 q0 9 0 17 M15 4 q2 8 1 16" stroke="#D8452E" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M9 4 q-1 -1 -2 0 M15 4 q1 -1 2 0" stroke="#C7361F" stroke-width="1.6" stroke-linecap="round"/>`,
+vanilla:`<path d="M9 4 C 7 10 8 17 11 21 q2 -1 2 -4 C 12 12 12 8 12 4 q-1 -1 -3 0z" fill="#4A3A2E"/><path d="M10 7 q0 8 1 12" stroke="#6b5340" stroke-width=".8"/><circle cx="16" cy="7" r="3.4" fill="#EFE6D2"/><circle cx="16" cy="7" r="1.4" fill="#E3C77A"/>`,
+/* ---- HERBS ---- */
+basil:`<path d="M12 21 q-1 -6 -1 -9" stroke="#46703A" stroke-width="1.4"/><path d="M11 12 C 4 11 4 4 8 3 C 12 5 12 10 11 12z" fill="#4E7A3F"/><path d="M13 14 C 20 13 20 6 16 5 C 12 7 12 12 13 14z" fill="#5C8A41"/><path d="M8 5 q1 5 2 6 M16 7 q-1 4 -2 6" stroke="#3F6B4A" stroke-width=".7" fill="none"/>`,
+parsley:`<path d="M12 21 v-8" stroke="#46703A" stroke-width="1.4"/>${[[8,8],[12,6],[16,8],[10,11],[14,11]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3" fill="#4E7A3F"/><circle cx="${x-1}" cy="${y-1}" r="1.2" fill="#6E9B5A"/>`).join('')}`,
+cilantro:`<path d="M12 21 v-9" stroke="#46703A" stroke-width="1.3"/><path d="M12 12 C 6 11 5 6 6 4 q3 2 3 5 q0 -4 3 -5 q3 1 3 5 q0 -3 3 -5 q1 2 0 6 C 17 12 12 12 12 12z" fill="#5C8A41"/><path d="M9 6 q1 3 3 5 M15 6 q-1 3 -3 5" stroke="#3F6B4A" stroke-width=".6" fill="none"/>`,
+dill:`<path d="M12 21 v-16" stroke="#5C8A41" stroke-width="1.2"/>${[6,10,14].map(y=>`<path d="M12 ${y} q-5 -1 -7 -3 M12 ${y} q5 -1 7 -3" stroke="#7FA64E" stroke-width="1" fill="none" stroke-linecap="round"/>`).join('')}<path d="M12 5 q-2 -2 -3 -4 M12 5 q2 -2 3 -4" stroke="#7FA64E" stroke-width="1" stroke-linecap="round"/>`,
+oregano:`<path d="M12 21 q0 -16 0 -17" stroke="#5C8A41" stroke-width="1.3"/>${[6,10,14].map(y=>`<circle cx="8" cy="${y}" r="2.4" fill="#4E7A3F"/><circle cx="16" cy="${y}" r="2.4" fill="#5C8A41"/>`).join('')}<circle cx="12" cy="4" r="2" fill="#6E9B5A"/>`,
+thyme:`<path d="M12 21 C 10 14 14 9 12 3" stroke="#7A5230" stroke-width="1.3" fill="none"/>${[[11,17],[13,14],[11,11],[13,8],[12,5]].map(([x,y],i)=>`<ellipse cx="${x+(i%2?2:-2)}" cy="${y}" rx="2" ry="1.2" fill="${i%2?'#5C8A41':'#4E7A3F'}"/>`).join('')}`,
+rosemary:`<path d="M12 21 q0 -9 0 -17" stroke="#6E4A32" stroke-width="1.3"/>${[6,9,12,15,18].map(y=>`<path d="M12 ${y} l-5 -2 M12 ${y} l5 -2" stroke="#4E7A3F" stroke-width="1.2" stroke-linecap="round"/>`).join('')}`,
+sage:`<path d="M12 21 v-7" stroke="#5C7A4A" stroke-width="1.4"/><ellipse cx="9" cy="9" rx="3.4" ry="6" fill="#8FA57A" transform="rotate(-20 9 9)"/><ellipse cx="15" cy="10" rx="3.4" ry="6" fill="#A0B58C" transform="rotate(20 15 10)"/><path d="M9 5 q0 6 0 8 M15 6 q0 6 0 8" stroke="#7A9066" stroke-width=".7"/>`,
+mint:`<path d="M12 21 v-9" stroke="#46703A" stroke-width="1.4"/><path d="M11 12 C 5 11 5 5 9 4 q3 2 3 4 q0 3 -1 4z" fill="#4E9A4A"/><path d="M13 13 C 19 12 19 6 15 5 q-3 2 -3 4 q0 3 1 4z" fill="#5CB055"/><path d="M9 5 l1 6 M15 6 l-1 6" stroke="#3F6B3A" stroke-width=".7"/>`,
+chives:`${[9,12,15].map((x,i)=>`<path d="M${x} 21 q${i-1} -10 0 -15" stroke="#5C8A41" stroke-width="1.6" fill="none" stroke-linecap="round"/>`).join('')}<circle cx="12" cy="5" r="3" fill="#9C84C2"/>${[0,60,120,180,240,300].map(a=>`<circle cx="${(12+Math.cos(a*Math.PI/180)*2.4).toFixed(1)}" cy="${(5+Math.sin(a*Math.PI/180)*2.4).toFixed(1)}" r="1" fill="#B49FD6"/>`).join('')}`,
+tarragon:`<path d="M12 21 q0 -9 0 -17" stroke="#5C8A41" stroke-width="1.2"/>${[7,11,15].map(y=>`<path d="M12 ${y} q-6 -2 -8 -5 M12 ${y+1} q6 -2 8 -5" stroke="#4E7A3F" stroke-width="1.4" fill="none" stroke-linecap="round"/>`).join('')}`,
+bay:`<path d="M12 21 C 6 15 6 6 12 3 C 18 6 18 15 12 21z" fill="#3F6B4A"/><path d="M12 4 q0 8 0 16" stroke="#325538" stroke-width="1"/><path d="M12 8 l-4 2 M12 8 l4 2 M12 12 l-4 2 M12 12 l4 2" stroke="#325538" stroke-width=".6"/>`,
+comfrey:`<path d="M10 21 C 3 16 3 6 9 4 C 12 8 12 16 10 21z" fill="#4E7A3F"/><path d="M9 6 q-1 8 0 13" stroke="#3F6B4A" stroke-width=".8"/><path d="M15 8 q3 0 3 3 q-3 1 -3 -3z" fill="#9C84C2"/><path d="M17 13 q3 0 3 3 q-3 1 -3 -3z" fill="#B49FD6"/>`,
+fennel:`<path d="M8 21 q0 -3 4 -3 q4 0 4 3 q-4 2 -8 0z" fill="#EFE6D2"/><path d="M12 18 q0 -6 0 -13" stroke="#5C8A41" stroke-width="1.2"/>${[6,10].map(y=>`<path d="M12 ${y} q-5 -1 -7 -3 M12 ${y} q5 -1 7 -3" stroke="#7FA64E" stroke-width="1" fill="none" stroke-linecap="round"/>`).join('')}<path d="M12 5 q-2 -2 -3 -3 M12 5 q2 -2 3 -3" stroke="#7FA64E" stroke-width="1" stroke-linecap="round"/>`,
+/* ---- FRUIT ---- */
+fig:`<path d="M12 7 C 6 8 5 15 10 20 q2 2 4 0 C 19 15 18 8 12 7z" fill="#7C4B86"/><path d="M12 7 q-3 -2 -4 -4 q3 0 4 2 q1 -2 4 -2 q-1 2 -4 4z" fill="#5C8A41"/><ellipse cx="12" cy="15" rx="2.4" ry="3" fill="#D98AA0"/><path d="M12 13 v4 M10.5 15 h3" stroke="#C56A82" stroke-width=".6"/>`,
+plum:`<circle cx="12" cy="13" r="7.5" fill="#7B4EA0"/><path d="M12 6 q-2 6 0 14" stroke="#5F3A82" stroke-width="1.2" fill="none"/><path d="M12 6 q1 -3 4 -3" stroke="#5C8A41" stroke-width="1.4" fill="none" stroke-linecap="round"/><ellipse cx="9" cy="10" rx="2" ry="1.4" fill="#9C74BE" opacity=".6"/>`,
+/* ---- FLOWERS & COVER ---- */
+marigold:`${[0,45,90,135,180,225,270,315].map(a=>`<ellipse transform="rotate(${a} 12 12)" cx="12" cy="6" rx="2.4" ry="3.4" fill="#E39B2E"/>`).join('')}${[22,67,112,157,202,247,292,337].map(a=>`<ellipse transform="rotate(${a} 12 12)" cx="12" cy="8" rx="2" ry="2.8" fill="#C77A22"/>`).join('')}<circle cx="12" cy="12" r="3" fill="#E3B93F"/>`,
+borage:`${[0,72,144,216,288].map(a=>`<ellipse transform="rotate(${a} 12 12)" cx="12" cy="6" rx="2.2" ry="4" fill="#5B7FC7"/>`).join('')}<circle cx="12" cy="12" r="2.2" fill="#2E2A55"/>`,
+nasturtium:`<circle cx="9" cy="14" r="5" fill="#5C8A41"/><path d="M9 14 l-4 -2 M9 14 l4 -1 M9 14 l-1 -4 M9 14 l1 4 M9 14 l-3 3" stroke="#46703A" stroke-width=".6"/><path d="M14 6 q5 0 5 4 q0 3 -4 3 q-3 0 -3 -3 q0 -4 2 -4z" fill="#E5792E"/><circle cx="16" cy="9" r="1.4" fill="#C7361F"/>`,
+vetch:`${[7,11,15].map(y=>`<ellipse cx="7" cy="${y}" rx="2" ry="1.2" fill="#4E7A3F"/><ellipse cx="12" cy="${y}" rx="2" ry="1.2" fill="#5C8A41"/>`).join('')}<path d="M9.5 6 q0 10 0 12" stroke="#5C8A41" stroke-width="1"/><path d="M15 8 q4 -3 3 2 q-3 2 -3 -2z" fill="#9C84C2"/><path d="M16 14 q4 0 3 4" stroke="#5C8A41" stroke-width="1" fill="none"/>`,
+rye:`<path d="M12 21 v-9" stroke="#C9A25A" stroke-width="1.3"/>${[5,8,11].map(y=>`<path d="M12 ${y} q-4 0 -5 2 M12 ${y} q4 0 5 2" stroke="#D6B85A" stroke-width="1.6" fill="none" stroke-linecap="round"/>`).join('')}<path d="M12 3 q-1 2 0 3 q1 -1 0 -3z" fill="#D6B85A"/>`,
+buckwheat:`<path d="M11 21 C 5 17 6 12 11 12 C 12 15 12 18 11 21z" fill="#5C8A41"/>${[[9,7],[13,5],[16,8],[11,9],[14,10]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.9" fill="#F3EFE6" stroke="#d9d2c2" stroke-width=".4"/><circle cx="${x}" cy="${y}" r=".7" fill="#DB87B0"/>`).join('')}`,
+/* ---- FUNGUS ---- */
+mycorrhiza:`<path d="M12 3 q0 8 0 12 q0 4 -2 6" stroke="#B98A57" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 15 q3 3 5 2" stroke="#B98A57" stroke-width="1.4" fill="none" stroke-linecap="round"/>${[[12,8],[12,12],[10,17],[15,15],[9,14]].map(([x,y])=>[0,60,120,180,240,300].map(a=>`<line x1="${x}" y1="${y}" x2="${(x+Math.cos(a*Math.PI/180)*3).toFixed(1)}" y2="${(y+Math.sin(a*Math.PI/180)*3).toFixed(1)}" stroke="#C9A9C7" stroke-width=".6"/>`).join('')).join('')}${[[6,10],[18,11],[7,17],[17,7],[16,18]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.1" fill="#C9A9C7"/>`).join('')}`
+};
+
+function glyph(name, fallback){
+  const k = String(name).toLowerCase();
+  return ICONS[k]
+    ? `<svg class="cico" viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>`
+    : (fallback || '');
+}
+
+</script>
+<script>
+/* ============================================================
+   NEW BOOK-DERIVED CONTENT
+============================================================ */
+
+/* ---- WATER & EARTHWORKS ---- */
+const EARTHWORKS = [
+  {n:"Swale",e:"💧",b:"A shallow ditch dug dead level along the contour of a slope, with the soil piled into a berm on the downhill side. Runoff collects in it and soaks straight down instead of running off, recharging the ground and watering tree crops planted on the berm. The original water-harvesting earthwork."},
+  {n:"H\u00fcgelkultur",e:"🪵",b:"A raised mound built over a buried core of logs and branches. The rotting wood acts as a sponge that holds water through dry spells and releases nutrients for years, so a h\u00fcgel bed needs far less irrigation once it settles. Fertility and water storage in one earthwork."},
+  {n:"Keyline",e:"🗺️",b:"P.A. Yeomans\u2019 pattern for moving water across a whole property. By plowing and planting along lines offset from the natural contour, you carry water from the wet valleys out toward the dry ridges, spreading it evenly instead of letting it channel and erode."},
+  {n:"Rain garden",e:"🌧️",b:"A planted depression set where runoff naturally collects, filled with plants that tolerate both flooding and drought. It catches a downpour, holds it, and lets it filter into the ground over a day or two rather than sheeting off and eroding."},
+  {n:"Mulch basin",e:"🍂",b:"A simple saucer of mulch dug around a tree or bed. It slows and pools water right where the roots are and breaks the force of the drop. The smallest earthwork, and the one you can do with a trowel."}
+];
+const WATER_BEDS = [
+  {n:"Herb spiral",e:"🌀",b:"A vertical spiral of stone and soil that packs many microclimates into one square metre. The dry, sunny, well-drained top suits Mediterranean herbs (rosemary, thyme, oregano); the cool, moist base at the shady foot suits mint, parsley, and chives. Water poured at the top feeds the whole spiral as it drains."},
+  {n:"Keyhole bed",e:"🔑",b:"A round raised bed with a wedge cut into it for access and, classically, a compost basket sunk in the centre. You feed and water the basket, and it feeds the whole bed from the middle out. Developed for dry African gardens, it wastes almost no space on paths."},
+  {n:"Mandala garden",e:"🌸",b:"Several keyhole beds arranged in a circular pattern so you can reach every bed from a notch without walking on the soil. It turns the path, usually dead space, into part of the design, and it is beautiful from above."}
+];
+const RAIN_FACTS = [
+  ["The formula","Every inch of rain on 1,000 sq ft of roof yields about 600 gallons. A single storm fills a lot of barrels."],
+  ["Rain barrel","The easy start: a barrel on a downspout with a screen against mosquitoes and an overflow away from the foundation. Legal and encouraged in New York."],
+  ["Cistern","Larger buried or above-ground storage for real dry-spell irrigation. May need a permit; check locally before you dig."],
+  ["Greywater","Reusing sink, shower, and laundry water for ornamentals. Genuinely useful and heavily regulated. Know your local code, and never store it."]
+];
+
+/* ---- SEED SAVING ---- */
+const SEED_TYPES = [
+  {n:"Open-pollinated",e:"🌱",b:"Breeds true. Save seed from an open-pollinated plant and its children look like the parent, generation after generation. This is the only kind worth saving, and over years it quietly adapts to your exact garden."},
+  {n:"Heirloom",e:"🫙",b:"An old open-pollinated variety, passed down and kept in circulation, usually pre-1950. All heirlooms are open-pollinated; not all open-pollinated varieties are old enough to be heirlooms."},
+  {n:"F1 hybrid",e:"⚗️",b:"A deliberate first-generation cross between two parent lines, often vigorous and uniform. But its saved seed does not come true: the next generation scatters into a jumble of the grandparents. Buy hybrid seed fresh each year, or don\u2019t save from it."}
+];
+const POLLINATION = [
+  {n:"Self-pollinating",tag:"Easy to save",c:"s-spring",b:"The flower fertilises itself before it even opens, so the seed is almost always pure. Start here: tomato, pea, bean, lettuce, pepper. Little to no isolation needed."},
+  {n:"Cross-pollinating",tag:"Hard to save",c:"s-fall",b:"Wind or insects carry pollen between plants, so varieties readily mix and you must isolate by distance, time, or a bag over the bloom. Squash, corn, cucumber, and all the brassicas live here."}
+];
+const ISOLATION = [
+  ["Tomato, Pea, Bean","Self","10 to 20 ft","The beginner\u2019s trio. Nearly foolproof."],
+  ["Lettuce","Self","12 ft","Let a few plants bolt and go to seed."],
+  ["Pepper","Mostly self","300 ft for purity","Or cage a plant. Bees will cross them if close."],
+  ["Squash","Insect","1/2 mile, or hand-pollinate","Only crosses within its own species. Tape blooms shut and pollinate by hand."],
+  ["Maize","Wind","1/2 mile, or time isolation","Also needs 100+ plants for genetic health. The hardest common crop."],
+  ["Brassicas","Insect","1/2 to 1 mile, biennial","Cabbage, kale, broccoli all cross freely. Expert territory."],
+  ["Carrot, Beet","Insect, biennial","1/2 mile","Cross with wild relatives, and need two seasons to flower."]
+];
+const SEED_PROCESS = [
+  {n:"Wet processing",e:"🍅",b:"For seeds inside a wet fruit: tomato, cucumber, squash. Scoop the seeds and pulp into a jar of water and let it ferment for two or three days. The rot dissolves the germination-inhibiting gel around each seed and kills seed-borne disease. Rinse, and dry the good seed that sinks."},
+  {n:"Dry processing",e:"🫘",b:"For seeds that dry on the plant: beans, peas, lettuce, brassicas, herbs. Let the pods or heads dry fully on the plant, then thresh (crush to free the seed) and winnow (let a breeze carry off the light chaff). Simple, and no fermenting."}
+];
+const SEED_STORAGE = [
+  ["The rule","Add the temperature in \u00b0F to the humidity in %. Keep the total under 100. A cool, dry, dark jar is everything."],
+  ["Dry first","Seed must be bone dry before storage or it rots or sprouts. A bean is ready when it shatters rather than dents under a hammer."],
+  ["Airtight and cool","A sealed jar with a little silica gel or powdered milk, kept in a cupboard or the fridge. Stable and cold beats warm and swinging."],
+  ["Label everything","Variety and year. You will not remember, and viability drops with age."]
+];
+const SEED_LIFE = [
+  ["1 year","Onion, leek, parsnip"],
+  ["2 years","Corn, pepper, okra"],
+  ["3 years","Bean, pea, carrot, celery, beet"],
+  ["4 to 5 years","Tomato, cucumber, lettuce, radish, squash, brassicas"]
+];
+
+/* ---- PESTS & DISEASE (IPM) ---- */
+const IPM_LADDER = [
+  {n:"1 \u00b7 Prevent",b:"The rung that does the most work. Healthy living soil, resistant varieties, correct spacing for airflow, crop rotation, and good timing stop most trouble before it starts. A stressed plant is what pests find; a thriving one mostly they don\u2019t."},
+  {n:"2 \u00b7 Physical",b:"Put a barrier between pest and plant. Floating row cover, handpicking into soapy water, sticky traps, collars against cutworms, copper tape against slugs, a hard spray of water for aphids. No chemistry at all."},
+  {n:"3 \u00b7 Biological",b:"Recruit the hunters. Attract or release ladybugs, lacewings, and parasitic wasps, and use living controls like Bt for caterpillars or beneficial nematodes for soil grubs. Precise, and it spares everything else."},
+  {n:"4 \u00b7 Least-toxic spray",b:"Only now, and only spot-treated: insecticidal soap, horticultural oil, neem, or iron phosphate for slugs. Targeted at the problem plant, never broadcast across the garden."},
+  {n:"5 \u00b7 Last resort",b:"Broad-spectrum synthetic pesticides sit at the bottom for a reason. They kill the beneficial insects along with the pest, which triggers the next outbreak, which pulls you onto a treadmill. In a healthy garden you should almost never reach this rung."}
+];
+const PESTS = [
+  ["Aphid","Blast with water, then insecticidal soap. Recruit ladybugs and lacewings with dill and alyssum."],
+  ["Cabbage worm","Row cover from transplant, handpick the green loopers, and use Bt if they get ahead of you."],
+  ["Squash bug","Crush the bronze egg clusters under the leaves, cover until flowering, and lay trap boards to collect them at dawn."],
+  ["Squash vine borer","Row cover until bloom, or grow butternut (Cucurbita moschata), whose solid vines resist it."],
+  ["Cucumber beetle","Row cover, yellow sticky traps, and a blue hubbard trap crop. They spread bacterial wilt, so they matter."],
+  ["Tomato hornworm","Handpick. But leave any wearing white rice-like cocoons: those are parasitic wasps doing your work."],
+  ["Colorado potato beetle","Handpick adults and eggs, rotate away from last year\u2019s bed, and use Bt tenebrionis for larvae."],
+  ["Slug and snail","Iron-phosphate bait, beer traps, copper tape, a night patrol, or a duck. Never salt, which ruins soil."],
+  ["Japanese beetle","Handpick into soapy water in the cool morning. Skip the pheromone traps: they lure in more than they catch."]
+];
+const DISEASES = [
+  ["Powdery mildew","A cultural problem: crowd and shade cause it. Space for airflow, water at the root in the morning, grow resistant varieties, and try a potassium-bicarbonate spray."],
+  ["Early & late blight","Mulch to stop soil splashing onto leaves, prune the lowest foliage, space well, and rotate. Late blight is destructive: remove and destroy infected plants, do not compost them."],
+  ["Damping off","Seedlings collapse at the soil line. Use a sterile mix, give airflow, bottom-water, and never keep them soggy."],
+  ["Clubroot","Deforms brassica roots. Lime the soil toward pH 7.2, rotate on a long cycle, and never move infected soil around."],
+  ["Blossom end rot","Not a disease at all. Uneven watering keeps calcium from reaching the fruit, so the fix is steady moisture and mulch, not a calcium spray."]
+];
+const BENEFICIALS = [
+  ["Ladybug","Aphids by the thousand","Dill, fennel, yarrow, alyssum"],
+  ["Lacewing","Aphids, mites, eggs","Coriander, cosmos, angelica"],
+  ["Parasitic wasp","Hornworms, aphids, grubs","Bolted parsley and dill, alyssum"],
+  ["Hoverfly","Aphids (the larvae)","Sweet alyssum, buckwheat, phacelia"],
+  ["Ground beetle","Slugs and soil larvae","Permanent mulch, stone edging"]
+];
+const ROTATION4 = [
+  {n:"1 \u00b7 Legumes",e:"🫘",b:"Beans and peas fix nitrogen and leave the bed richer than they found it. They lead the cycle."},
+  {n:"2 \u00b7 Leaves",e:"🥬",b:"Brassicas and greens are hungry for nitrogen, so they follow the legumes and spend what was banked."},
+  {n:"3 \u00b7 Fruits",e:"🍅",b:"Tomato, pepper, squash, and cucumber are heavy feeders that want phosphorus and potassium. Compost goes here."},
+  {n:"4 \u00b7 Roots",e:"🥕",b:"Carrots, beets, and onions ask little and break the pest cycle before the bed returns to legumes."}
+];
+
+/* ---- DEEPER SOIL SCIENCE ---- */
+const SOIL_TEST = [
+  ["pH","The gate on every nutrient. Aim 6.0 to 7.0 for most crops."],
+  ["Organic matter %","The engine of fertility and water-holding. Most gardens want to climb toward 5% or more."],
+  ["CEC","Cation Exchange Capacity: how many nutrient ions the soil can hold. Sand is low and leaky (1 to 5); clay and humus are high and retentive (15 to 30)."],
+  ["Base saturation","What share of that holding capacity is filled by calcium, magnesium, and potassium rather than acidity."],
+  ["P, K, and micros","Phosphorus, potassium, and the trace elements (iron, manganese, zinc, boron), each with an amendment recommendation."]
+];
+const SOIL_MYTHS = [
+  {t:"Wood chips rob the soil of nitrogen",fn:1,b:"Mostly false. Only a paper-thin zone right at the chip-and-soil boundary is affected. As a surface mulch, wood chips do not starve your plants\u2019 roots. The one real rule: don\u2019t till fresh chips down into the root zone."},
+  {t:"Compost tea protects plants",fn:3,b:"Weak evidence. The elaborate claims for aerated, brewed tea mostly don\u2019t hold up in trials. Finished compost worked into or onto the soil is what actually feeds it."},
+  {t:"Epsom salt is a garden tonic",fn:1,b:"False as a general practice. Magnesium sulfate only helps a soil with a confirmed magnesium deficiency, and routine use can throw calcium out of balance. Test before you reach for it."},
+  {t:"Put gravel in the pot bottom for drainage",fn:1,b:"False, and it backfires. A gravel layer raises the perched water table and keeps roots wetter, not drier. Use a good mix and a drainage hole, nothing else."},
+  {t:"Loosen clay by adding sand",fn:1,b:"You get something close to concrete. The only real fix for both sand and clay is the same: add organic matter, patiently, forever."},
+  {t:"Dig deep and amend the whole bed",fn:2,b:"No-till with compost laid on the surface matches or beats double-digging over time, and it keeps the soil structure and fungal networks you worked to build. Disturb only where you plant."}
+];
+
+/* ---- PERENNIAL STAPLES & NATURAL FARMING (Farm tab) ---- */
+const PERENNIAL = [
+  {n:"Bread from trees",b:"Mark Shepard\u2019s wager: annual grains cost soil every year, while perennial tree crops build it and still yield calories. Chestnut is starchy enough to mill like flour, hazelnut gives oil and protein, and fruit, berries, and nut pines fill the layers between. Staple food from a system that heals instead of erodes."},
+  {n:"Alley cropping",b:"Widely spaced rows of trees or shrubs with annual crops, forage, or pasture grown in the alleys between them. You stack a long-lived tree harvest over a yearly one on the same ground, and the trees shelter and feed the alley."},
+  {n:"STUN selection",b:"Sheer Total Utter Neglect. Plant far more seedlings than you need, give them no coddling, and keep only the ones that thrive on their own. You breed a tough, low-input planting instead of nursing weaklings for years."}
+];
+const FUKUOKA = [
+  {n:"The four do-nothings",b:"Masanobu Fukuoka\u2019s natural farming removes four things: tillage, chemical fertiliser, weeding by cultivation, and pesticides. Not laziness, but the discipline of not creating the problems you then have to solve. The soil, left its own structure and its own residue, does the work."},
+  {n:"Seed balls",b:"Nendo dango: seeds rolled into marbles of clay and compost and scattered on the surface. The clay shell guards them from birds and drought until rain dissolves it and triggers germination. Sowing with no tilling and no burying at all."},
+  {n:"Sow into the standing crop",b:"Broadcast the next crop into the one still growing, before you cut it, so the ground is never bare. Then drop the straw of the harvested crop as mulch over the seedlings coming up beneath. A continuous, unbroken cover."}
+];
+
+/* ---- JAPANESE DESIGN (Landscape tab) ---- */
+const JAPAN = [
+  {x:"\u9060\u666f",t:"Shakkei, borrowed scenery",p:"Compose a distant feature you don\u2019t own (a tree, a rooftop, a hill) into the garden by framing it, so the eye reads it as part of your composition. The garden borrows the horizon."},
+  {x:"\u898b\u96a0",t:"Miegakure, hide and reveal",p:"A path that conceals its destination and then discloses it stretches a small garden and rewards the walk. Never show everything at once."},
+  {x:"\u9593",t:"Ma, the charged interval",p:"The emptiness between objects is itself the composition, not a gap waiting to be filled. The Japanese cousin of negative space, and stricter about it."},
+  {x:"\u4fab",t:"Wabi-sabi",p:"Beauty in the weathered, the asymmetric, and the impermanent: moss on stone, a patinated gate, one imperfect rock placed with care. The opposite of the showroom."},
+  {x:"\u5674",t:"Asymmetry and odd numbers",p:"Balance by visual weight and by threes, never by mirror symmetry. A composition of unequal parts that still settles into rest."},
+  {x:"\u56f2",t:"Enclosure and the frame",p:"A gate, a window, a clipped hedge that turns a living view into a hung picture. The frame is what makes the scene."}
+];
+
+/* ---- FLOWER PROGRAM (Companions tab) ---- */
+const FLOWER_PROG = [
+  {n:"Vegetables love flowers",b:"In a productive garden, flowers are not decoration. They are the fuel that keeps pollinators and predatory insects on site, and their presence measurably lifts the yield of everything around them. Lisa Ziegler\u2019s thesis, and the reason a cutting patch belongs beside the vegetables."},
+  {n:"Cut-flower succession",b:"Hardy annuals sown in fall or very early spring (bachelor button, larkspur, snapdragon, calendula) bloom first and shrug off frost. Tender annuals (zinnia, cosmos, sunflower, celosia) follow through the heat. Stagger them and something is always in bloom."},
+  {n:"Pinch and cut often",b:"Counterintuitively, pinching out the growing tip of a young plant and cutting flowers frequently makes more flowers, not fewer. Each cut forces branching, which means more blooms and more forage for beneficials."}
+];
+const INSECTARY = [
+  ["Sweet alyssum","Hoverflies, whose larvae devour aphids. Low, spreading, endlessly in bloom."],
+  ["Dill, fennel, parsley (bolted)","Tiny parasitic wasps that hunt hornworms and aphids. Let a few plants flower."],
+  ["Yarrow, cosmos","Lacewings and ladybugs. Flat landing pads of tiny flowers."],
+  ["Calendula","A generalist magnet, and edible. Blooms cool season to frost."],
+  ["Phacelia, buckwheat","Bees and hoverflies both. The fastest way to turn a bare bed into forage."],
+  ["Borage","Bees adore it, and it self-seeds forever once you let it."]
+];
+
+/* ============================================================
+   RENDERERS FOR NEW CONTENT
+============================================================ */
+function cardList(arr, keyN, keyB, keyE){
+  return arr.map(o=>`<div class="card">
+    <div class="${keyE?'ety-top':''}" style="margin-bottom:6px">${keyE&&o[keyE]?`<span class="emoji">${glyph(o[keyN],o[keyE])}</span>`:''}<span class="m-title">${o[keyN]}</span></div>
+    <div class="m-body">${o[keyB]}</div></div>`).join('');
+}
+function simpleTable(head, rows){
+  return `<div class="tblscroll"><table class="tbl"><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${
+    rows.map(r=>`<tr>${r.map((c,i)=>i===0?`<td><b>${c}</b></td>`:`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+
+function renderWater(){
+  const ew=EARTHWORKS.map(o=>`<div class="card"><div class="ety-top" style="margin-bottom:6px"><span class="emoji">${o.e}</span><span class="m-title">${o.n}</span></div><div class="m-body">${o.b}</div></div>`).join('');
+  const wb=WATER_BEDS.map(o=>`<div class="card"><div class="ety-top" style="margin-bottom:6px"><span class="emoji">${o.e}</span><span class="m-title">${o.n}</span></div><div class="m-body">${o.b}</div></div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Water, earthworks, and the shape of the land</div>
+    <h2 class="serif">Slow it, spread it, sink it.</h2>
+    <p>The permaculture mantra for water is three verbs. A garden shaped to catch rain where it falls, hold it, and let it soak in needs a fraction of the irrigation of a flat bed on bare soil. This is the pillar the first draft was missing, and it is mostly done with a shovel, not a hose.</p>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Earthworks that harvest water</h3>
+    <p class="section-sub">Shaping the ground so rain stays and sinks instead of running off and eroding.</p>
+    <div class="grid g-3">${ew}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Beds that make their own microclimate</h3>
+    <p class="section-sub">Three classic permaculture forms that stack conditions and cut wasted path.</p>
+    <div class="grid g-3">${wb}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Catching the rain</h3>
+    <p class="section-sub">A roof is a watershed. In a Manhattan summer, stored rain is the difference between a thriving planter and a dead one.</p>
+    <div class="grid g-2">${RAIN_FACTS.map(([k,v])=>`<div class="card"><div class="m-title" style="margin-bottom:5px">${k}</div><div class="m-body">${v}</div></div>`).join('')}</div>
+    <div class="callout" style="margin-top:16px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <div><h4>The one-inch, one-thousand-square-foot rule</h4><p>An inch of rain on a thousand square feet of roof is roughly 600 gallons. Even a small city roof sheds hundreds of gallons per storm straight down the drain. A barrel or two turns that into free, chlorine-free irrigation that plants prefer.</p></div>
+    </div>
+  </div>`;
+}
+
+function renderSeeds(){
+  const types=SEED_TYPES.map(o=>`<div class="card"><div class="ety-top" style="margin-bottom:6px"><span class="emoji">${o.e}</span><span class="m-title">${o.n}</span></div><div class="m-body">${o.b}</div></div>`).join('');
+  const poll=POLLINATION.map(o=>`<div class="card"><div class="g-head"><h4 class="serif">${o.n}</h4><span class="season-tag ${o.c}">${o.tag}</span></div><div class="m-body" style="margin-top:10px">${o.b}</div></div>`).join('');
+  const proc=SEED_PROCESS.map(o=>`<div class="card"><div class="ety-top" style="margin-bottom:6px"><span class="emoji">${glyph(o.n.split(' ')[0]==='Wet'?'tomato':'bean',o.e)}</span><span class="m-title">${o.n}</span></div><div class="m-body">${o.b}</div></div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Saving seed</div>
+    <h2 class="serif">Save seed and the garden starts adapting to you.</h2>
+    <p>Kept over a few seasons, a variety quietly tunes itself to your soil, your microclimate, your timing. It costs nothing, it is how every crop we grow was bred, and it starts with knowing which plants will come true and which will betray you.</p>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Open-pollinated, heirloom, or hybrid</h3>
+    <p class="section-sub">The one distinction that decides whether saved seed is worth anything.</p>
+    <div class="grid g-3">${types}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Who pollinates whom</h3>
+    <p class="section-sub">Self-pollinators stay pure on their own. Cross-pollinators mix, and must be kept apart.</p>
+    <div class="grid g-2">${poll}</div>
+    <div style="margin-top:14px">${simpleTable(["Crop","Pollination","Isolation","Notes"],ISOLATION)}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Cleaning the seed: wet or dry</h3>
+    <div class="grid g-2">${proc}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Drying and storing</h3>
+    <p class="section-sub">More saved seed is lost to warmth and damp than to anything else.</p>
+    <div class="grid g-2">${SEED_STORAGE.map(([k,v])=>`<div class="card"><div class="m-title" style="margin-bottom:5px">${k}</div><div class="m-body">${v}</div></div>`).join('')}</div>
+    <div class="fp-rows" style="margin-top:14px">
+      ${SEED_LIFE.map(([k,v])=>`<div class="fp-row"><div class="fp-k">Lasts ${k}</div><div class="fp-v">${v}</div></div>`).join('')}
+    </div>
+    <div class="callout" style="margin-top:16px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <div><h4>Test old seed before you sow a whole bed</h4><p>Roll ten seeds in a damp paper towel, keep it warm, and count how many sprout in a week or so. Seven of ten means about 70% viable: sow a little thicker and trust it. One of ten means buy fresh.</p></div>
+    </div>
+  </div>`;
+}
+
+function renderPests(){
+  const ladder=IPM_LADDER.map((o,i)=>`<div class="card"><div class="m-h"><span class="dotmark mono">${i+1}</span><span class="m-title">${o.n.replace(/^\d+ \u00b7 /,'')}</span></div><div class="m-body">${o.b}</div></div>`).join('');
+  const rot=ROTATION4.map(o=>`<div class="rot-step"><span class="rs-n">${o.n.split(' ')[0]}</span><h5>${glyph(({'1':'bean','2':'kale','3':'tomato','4':'carrot'})[o.n[0]],o.e)} ${o.n.replace(/^\d+ \u00b7 /,'')}</h5><p>${o.b}</p></div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Pests and disease as a system</div>
+    <h2 class="serif">Identify first, then climb the ladder from gentlest up.</h2>
+    <p>The mistake is to reach for a spray at the first chewed leaf. Integrated pest management starts by diagnosing what is actually wrong, then works up a ladder of responses from the gentlest, resorting to chemistry only when everything below it has failed. In a garden with living soil and flowers for the hunters, you rarely climb far.</p>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">The least-toxic ladder</h3>
+    <p class="section-sub">Always start at the bottom rung and only climb when you must.</p>
+    <div class="grid g-2">${ladder}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Common pests, gentlest fix first</h3>
+    ${simpleTable(["Pest","The least-toxic answer"],PESTS)}
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Common diseases, mostly cultural</h3>
+    <p class="section-sub">Nearly all of these are prevented by airflow, mulch, rotation, and watering at the root. One of them is not a disease at all.</p>
+    ${simpleTable(["Problem","The fix"],DISEASES)}
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Recruit the hunters</h3>
+    <p class="section-sub">Every pest has a predator. Plant what keeps that predator on site and it works for free.</p>
+    ${simpleTable(["Beneficial","What it eats","Plant this to keep it"],BENEFICIALS)}
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Rotate by family, every year</h3>
+    <p class="section-sub">Move each plant family to a new bed each season so soil pests and disease never build up, and so the nitrogen the legumes bank feeds the leaves that follow.</p>
+    <div class="rotation">${rot}</div>
+  </div>`;
+}
+
+/* ---- EXTRA sections appended to existing tabs ---- */
+function companionsExtra(){
+  const fp=FLOWER_PROG.map(o=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${o.n}</div><div class="m-body">${o.b}</div></div>`).join('');
+  return `
+  <div class="section">
+    <h3 class="section-h serif">Grow flowers on purpose</h3>
+    <p class="section-sub">The flower beside the vegetable is not decoration. It is what keeps the pollinators and predators on the plot.</p>
+    <div class="grid g-3">${fp}</div>
+    <div style="margin-top:14px">${simpleTable(["The best insectary flowers","Who it brings, and why"],INSECTARY)}</div>
+  </div>`;
+}
+function farmExtra(){
+  const per=PERENNIAL.map(o=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${o.n}</div><div class="m-body">${o.b}</div></div>`).join('');
+  const fuk=FUKUOKA.map(o=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${o.n}</div><div class="m-body">${o.b}</div></div>`).join('');
+  return `
+  <div class="section">
+    <h3 class="section-h serif">Calories from perennials</h3>
+    <p class="section-sub">Mark Shepard\u2019s case for staple food from trees, on ground that heals instead of eroding.</p>
+    <div class="grid g-3">${per}</div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Fukuoka\u2019s natural farming</h3>
+    <p class="section-sub">The do-nothing method: the discipline of removing the interventions that create the problems they then solve.</p>
+    <div class="grid g-3">${fuk}</div>
+  </div>`;
+}
+function compostExtra(){
+  return `
+  <div class="section">
+    <h3 class="section-h serif">Reading a soil test</h3>
+    <p class="section-sub">Twenty dollars and a soil sample tells you what to add and, more often, what you never needed. Amend from the numbers, not from the internet.</p>
+    ${simpleTable(["What it reports","What it means"],SOIL_TEST)}
+    <div class="card" style="margin-top:14px"><div class="m-title" style="margin-bottom:6px">CEC, the number that explains the ethos</div><div class="m-body">Cation Exchange Capacity is the count of tiny negative sites on clay and organic matter that grip nutrient ions and hand them to roots. Sand has almost none, so it leaks; clay and humus have many, so they hold. Raising organic matter raises CEC, which is the literal mechanism behind <b>feed the soil, not the plants</b>. You are not fertilising, you are building the pantry.</div></div>
+  </div>
+  <div class="section">
+    <h3 class="section-h serif">Six things that are not true</h3>
+    <p class="section-sub">Garden lore outlives evidence. Each of these is flagged the way the companion claims are.</p>
+    <div class="grid g-2">${SOIL_MYTHS.map(m=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${m.t}<sup class="fn" title="Evidence note ${m.fn}">${m.fn}</sup></div><div class="m-body">${m.b}</div></div>`).join('')}</div>
+    <div class="footnotes">
+      <h5>Evidence notes</h5>
+      <div class="fn-row"><span class="fn-num">1</span><div><b>Solid correction.</b> The myth is clearly contradicted by soil science. Act on the correction.</div></div>
+      <div class="fn-row"><span class="fn-num">2</span><div><b>Moderate.</b> The better practice wins over time, though the old way is not disastrous.</div></div>
+      <div class="fn-row"><span class="fn-num">3</span><div><b>Weak.</b> The claim is mostly unsupported, but harmless to have tried.</div></div>
+    </div>
+  </div>`;
+}
+function landscapeExtra(){
+  const jp=JAPAN.map(o=>`<div class="card prose-card"><h4 class="serif"><span class="idx mono" style="font-family:'Fraunces',serif;font-size:16px">${o.x}</span>${o.t}</h4><p>${o.p}</p></div>`).join('');
+  return `
+  <div class="section">
+    <h3 class="section-h serif">The Japanese grammar</h3>
+    <p class="section-sub">A second design vocabulary, older and stricter about emptiness, that deepens every principle above.</p>
+    <div class="grid g-3">${jp}</div>
+  </div>`;
+}
+
+const EXTRA = { companions:companionsExtra, farm:farmExtra, compost:compostExtra, landscape:landscapeExtra };
+
+</script>
+<script>
+/* ============================================================
    HERO SVG
 ============================================================ */
 (function(){
@@ -1315,7 +1734,7 @@ function paintEty(filter){
       return node+arr;
     }).join('');
     return `<div class="card">
-      <div class="ety-top"><span class="emoji">${e.e}</span><span class="ety-word serif">${e.w}</span><span class="ety-tag">${e.t}</span></div>
+      <div class="ety-top"><span class="emoji">${glyph(e.w,e.e)}</span><span class="ety-word serif">${e.w}</span><span class="ety-tag">${e.t}</span></div>
       <div><span class="habit ${habitClass(e.hc)}">${e.h}</span></div>
       <div class="ety-gloss">“${e.g}”</div>
       <div class="chain">${chain}</div>
@@ -1331,7 +1750,7 @@ function renderCompanions(){
       <div class="m-body">${m.b}</div></div>`).join('');
   const anti=ANTI.map(g=>`<div class="card anti">
       <div class="g-head"><h4 class="serif">${g.n}${fnSup(g.fn)}</h4></div>
-      <div class="members">${g.m.map(x=>`<span class="member">${em(x)} ${x}</span>`).join('')}</div>
+      <div class="members">${g.m.map(x=>`<span class="member">${glyph(x,em(x))} ${x}</span>`).join('')}</div>
       <div class="guild-why">${g.w}</div></div>`).join('');
   const nut=NUTRI.map(n=>`<div class="card nut">
       <div class="pair"><span>${n.a}</span><span class="plus">+</span><span>${n.b}</span></div>
@@ -1378,7 +1797,7 @@ function paintGuilds(season){
   document.getElementById('guildGrid').innerHTML=items.map(g=>`
     <div class="card guild-card">
       <div class="g-head"><h4 class="serif">${g.n}${fnSup(g.fn)}</h4><span class="season-tag s-${g.s}">${g.s}</span></div>
-      <div class="members">${g.m.map(x=>`<span class="member">${em(x)} ${x}</span>`).join('')}</div>
+      <div class="members">${g.m.map(x=>`<span class="member">${glyph(x,em(x))} ${x}</span>`).join('')}</div>
       <div class="guild-why">${g.w}</div>
     </div>`).join('') || `<p style="color:var(--ink-soft)">Nothing in that season. Try another.</p>`;
 }
@@ -1389,7 +1808,7 @@ function renderFarm(){
   const notill=NOTILL.map(([t,b])=>`<div class="card"><div class="m-title" style="margin-bottom:6px">${t}</div><div class="m-body">${b}</div></div>`).join('');
   const layers=LAYERS.map(([n,nm,eg])=>`<div class="layer-row"><span class="layer-n mono">${n}</span><span class="layer-name">${nm}</span><span class="layer-eg">${eg}</span></div>`).join('');
   const animals=ANIMALS.map(a=>`<div class="card">
-      <div class="ety-top"><span class="emoji">${em(a.n)}</span><span class="ety-word serif">${a.n}</span></div>
+      <div class="ety-top"><span class="emoji">${glyph(a.n,em(a.n))}</span><span class="ety-word serif">${a.n}</span></div>
       <div class="mono" style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin:0 0 9px">${a.r}</div>
       <div class="m-body">${a.b}</div></div>`).join('');
   const zones=ZONES.map(([n,t,p])=>`<div class="zone"><span class="zn serif">${n}</span><h4>Zone ${n} · ${t}</h4><p>${p}</p></div>`).join('');
@@ -1664,14 +2083,14 @@ function renderRooftop(){
 /* ============================================================
    ROUTER
 ============================================================ */
-const TABS=[["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],["compost","Compost"],["landscape","Landscape"],["rooftop","Rooftop"]];
-const RENDERERS={etymology:renderEtymology,companions:renderCompanions,farm:renderFarm,compost:renderCompost,landscape:renderLandscape,rooftop:renderRooftop};
+const TABS=[["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],["compost","Soil & Compost"],["water","Water"],["seeds","Seeds"],["pests","Pests"],["landscape","Landscape"],["rooftop","Rooftop"]];
+const RENDERERS={etymology:renderEtymology,companions:renderCompanions,farm:renderFarm,compost:renderCompost,water:renderWater,seeds:renderSeeds,pests:renderPests,landscape:renderLandscape,rooftop:renderRooftop};
 const seg=document.getElementById('seg');
 const main=document.getElementById('main');
 seg.innerHTML=TABS.map((t,i)=>`<button role="tab" data-tab="${t[0]}" aria-selected="${i===0}">${t[1]}</button>`).join('');
 
 function show(tab){
-  main.innerHTML=`<section class="panel">${RENDERERS[tab]()}</section>`;
+  main.innerHTML=`<section class="panel">${RENDERERS[tab]()}${(typeof EXTRA!=="undefined"&&EXTRA[tab])?EXTRA[tab]():""}</section>`;
   if(tab==="etymology"){
     paintEty();
     document.getElementById('etyFilters').addEventListener('click',e=>{

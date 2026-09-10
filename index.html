@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Living System v1.0 — A Field Guide to Companion Planting &amp; Permaculture</title>
-<meta name="description" content="An interactive field guide to companion planting and no-till permaculture, from soil biology to a working farm, a designed landscape, and a real Manhattan rooftop.">
-<meta property="og:title" content="The Living System v1.0">
-<meta property="og:description" content="An interactive field guide to companion planting and no-till permaculture, from soil biology to a real Manhattan rooftop.">
+<title>The Living System · A Field Guide to Companion Planting &amp; Permaculture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700;8..60,900&display=swap" rel="stylesheet">
 <style>
-:root{--sans:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;--serif:'Source Serif 4',ui-serif,Georgia,serif;--mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+:root{--sans:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',sans-serif;--serif:'Source Serif 4',ui-serif,Georgia,serif;--mono:'JetBrains Mono','SF Mono',Menlo,monospace;--wm-glass:rgba(255,255,255,.72);--wm-shadow2:0 8px 28px rgba(0,0,0,.08);
   --paper:#F5F4EE; --paper-2:#EDEBE1; --panel:#FBFAF6;
   --ink:#1F241C; --ink-soft:#566052; --ink-faint:#8A917F;
   --line:rgba(31,36,28,.12); --line-2:rgba(31,36,28,.07);
@@ -18,11 +15,6 @@
   --pollen:#CF9A30; --pollen-soft:#F4E6C4;
   --rust:#B4573C; --rust-soft:#F3DED6;
   --sky:#E7EDEC;
-  --cool:#8FB8D8; --cold:#A9BCC9;
-  --map-1:#EAF2E2; --map-2:#E4EEDA; --map-3:#DCEAD0;
-  --mix-label:#1F241C;
-  --strip-bg:#1F241C; --strip-ink:#F5F4EE;
-  --strip-btn:rgba(245,244,238,.08); --strip-btn-hover:rgba(245,244,238,.16); --strip-line:rgba(245,244,238,.18);
   --shadow:0 1px 2px rgba(31,36,28,.04),0 8px 30px rgba(31,36,28,.06);
   --shadow-lift:0 2px 6px rgba(31,36,28,.07),0 18px 50px rgba(31,36,28,.11);
   --r:18px; --r-sm:12px;
@@ -37,11 +29,6 @@
   --pollen:#E3B654; --pollen-soft:#33290F;
   --rust:#D98060; --rust-soft:#37211A;
   --sky:#1A2020;
-  --cool:#8FC4E8; --cold:#B9C8D2;
-  --map-1:#1E2A18; --map-2:#212D1A; --map-3:#25311D;
-  --mix-label:#1F241C;
-  --strip-bg:#0B0D08; --strip-ink:#ECE9DC;
-  --strip-btn:rgba(236,233,220,.08); --strip-btn-hover:rgba(236,233,220,.16); --strip-line:rgba(236,233,220,.16);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.4);
   --shadow-lift:0 2px 8px rgba(0,0,0,.4),0 22px 60px rgba(0,0,0,.55);
 }
@@ -80,8 +67,8 @@ h1.title{font-family:"Source Serif 4",serif;font-weight:500;font-size:clamp(34px
 [data-theme="dark"] .factor b{color:var(--sprout)}
 .factor[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .factor[aria-expanded="true"] b{color:var(--paper)}
-[data-theme="dark"] .factor[aria-expanded="true"]{background:var(--sprout);border-color:var(--sprout);color:var(--paper)}
-[data-theme="dark"] .factor[aria-expanded="true"] b{color:var(--paper)}
+[data-theme="dark"] .factor[aria-expanded="true"]{background:var(--sprout);border-color:var(--sprout);color:#13160F}
+[data-theme="dark"] .factor[aria-expanded="true"] b{color:#13160F}
 .factor-panel{overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.2,.7,.2,1)}
 .factor-panel.open{max-height:600px}
 .fp-in{padding:4px 0 24px}
@@ -96,25 +83,16 @@ h1.title{font-family:"Source Serif 4",serif;font-weight:500;font-size:clamp(34px
 .fp-k{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
 .fp-v{font-size:14.5px;color:var(--ink)}
 
-/* ---------- Contact strip ---------- */
-.contact-strip{background:var(--strip-bg);color:var(--strip-ink)}
-.contact-strip-in{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:7px 0;flex-wrap:wrap}
-.contact-link{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;border:1px solid var(--strip-line);background:var(--strip-btn);color:var(--strip-ink);font-size:12px;font-weight:500;transition:.2s;text-decoration:none}
-.contact-link:hover{background:var(--strip-btn-hover);transform:translateY(-1px)}
-.contact-link svg{width:13px;height:13px;flex:none}
-.themetoggle{flex:none;width:30px;height:30px;border-radius:99px;border:1px solid var(--strip-line);background:var(--strip-btn);color:var(--strip-ink);cursor:pointer;display:grid;place-items:center;transition:.2s}
-.themetoggle:hover{background:var(--strip-btn-hover)}
-.themetoggle svg{width:15px;height:15px}
-
 /* ---------- Topbar ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:60px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;white-space:nowrap}
-.brand .vtag{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:400;color:var(--ink-faint);margin-left:-2px}
 .seg{display:flex;gap:2px;background:var(--paper-2);border:1px solid var(--line);border-radius:99px;padding:4px}
 .seg button{font:inherit;font-size:13.5px;font-weight:500;color:var(--ink-soft);background:none;border:none;padding:7px 15px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:color .2s,background .25s,box-shadow .25s}
 .seg button:hover{color:var(--ink)}
 .seg button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+.theme-btn{flex:none;width:40px;height:40px;border-radius:99px;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--ink);display:grid;place-items:center;transition:.25s}
+.theme-btn:hover{box-shadow:var(--shadow);border-color:var(--sprout)}
 .nav-scroll{overflow-x:auto;scrollbar-width:none}.nav-scroll::-webkit-scrollbar{display:none}
 
 /* ---------- Panels ---------- */
@@ -135,7 +113,7 @@ main{padding:46px 0 30px;min-height:60vh}
 .chip{font:inherit;font-size:13.5px;font-weight:500;padding:7px 15px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);cursor:pointer;transition:.22s}
 .chip:hover{color:var(--ink);border-color:var(--sprout)}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--sprout);color:var(--paper);border-color:var(--sprout)}
+[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--sprout);color:#13160F;border-color:var(--sprout)}
 
 .grid{display:grid;gap:14px}
 .g-2{grid-template-columns:repeat(2,1fr)}
@@ -259,8 +237,8 @@ sup.fn{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--green);
 .t-hot{background:color-mix(in srgb,var(--rust) 20%,var(--panel));color:var(--ink)}
 .t-work{background:color-mix(in srgb,var(--pollen) 22%,var(--panel));color:var(--ink)}
 .t-warm{background:color-mix(in srgb,var(--sprout) 20%,var(--panel));color:var(--ink)}
-.t-cool{background:color-mix(in srgb,var(--cool) 24%,var(--panel));color:var(--ink)}
-.t-cold{background:color-mix(in srgb,var(--cold) 20%,var(--panel));color:var(--ink)}
+.t-cool{background:color-mix(in srgb,#8FB8D8 24%,var(--panel));color:var(--ink)}
+.t-cold{background:color-mix(in srgb,#A9BCC9 20%,var(--panel));color:var(--ink)}
 
 /* lasagna stack */
 .lasagna{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
@@ -277,7 +255,7 @@ sup.fn{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--green);
 
 /* recipe bars */
 .mix{display:flex;height:38px;border-radius:10px;overflow:hidden;border:1px solid var(--line);margin:12px 0 10px}
-.mix span{display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--mix-label)}
+.mix span{display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:#1F241C}
 .mixkey{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--ink-soft)}
 .mixkey i{display:inline-flex;align-items:center;gap:6px;font-style:normal}
 .mixkey i::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--k)}
@@ -293,7 +271,8 @@ sup.fn{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--green);
 .mapwrap{margin:8px 0 30px}
 .map-cap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
 .map-hint{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-faint)}
-.mapframe{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg,var(--map-1) 0%,var(--map-2) 45%,var(--map-3) 100%)}
+.mapframe{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg,#EAF2E2 0%,#E4EEDA 45%,#DCEAD0 100%)}
+[data-theme="dark"] .mapframe{border-color:rgba(0,0,0,.4)}
 .map-svg{display:block;width:100%;height:auto}
 .sprite{cursor:pointer;transform-box:fill-box;transform-origin:50% 82%;transition:transform .25s cubic-bezier(.2,.7,.2,1),opacity .3s;outline:none}
 .sprite:hover,.sprite:focus-visible{transform:translateY(-3px) scale(1.07)}
@@ -331,12 +310,6 @@ sup.fn{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--green);
 
 footer{border-top:1px solid var(--line);margin-top:40px;padding:34px 0 60px;color:var(--ink-faint);font-size:13.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.foot-meta{width:100%;margin-top:18px;padding-top:14px;border-top:1px solid var(--line-2)}
-.verstamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-faint)}
-.foot-contact{margin-top:6px;font-size:13px;color:var(--ink-soft)}
-.foot-contact a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
-.foot-contact a:hover{color:var(--green)}
-[data-theme="dark"] .foot-contact a:hover{color:var(--sprout)}
 
 .grow{transform-box:fill-box;transform-origin:bottom center;transform:scaleY(0);opacity:0;animation:grow .9s cubic-bezier(.2,.8,.25,1) forwards}
 @keyframes grow{to{transform:scaleY(1);opacity:1}}
@@ -358,32 +331,68 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .grow{transform:none !important;opacity:1 !important}
 }
 
+  :root{--wm-ink:#111114;--paper:#f5f5f7;--paper-2:#eef0f3;--panel:rgba(255,255,255,.72);--ink:#111114;--ink-soft:#303540;--ink-faint:#6b6f7b;--line:rgba(0,0,0,.09);--line-2:rgba(0,0,0,.06);--sky:#eaf3ff;}
+
+  /* ===== world_models re-skin (chrome only; content untouched) ===== */
+  html{background:#eff2f6;}
+  body{background:radial-gradient(circle at 15% 0%, #eaf3ff 0, rgba(234,243,255,0) 38%),radial-gradient(circle at 80% 8%, #fff0df 0, rgba(255,240,223,0) 32%),linear-gradient(180deg,#fbfbfd 0,#f5f5f7 45%,#eff2f6 100%) !important;background-attachment:fixed !important;color:var(--wm-ink,#111114);}
+  body{font-family:var(--sans) !important;line-height:1.45;}
+  h1,h2,h3,h4,h5,h6,.serif,.title,h1.title,.fp-title,.lede h2,.display,.big,.fp-title,.fp-card h3{font-family:var(--serif) !important;}
+  code,kbd,pre,samp,th,.mono,.factor,.kicker,.eyebrow,.fp-k,.fp-stat,[class*="mono"],.chip,.ety-tag,.season-tag,.seg,.theme-btn{font-family:var(--mono) !important;}
+  .fp-card,.card,.callout,.zone,.member,.habit,.footnotes{background:var(--wm-glass) !important;backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);box-shadow:var(--wm-shadow2);border:1px solid rgba(0,0,0,.09);}
+/* custom glyph sizing (fixes missing rule) */
+.cico{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;flex:none}
+/* planner + world */
+.planter{display:grid;grid-template-columns:1fr minmax(258px,318px);gap:22px;align-items:start}
+.pal-info{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:14px 16px;min-height:74px;margin-bottom:6px}
+.pal-group{margin-top:12px}
+.pal-h{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px}
+.pal-row{display:flex;flex-wrap:wrap;gap:6px}
+.pplant{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;padding:5px 10px 5px 7px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;transition:.18s}
+.pplant:hover{border-color:var(--sprout);transform:translateY(-1px)}
+.pplant.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+[data-theme="dark"] .pplant.sel{background:var(--sprout);color:#13160F}
+.pico{width:1.2em;height:1.2em;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.pico .cico{width:1.1em;height:1.1em}
+.pico.big{font-size:32px}
+.prof{display:flex;gap:12px;align-items:flex-start}
+.prof-n{font-size:18px;font-weight:500}
+.prof-sel{font-size:9.5px;color:var(--green);text-transform:uppercase;letter-spacing:.07em}
+[data-theme="dark"] .prof-sel{color:var(--sprout)}
+.prof-tags{font-size:11px;color:var(--ink-faint);margin:3px 0 7px}
+.prof-b{font-size:13.5px;color:var(--ink-soft)}
+.bedwrap{position:sticky;top:74px}
+.bed-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;background:var(--loam-soft);padding:8px;border-radius:16px;border:1px solid var(--line)}
+.cell{aspect-ratio:1/1;border:1px dashed var(--line);border-radius:9px;background:var(--panel);cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;transition:.15s;padding:0;color:inherit}
+.cell:hover{border-style:solid;border-color:var(--sprout)}
+.cell.filled{border-style:solid;background:var(--sprout-soft)}
+.cell.good{box-shadow:inset 0 0 0 2px var(--sprout)}
+.cell.warn{background:var(--rust-soft);border-color:var(--rust);box-shadow:inset 0 0 0 2px var(--rust)}
+.cico-wrap{font-size:26px;line-height:1;display:flex}
+.cico-wrap .cico{width:1em;height:1em}
+.cell-x{position:absolute;bottom:0;right:3px;font-family:"DM Mono",monospace;font-size:8px;color:var(--ink-faint)}
+.bed-actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px}
+.bed-count{font-size:12px;color:var(--ink-faint)}
+.cal{font-size:12px}
+.cal-head,.cal-row{display:grid;grid-template-columns:118px repeat(12,1fr);gap:2px;align-items:center}
+.cal-head span{text-align:center;font-family:"DM Mono",monospace;font-size:9px;color:var(--ink-faint)}
+.cal-row{margin-top:3px}
+.cal-n{font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:6px}
+.cal-n i{color:var(--ink-faint);font-size:9px;font-style:normal}
+.cal-cell{height:15px;border-radius:3px;background:var(--paper-2)}
+.cal-cell.on{background:var(--sprout)}
+.world-row{display:grid;grid-template-columns:112px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line-2);font-size:14px;color:var(--ink-soft)}
+.world-k{font-family:"DM Mono",monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);padding-top:3px}
+@media(max-width:880px){.planter{grid-template-columns:1fr}.bedwrap{position:static}.cal-head,.cal-row{grid-template-columns:92px repeat(12,1fr)}.world-row{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 
-<div class="contact-strip">
-  <div class="wrap contact-strip-in">
-    <a class="contact-link" href="mailto:ponelson@gmail.com" aria-label="Email">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" fill="currentColor"/></svg>
-      <span>Email</span>
-    </a>
-    <a class="contact-link" href="https://www.linkedin.com/in/ponelson/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H3.56V19h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.25 6.92 1.96 1.96 0 0 0 5.25 3ZM20.44 13.08c0-3.16-1.68-4.63-3.93-4.63-1.81 0-2.62.99-3.08 1.69V8.5h-3.38V19h3.38v-5.2c0-1.37.26-2.7 1.96-2.7 1.68 0 1.7 1.57 1.7 2.79V19h3.38l-.03-5.92Z" fill="currentColor"/></svg>
-      <span>LinkedIn</span>
-    </a>
-    <a class="contact-link" href="https://ponelson.github.io/pon/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 .5C5.73.5.9 5.34.9 11.6c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.53v-1.86c-3.08.67-3.73-1.49-3.73-1.49-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.67.08-.67 1.11.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.46-.28-5.05-1.23-5.05-5.49 0-1.21.43-2.2 1.14-2.98-.11-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14.88-.25 1.83-.37 2.77-.37.94 0 1.89.13 2.78.37 2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.22 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.27-2.6 5.21-5.07 5.48.4.35.76 1.03.76 2.08v3.08c0 .3.2.64.76.53 4.39-1.47 7.56-5.63 7.56-10.53C23.1 5.34 18.27.5 12 .5Z" fill="currentColor"/></svg>
-      <span>GitHub</span>
-    </a>
-    <button class="themetoggle" id="themeToggle" type="button" aria-label="Toggle dark mode"></button>
-  </div>
-</div>
-
 <header class="masthead">
   <div class="wrap mh-grid">
     <div>
-      <div class="eyebrow">A Field Guide · Temperate Northeast · Zone 7b &nbsp;/&nbsp; <b>v1.0</b> &nbsp;&middot;&nbsp; 27 August 2026, 5:02 AM ET &nbsp;&middot;&nbsp; <span class="mono">build 2026-08-27T09:02</span></div>
+      <div class="eyebrow">A Field Guide · Temperate Northeast · Zone 7b</div>
       <h1 class="title serif">The Living <em>System</em></h1>
       <p class="ethos"><b>Feed the soil, not the plants.</b> Everything below grows from that one idea: companion planting, no-till permaculture, compost, a working farm, a designed landscape, a Manhattan roof.</p>
     </div>
@@ -403,9 +412,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="brand">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 0-9 4-12-5 0-8 2-8 7" stroke="var(--green)" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21c0-4 0-6-3-8 3.5 0 5 1.5 5 5" stroke="var(--sprout)" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21v-2" stroke="var(--loam)" stroke-width="1.7" stroke-linecap="round"/></svg>
       <span>The Living System</span>
-      <span class="vtag">v1.0</span>
     </div>
     <div class="nav-scroll"><div class="seg" id="seg" role="tablist"></div></div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"></button>
   </div>
 </div>
 
@@ -414,10 +423,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer><div class="wrap">
   <div>Built as one quiet system. Companion-planting claims carry an evidence footnote, because a fair share of the traditional canon is folklore.</div>
   <div class="mono">FEED THE SOIL → NOT THE PLANTS</div>
-  <div class="foot-meta">
-    <p class="verstamp">The Living System — v1.0 · build 2026-08-27T09:02</p>
-    <p class="foot-contact">Contact: <a href="mailto:ponelson@gmail.com">ponelson@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/ponelson/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="https://ponelson.github.io/pon/" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-  </div>
 </div></footer>
 
 <script>
@@ -775,7 +780,7 @@ const SOIL_MIXES = [
    b:"Topsoil gives body, mineral content, and a buffer that stops the bed drying out. Compost supplies life and nutrition. The aeration fraction keeps it from packing down. Never fill a bed with pure compost: it looks luxurious, holds too much water, and slumps by a third in the first season."},
   {n:"The rooftop or balcony container",sub:"Where every pound is a structural question",
    bars:[["Coco coir or peat",40,"#9A7A57"],["Compost",30,"#4E7A3F"],["Pumice or perlite",30,"#C9CBBE"]],
-   b:"No topsoil at all: it is the heaviest ingredient and you do not have the load budget for it. Coir holds water at a fraction of the weight, and pumice keeps the mix open. This is the mix for 130 E 12th Street. Expect to feed it, since there is no mineral reserve to draw on."},
+   b:"No topsoil at all: it is the heaviest ingredient and you do not have the load budget for it. Coir holds water at a fraction of the weight, and pumice keeps the mix open. This is the mix for a New York City roof. Expect to feed it, since there is no mineral reserve to draw on."},
   {n:"Mel's Mix",sub:"The classic square-foot recipe, by volume",
    bars:[["Blended compost",33,"#4E7A3F"],["Peat moss or coir",33,"#9A7A57"],["Coarse vermiculite",34,"#C9CBBE"]],
    b:"Equal thirds, and famously effective in shallow beds. Two honest caveats: peat is a carbon problem worth avoiding (use coir), and the recipe calls for compost from five different sources, which matters more than people think, since a single-source compost gives you a single narrow nutrient profile."}
@@ -1666,6 +1671,335 @@ const EXTRA = { companions:companionsExtra, farm:farmExtra, compost:compostExtra
 </script>
 <script>
 /* ============================================================
+   ZONE MAP  (concentric permaculture zones 0-5)
+============================================================ */
+function bandPath(cx,cy,r1,r2){
+  return `M ${cx} ${cy-r2} A ${r2} ${r2} 0 0 1 ${cx} ${cy+r2} L ${cx} ${cy+r1} A ${r1} ${r1} 0 0 0 ${cx} ${cy-r1} Z`;
+}
+function zoneScene(){
+  const cx=64, cy=300;
+  const R=[0,74,150,250,370,490,620];
+  const fills=['#E7DBC2','#DCE8C6','#CFE2BE','#BFD8AE','#AEC9A0','#9CBB8E'];
+  const keys=['zone0','zone1','zone2','zone3','zone4','zone5'];
+  const labels=['ZONE 0','ZONE 1','ZONE 2','ZONE 3','ZONE 4','ZONE 5'];
+  let s='';
+  // bands (clickable, flat)
+  for(let i=5;i>=0;i--){
+    s+=spr(keys[i], 'Zone '+i, `<path d="${bandPath(cx,cy,R[i],R[i+1])}" fill="${fills[i]}"/>`, fills[i], 'flat');
+  }
+  // decorative sprites per band (also carry the zone key)
+  const mid=i=>(R[i]+R[i+1])/2;
+  const at=(i,ang,sc,name)=>{const a=ang*Math.PI/180;const r=mid(i);return place(cx+Math.cos(a)*r, cy+Math.sin(a)*r, sc, name);};
+  // z0 house
+  s+=place(cx-6, cy-30, 0.95, spr('zone0','Zone 0, the home', SP.house(), C.roof));
+  // z1 herbs + salad by the door
+  s+=at(1,-32,0.85, spr('zone1','Zone 1, herbs and salad', SP.flowers(), C.leafL));
+  s+=at(1,22,0.7, spr('zone1','Zone 1, herbs and salad', SP.bed(), C.leafL));
+  // z2 veg beds, compost, hens
+  s+=at(2,-40,0.95, spr('zone2','Zone 2, main garden', SP.bed(), C.leafL));
+  s+=at(2,-6,0.9, spr('zone2','Zone 2, compost', SP.compost(), C.soil));
+  s+=at(2,30,1.0, spr('zone2','Zone 2, the henhouse', SP.hen(), C.hen),'peck');
+  // z3 orchard + grazers
+  s+=at(3,-42,1.15, spr('zone3','Zone 3, orchard', SP.tree(C.fruit), C.fruit),'sway');
+  s+=at(3,-10,1.15, spr('zone3','Zone 3, orchard', SP.tree(C.plum), C.fruit),'sway');
+  s+=at(3,26,1.15, spr('zone3','Zone 3, pasture', SP.cow(), C.cowSpot));
+  s+=at(3,52,1.0, spr('zone3','Zone 3, pasture', SP.sheep(), C.face),'bob');
+  // z4 semi-wild
+  s+=at(4,-34,1.0, spr('zone4','Zone 4, semi-wild', SP.shrub(C.plum), C.plum),'sway');
+  s+=at(4,4,1.0, spr('zone4','Zone 4, semi-wild', SP.shrub(C.fruit), C.leafD),'sway');
+  s+=at(4,40,0.95, spr('zone4','Zone 4, semi-wild', SP.pine(), C.pine),'sway');
+  // z5 wild
+  s+=at(5,-30,1.1, spr('zone5','Zone 5, the wild', SP.pine(), C.pine),'sway');
+  s+=at(5,6,1.1, spr('zone5','Zone 5, the wild', SP.pine(), C.pine),'sway');
+  s+=at(5,40,1.0, spr('zone5','Zone 5, the wild', SP.tree(''), C.leafD),'sway');
+  // a bird and bee drifting
+  s+=place(360,70,1.1, spr('zone5','A visiting bird', SP.bird(), C.bird),'fly');
+  s+=place(300,150,1.2, spr('zone2','A working bee', SP.bee(), C.bee),'fly2');
+  // labels along the horizontal axis
+  for(let i=0;i<6;i++){ const r=mid(i); s+=badge(cx+r-24, cy-9, 'Z'+i); }
+  return s;
+}
+const ZONE_INFO={};
+ZONES.forEach(([n,t,p])=>{ ZONE_INFO['zone'+n]={n:'Zone '+n+', '+t, r:'Permaculture zone '+n, b:p, c:['#B5654A','#7FA64E','#4E7A3F','#3F6B4A','#6B8E5A','#2F5D34'][+n]}; });
+ZONE_INFO.zone0.b += ' Everything else is arranged around it by how often you need to walk there.';
+function buildZoneMap(){
+  const svg=document.getElementById('zoneMapSvg');
+  if(!svg||svg.dataset.built) return;
+  svg.innerHTML=zoneScene(); svg.dataset.built='1';
+  wireMap('zoneMapSvg','zoneInfo',ZONE_INFO);
+}
+function zoneMapSection(){
+  return `
+  <div class="section">
+    <h3 class="section-h serif">The zone map</h3>
+    <p class="section-sub">The same zones drawn as they are actually laid out: rings around the home, each one a little wilder and visited a little less. Tap a ring or anything growing in it.</p>
+    <div class="mapwrap">
+      <div class="map-cap"><span class="kicker" style="margin:0">Zones 0 to 5</span><span class="map-hint">tap a ring</span></div>
+      <div class="mapframe"><svg id="zoneMapSvg" class="map-svg" viewBox="0 0 760 600" role="img" aria-label="Concentric permaculture zone map from the home out to the wild edge"></svg></div>
+      <div class="map-info" id="zoneInfo"></div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   ROOFTOP RAISED BED: LAYER CROSS-SECTION
+============================================================ */
+function roofLayerScene(){
+  const W=760,H=440, x=90, w=580, top=70, bot=380;
+  let s='';
+  // membrane + pavers
+  s+=`<rect x="40" y="${bot+18}" width="680" height="16" rx="4" fill="#3A3F34"/>`;
+  s+=spr('membrane','Pavers and the membrane', `<rect x="60" y="${bot+6}" width="640" height="14" rx="3" fill="#9AA090"/><rect x="60" y="${bot+6}" width="640" height="14" rx="3" fill="none" stroke="#7f8676" stroke-width="1"/>`, '#9AA090','flat');
+  // container walls
+  s+=`<path d="M${x-14} ${top-10} L${x} ${top} L${x} ${bot} L${x-14} ${bot+10} Z" fill="#B98A57"/>`;
+  s+=`<path d="M${x+w+14} ${top-10} L${x+w} ${top} L${x+w} ${bot} L${x+w+14} ${bot+10} Z" fill="#A9713F"/>`;
+  // layers bottom to top (each clickable, flat)
+  const layer=(key,label,y,h,fill,inner)=>spr(key,label,`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}"/>${inner||''}`,fill,'flat');
+  s+=layer('reservoir','Water reservoir', 320, 60, '#9EC6D6',
+    `<g class="shimmer"><path d="M120 340 q30 -6 60 0 t60 0 t60 0" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/></g>`);
+  s+=layer('wick','Wicking chamber', 292, 28, '#C7B48E',
+    `${[160,300,440,560].map(px=>`<rect x="${px}" y="300" width="16" height="40" rx="4" fill="#B98A57"/>`).join('')}`);
+  s+=`<rect x="${x}" y="290" width="${w}" height="4" fill="#8A6A48"/>`; // separator
+  s+=layer('media','Lightweight media', 180, 110, '#7A5A3D',
+    `${[[180,230],[360,250],[520,235],[280,265],[600,255]].map(([px,py])=>`<circle cx="${px}" cy="${py}" r="4" fill="#C9CBBE" opacity=".7"/>`).join('')}`);
+  s+=layer('compost','Compost and worms', 150, 30, '#4E3A28',
+    `${[220,380,520].map(px=>`<path d="M${px} 165 q4 -5 8 0 q4 5 8 0" stroke="#E79AA6" stroke-width="3" fill="none" stroke-linecap="round"/>`).join('')}`);
+  s+=layer('mulch','Mulch cap', 132, 18, '#C9A25A','');
+  // fill tube + overflow
+  s+=spr('filltube','The fill tube', `<rect x="600" y="90" width="26" height="250" rx="6" fill="#CFC6B4"/><rect x="604" y="94" width="18" height="240" rx="4" fill="#9EC6D6"/><path d="M613 110 v210" stroke="#fff" stroke-width="1.5" opacity=".5"/>`, '#CFC6B4','flat');
+  s+=spr('overflow','The overflow hole', `<circle cx="${x+w-4}" cy="352" r="7" fill="#3A3F34"/><path d="M${x+w+2} 356 q14 4 22 -2" stroke="#9EC6D6" stroke-width="3" fill="none" stroke-linecap="round"/>`, '#3A3F34','flat');
+  // plants growing on top
+  s+=place(200,132,1.2, spr('plants','What grows on top', SP.tree(C.fruit), C.leaf),'sway');
+  s+=place(330,138,1.0, spr('plants','What grows on top', SP.flowers(), C.bloom1));
+  s+=place(450,140,1.0, spr('plants','What grows on top', SP.lavender(), C.lav));
+  s+=place(540,140,0.9, spr('plants','What grows on top', SP.bed(), C.leafL));
+  return s;
+}
+const ROOF_LAYER_INFO={
+  membrane:{n:'Pavers and membrane 🧱',r:'The rule that comes first',b:'The container never sits directly on the roof. Pavers or sleepers spread the load and let water drain beneath, and the waterproof membrane is never punctured. Confirm the load rating with an engineer before any of this.',c:'#9AA090'},
+  reservoir:{n:'Water reservoir 💧',r:'Bottom of a self-watering bed',b:'A sealed layer that holds water below the soil. It is the single feature that keeps a rooftop bed alive through a hot, windy week, because the plants drink from below instead of from a surface that bakes dry by noon.',c:'#9EC6D6'},
+  wick:{n:'Wicking chamber 🧵',r:'The bridge',b:'Perforated cups or pipe packed with media dip into the reservoir and wick water upward into the soil by capillary action. This is how the bed waters itself between fills.',c:'#C7B48E'},
+  media:{n:'Lightweight media 🪨',r:'Not garden soil',b:'Coir or peat blended with compost and pumice or perlite. It holds water and weighs a fraction of topsoil, which is the whole point on a roof where every pound is a structural question.',c:'#7A5A3D'},
+  compost:{n:'Compost and worms 🪱',r:'The fertility layer',b:'A rich band near the surface, topped up each spring. A few red wigglers will live happily in a shaded bed and turn kitchen scraps into castings in place, though a bed in full summer sun gets too hot for them.',c:'#4E3A28'},
+  mulch:{n:'Mulch cap 🍂',r:'The bandage',b:'Straw or shredded leaves on top. On an exposed roof this matters double: it shades the surface, breaks the wind, and slows the evaporation that would otherwise undo everything below it.',c:'#C9A25A'},
+  filltube:{n:'The fill tube 🚰',r:'How you water',b:'A pipe running down to the reservoir. You pour in here, or run drip irrigation into it, and fill until the overflow runs. Watering from the bottom means less waste and no wet foliage to invite mildew.',c:'#CFC6B4'},
+  overflow:{n:'The overflow hole 🕳️',r:'The gauge',b:'A hole at the top of the reservoir. When water runs out of it the reservoir is full, so it doubles as your fill gauge and stops the bed from drowning in a downpour.',c:'#3A3F34'},
+  plants:{n:'What grows on top 🌿',r:'The payoff',b:'Herbs, salad, peppers, cherry tomatoes, strawberries, and pollinator flowers. Build the planting with the planner below.',c:'#5C8A41'}
+};
+function buildRoofLayers(){
+  const svg=document.getElementById('roofLayerSvg');
+  if(!svg||svg.dataset.built) return;
+  svg.innerHTML=roofLayerScene(); svg.dataset.built='1';
+  wireMap('roofLayerSvg','roofLayerInfo',ROOF_LAYER_INFO);
+}
+
+/* ============================================================
+   SQUARE-FOOT BED PLANNER
+============================================================ */
+const PLANTS = [
+  {k:'basil',n:'Basil',cat:'Herb',grp:'herb',sfg:4,sun:'full',roof:'great',plant:'transplant after May 1',bars:[[4,9]],fg:['nightshade'],tip:'Classic tomato partner. Pinch often.'},
+  {k:'rosemary',n:'Rosemary',cat:'Herb',grp:'herb',sfg:1,sun:'full',roof:'great',plant:'spring, lives for years',bars:[[0,11]],per:1,fg:[],tip:'Woody perennial. Loves the reflected heat.'},
+  {k:'thyme',n:'Thyme',cat:'Herb',grp:'herb',sfg:4,sun:'full',roof:'great',plant:'spring, perennial',bars:[[0,11]],per:1,fg:[],tip:'Drought-proof once established.'},
+  {k:'oregano',n:'Oregano',cat:'Herb',grp:'herb',sfg:4,sun:'full',roof:'great',plant:'spring, perennial',bars:[[0,11]],per:1,fg:[],tip:'Spreads. Give it a corner.'},
+  {k:'sage',n:'Sage',cat:'Herb',grp:'herb',sfg:1,sun:'full',roof:'great',plant:'spring, perennial',bars:[[0,11]],per:1,fg:[],tip:'Silver foliage, evergreen-ish.'},
+  {k:'mint',n:'Mint',cat:'Herb',grp:'herb',sfg:4,sun:'part',roof:'ok',plant:'spring',bars:[[3,10]],fg:[],loner:1,tip:'Runs everywhere. Keep it in its own pot.'},
+  {k:'chives',n:'Chives',cat:'Herb',grp:'allium',sfg:16,sun:'full',roof:'great',plant:'spring, perennial',bars:[[2,10]],per:1,fg:['umbel'],tip:'Purple pom flowers feed pollinators.'},
+  {k:'parsley',n:'Parsley',cat:'Herb',grp:'umbel',sfg:4,sun:'part',roof:'great',plant:'sow Mar or Aug',bars:[[3,10]],fg:['nightshade'],tip:'Bolted flowers feed predatory wasps.'},
+  {k:'cilantro',n:'Cilantro',cat:'Herb',grp:'umbel',sfg:9,sun:'part',roof:'ok',plant:'cool season, bolts in heat',bars:[[2,5],[8,10]],fg:[],tip:'Sow every few weeks; it bolts fast.'},
+  {k:'dill',n:'Dill',cat:'Herb',grp:'umbel',sfg:3,sun:'full',roof:'ok',plant:'sow May',bars:[[4,8]],fg:['brassica'],tip:'Top insectary plant. Let it flower.'},
+  {k:'tomato',n:'Cherry tomato',cat:'Veg',grp:'nightshade',sfg:1,sun:'full',roof:'wind',plant:'transplant after May 1',bars:[[4,9]],fg:[],tip:'Cage low and stake hard against wind.'},
+  {k:'pepper',n:'Pepper',cat:'Veg',grp:'nightshade',sfg:1,sun:'full',roof:'great',plant:'transplant mid-May',bars:[[4,9]],fg:[],tip:'Loves the reflected roof heat.'},
+  {k:'eggplant',emj:'🍆',n:'Eggplant',cat:'Veg',grp:'nightshade',sfg:1,sun:'full',roof:'great',plant:'transplant mid-May',bars:[[4,9]],fg:[],tip:'Another heat lover, thrives up high.'},
+  {k:'bean',n:'Bush bean',cat:'Veg',grp:'legume',sfg:9,sun:'full',roof:'great',plant:'sow after May 1',bars:[[4,8]],fg:[],tip:'Fixes its own nitrogen. Keep from onions.'},
+  {k:'chard',emj:'🥬',n:'Chard',cat:'Veg',grp:'leafy',sfg:4,sun:'part',roof:'great',plant:'sow Apr, cut all summer',bars:[[3,10]],fg:[],tip:'The most forgiving leafy crop up here.'},
+  {k:'kale',n:'Kale',cat:'Veg',grp:'brassica',sfg:1,sun:'part',roof:'great',plant:'sow Mar and Aug',bars:[[2,5],[8,11]],fg:[],tip:'Sweetens after frost. Keep off strawberries.'},
+  {k:'lettuce',n:'Lettuce',cat:'Veg',grp:'leafy',sfg:4,sun:'part',roof:'ok',plant:'sow Mar and Aug',bars:[[2,5],[8,10]],fg:[],tip:'Give it afternoon shade or it bolts.'},
+  {k:'spinach',n:'Spinach',cat:'Veg',grp:'leafy',sfg:9,sun:'part',roof:'ok',plant:'sow Mar and Sep',bars:[[2,4],[9,11]],fg:[],tip:'Cool-season only; scorches in July.'},
+  {k:'radish',n:'Radish',cat:'Veg',grp:'root',sfg:16,sun:'full',roof:'great',plant:'sow Mar and Sep',bars:[[2,4],[8,10]],fg:[],tip:'Fastest crop there is, ready in a month.'},
+  {k:'carrot',n:'Carrot',cat:'Veg',grp:'umbel',sfg:16,sun:'full',roof:'ok',plant:'sow Apr and Jul',bars:[[3,6],[7,10]],fg:['allium'],tip:'Needs deep media. Loves onion neighbours.'},
+  {k:'garlic',n:'Garlic',cat:'Veg',grp:'allium',sfg:9,sun:'full',roof:'great',plant:'plant Oct, harvest Jul',bars:[[9,11],[0,6]],fg:[],tip:'Goes in at frost, over-winters, out in July.'},
+  {k:'onion',n:'Onion',cat:'Veg',grp:'allium',sfg:9,sun:'full',roof:'great',plant:'set out Apr',bars:[[3,7]],fg:['umbel'],tip:'Confuses carrot fly. Keep from beans.'},
+  {k:'strawberry',n:'Strawberry',cat:'Fruit',grp:'strawberry',sfg:4,sun:'full',roof:'great',plant:'plant spring, perennial',bars:[[3,9]],per:1,fg:[],tip:'Great in the edge of a bed. Loves borage.'},
+  {k:'blueberry',n:'Blueberry',cat:'Shrub',grp:'shrub',sfg:1,sun:'full',roof:'wrap',plant:'own acidic pot, perennial',bars:[[0,11]],per:1,loner:1,tip:'Needs its own pot of acidic mix, pH 4.5 to 5.5.'},
+  {k:'fig',n:'Fig',cat:'Shrub',grp:'shrub',sfg:1,sun:'full',roof:'wrap',plant:'big pot, wrap for winter',bars:[[4,9]],per:1,loner:1,tip:'Thrives in a pot; wrap or move in for winter.'},
+  {k:'marigold',n:'Marigold',cat:'Flower',grp:'flower',sfg:4,sun:'full',roof:'great',plant:'after last frost',bars:[[4,9]],fg:['nightshade','root','umbel'],tip:'Suppresses root-knot nematodes. Friend to all.'},
+  {k:'nasturtium',n:'Nasturtium',cat:'Flower',grp:'flower',sfg:2,sun:'full',roof:'great',plant:'sow after frost',bars:[[4,9]],fg:['nightshade','leafy'],tip:'Aphid trap crop, and edible.'},
+  {k:'borage',n:'Borage',cat:'Flower',grp:'flower',sfg:1,sun:'full',roof:'great',plant:'sow after frost',bars:[[4,9]],fg:['strawberry'],tip:'Pollinator magnet. Self-seeds forever.'},
+  {k:'calendula',emj:'🌼',n:'Calendula',cat:'Flower',grp:'flower',sfg:4,sun:'full',roof:'great',plant:'cool season to frost',bars:[[3,6],[8,10]],fg:['nightshade','leafy'],tip:'Edible petals, blooms cool to cold.'},
+  {k:'alyssum',emj:'🌸',n:'Alyssum',cat:'Flower',grp:'flower',sfg:4,sun:'full',roof:'great',plant:'cool tolerant',bars:[[3,10]],fg:['leafy','nightshade'],tip:'Low carpet of hoverfly food.'},
+  {k:'lavender',n:'Lavender',cat:'Shrub',grp:'herb',sfg:1,sun:'full',roof:'great',plant:'spring, perennial',bars:[[0,11]],per:1,fg:[],tip:'Woody, drought-proof, loved by bees.'}
+];
+const PMAP={}; PLANTS.forEach(p=>PMAP[p.k]=p);
+const FOES={ allium:['legume'], legume:['allium'], brassica:['strawberry'], strawberry:['brassica'] };
+const FOE_TEXT={
+  'allium|legume':'Alliums are traditionally reported to stunt beans and peas.',
+  'brassica|strawberry':'Brassicas and strawberries compete and grow poorly together.'
+};
+function isFoe(a,b){ return (FOES[a.grp]||[]).includes(b.grp); }
+function isFriend(a,b){ return (a.fg||[]).includes(b.grp) || (b.fg||[]).includes(a.grp); }
+
+const MONTHS=['J','F','M','A','M','J','J','A','S','O','N','D'];
+function planterSection(){
+  const cats=['Herb','Veg','Fruit','Shrub','Flower'];
+  const pal=cats.map(cat=>`<div class="pal-group"><div class="pal-h mono">${cat}</div><div class="pal-row">${
+    PLANTS.filter(p=>p.cat===cat).map(p=>`<button class="pplant" data-k="${p.k}" title="${p.n}"><span class="pico">${glyph(p.k,p.emj||em(p.k)||'🌱')}</span><span>${p.n}</span></button>`).join('')
+  }</div></div>`).join('');
+  const cells=Array.from({length:25},(_,i)=>`<button class="cell" data-i="${i}" aria-label="square ${i+1}"></button>`).join('');
+  return `
+  <div class="section">
+    <h3 class="section-h serif">Build your rooftop bed</h3>
+    <p class="section-sub">A five-by-five square-foot bed. Pick a plant, then tap a square to plant it. The bed checks companions as you go and builds a Zone 7b planting calendar from whatever you choose. Tap a filled square to clear it.</p>
+    <div class="planter">
+      <div class="pal">
+        <div class="pal-info" id="palInfo"><div class="map-default"><span class="mi-pulse"></span>Pick a plant, then tap a square.</div></div>
+        ${pal}
+      </div>
+      <div class="bedwrap">
+        <div class="bed-grid" id="bedGrid">${cells}</div>
+        <div class="bed-actions"><button class="chip" id="planClear">Clear bed</button><span class="bed-count mono" id="planCount">0 squares planted</span></div>
+      </div>
+    </div>
+    <div class="grid g-2" style="margin-top:16px">
+      <div class="card"><div class="m-title" style="margin-bottom:8px">Companions in this bed</div><div id="planWarn"><div class="m-body" style="color:var(--ink-faint)">Nothing planted yet.</div></div></div>
+      <div class="card"><div class="m-title" style="margin-bottom:8px">Your planting calendar, Zone 7b</div><div id="planCal"><div class="m-body" style="color:var(--ink-faint)">Plant something to build the calendar.</div></div></div>
+    </div>
+  </div>`;
+}
+function initPlanner(){
+  const grid=document.getElementById('bedGrid'); if(!grid||grid.dataset.init) return;
+  grid.dataset.init='1';
+  const palInfo=document.getElementById('palInfo'), warn=document.getElementById('planWarn'),
+        cal=document.getElementById('planCal'), count=document.getElementById('planCount');
+  const cells=[...grid.querySelectorAll('.cell')];
+  let sel=null; const state=Array(25).fill(null);
+  const nbrs=i=>{const r=[],c=i%5; if(i>=5)r.push(i-5); if(i<20)r.push(i+5); if(c>0)r.push(i-1); if(c<4)r.push(i+1); return r;};
+
+  document.querySelectorAll('.pplant').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.pplant').forEach(x=>x.classList.remove('sel'));
+      const k=b.dataset.k;
+      if(sel===k){sel=null;} else {sel=k; b.classList.add('sel');}
+      showProfile(sel);
+    });
+    b.addEventListener('mouseenter',()=>{ if(!sel) showProfile(b.dataset.k,true); });
+  });
+  function roofBadge(r){return {great:'thrives up here',ok:'workable',wind:'stake against wind',wrap:'own pot, wrap for winter'}[r]||r;}
+  function showProfile(k,preview){
+    if(!k){ palInfo.innerHTML=`<div class="map-default"><span class="mi-pulse"></span>Pick a plant, then tap a square.</div>`; return; }
+    const p=PMAP[k];
+    palInfo.innerHTML=`<div class="prof">
+      <span class="pico big">${glyph(p.k,p.emj||em(p.k)||'🌱')}</span>
+      <div><div class="prof-n serif">${p.n}${preview?'':' <span class="mono prof-sel">selected</span>'}</div>
+      <div class="prof-tags mono">${p.per?'perennial · ':''}${p.sfg} per sq ft · ${p.sun==='full'?'full sun':'part shade ok'} · ${roofBadge(p.roof)}</div>
+      <div class="prof-b">${p.tip} <b>Timing:</b> ${p.plant}.</div></div></div>`;
+  }
+  function paint(){
+    cells.forEach((c,i)=>{
+      const k=state[i]; c.className='cell'+(k?' filled':'');
+      c.innerHTML = k?`<span class="cico-wrap">${glyph(k,PMAP[k].emj||em(k)||'🌱')}</span><span class="cell-x">${PMAP[k].sfg>1?'×'+PMAP[k].sfg:''}</span>`:'';
+    });
+    // conflicts + synergy
+    const conf=new Set(), good=new Set(); const pairs={}; const gpairs={};
+    state.forEach((k,i)=>{ if(!k)return; const p=PMAP[k];
+      nbrs(i).forEach(j=>{ const q=state[j]; if(!q)return; const b=PMAP[q];
+        if(isFoe(p,b)){ conf.add(i); conf.add(j); const key=[p.grp,b.grp].sort().join('|'); pairs[key]=[p.n,b.n]; }
+        else if(isFriend(p,b)){ good.add(i); const key=[p.n,b.n].sort().join('|'); gpairs[key]=[p.n,b.n]; }
+      });
+    });
+    cells.forEach((c,i)=>{ if(conf.has(i))c.classList.add('warn'); else if(good.has(i))c.classList.add('good'); });
+    // counts
+    const planted=state.filter(Boolean).length;
+    count.textContent = planted+(planted===1?' square planted':' squares planted');
+    // warnings panel
+    const wkeys=Object.keys(pairs);
+    if(!planted){ warn.innerHTML=`<div class="m-body" style="color:var(--ink-faint)">Nothing planted yet.</div>`; }
+    else {
+      let h='';
+      if(wkeys.length){ h+=`<ul class="dd no" style="margin-bottom:8px">${wkeys.map(kk=>`<li><span class="mk">✕</span><span><b style="color:var(--ink)">${pairs[kk][0]} beside ${pairs[kk][1]}.</b> ${FOE_TEXT[kk]||'Poor companions.'}</span></li>`).join('')}</ul>`; }
+      const gk=Object.keys(gpairs).slice(0,4);
+      if(gk.length){ h+=`<ul class="dd yes">${gk.map(kk=>`<li><span class="mk">✓</span><span>${gpairs[kk][0]} and ${gpairs[kk][1]} are good together.</span></li>`).join('')}</ul>`; }
+      if(!wkeys.length && !gk.length) h=`<div class="m-body">No conflicts. Space things a square apart for airflow.</div>`;
+      warn.innerHTML=h;
+    }
+    // calendar
+    const uniq=[...new Set(state.filter(Boolean))].map(k=>PMAP[k]);
+    if(!uniq.length){ cal.innerHTML=`<div class="m-body" style="color:var(--ink-faint)">Plant something to build the calendar.</div>`; }
+    else {
+      cal.innerHTML=`<div class="cal"><div class="cal-head"><span></span>${MONTHS.map(m=>`<span>${m}</span>`).join('')}</div>${
+        uniq.map(p=>{ const on=Array(12).fill(false); (p.bars||[]).forEach(([s,e])=>{for(let m=s;m<=e;m++)on[m]=true;});
+          return `<div class="cal-row"><span class="cal-n">${p.n}${p.per?' <i class="mono">·perennial</i>':''}</span>${on.map(o=>`<span class="cal-cell${o?' on':''}"></span>`).join('')}</div>`;
+        }).join('')}</div>`;
+    }
+  }
+  cells.forEach((c,i)=>c.addEventListener('click',()=>{
+    if(state[i]){ state[i]=null; }
+    else if(sel){ state[i]=sel; }
+    paint();
+  }));
+  document.getElementById('planClear').addEventListener('click',()=>{ for(let i=0;i<25;i++)state[i]=null; paint(); });
+  paint();
+}
+function initRooftopBuilder(){ buildRoofLayers(); initPlanner(); }
+function rooftopExtra(){
+  return `
+  <div class="section">
+    <h3 class="section-h serif">How a rooftop bed is built</h3>
+    <p class="section-sub">A self-watering (sub-irrigated) raised bed, in cross-section. Tap each layer to see what it does and why it matters this high up.</p>
+    <div class="mapwrap">
+      <div class="map-cap"><span class="kicker" style="margin:0">The cross-section</span><span class="map-hint">tap a layer</span></div>
+      <div class="mapframe"><svg id="roofLayerSvg" class="map-svg" viewBox="0 0 760 440" role="img" aria-label="Cutaway of a self-watering rooftop raised bed showing reservoir, wicking, media, compost and mulch"></svg></div>
+      <div class="map-info" id="roofLayerInfo"></div>
+    </div>
+  </div>
+  ${planterSection()}`;
+}
+
+/* ============================================================
+   GARDENS OF THE WORLD
+============================================================ */
+const GARDENS = [
+  {n:"Persian charbagh",e:"🕌",era:"c. 500 BCE",hall:"A garden quartered by four water channels meeting at a central pool, an image of paradise walled against the desert. Shade, scent, and the sound of water are the whole point.",who:"Seen at the Alhambra's Generalife and the gardens of Isfahan.",edible:"Pomegranate, fig, citrus, and rose, grown for fruit and fragrance together."},
+  {n:"Italian Renaissance",e:"⛲",era:"1400s to 1600s",hall:"Geometry imposed on a hillside: stone terraces, clipped evergreens, statuary, and elaborate water on axis. Architecture continued outdoors, meant to be viewed from the villa above.",who:"Villa d'Este at Tivoli; the theorist Leon Battista Alberti.",edible:"Lemon in terracotta pots, wheeled into a limonaia for winter."},
+  {n:"French formal",e:"🌳",era:"1600s",hall:"Absolute symmetry stretched to the horizon: parterres of clipped box, mirror canals, and radiating allées that flatter a single sightline from the house. Nature made to obey.",who:"Andr\u00e9 Le N\u00f4tre, who laid out Versailles and Vaux-le-Vicomte.",edible:"The potager at Villandry, where vegetables are planted in formal jewel-box parterres."},
+  {n:"English landscape",e:"🐑",era:"1700s",hall:"A reaction against all that symmetry: rolling turf, serpentine lakes, clumped trees, and a borrowed horizon, composed to look like untouched Arcadia and utterly man-made.",who:"Lancelot 'Capability' Brown and Humphry Repton.",edible:"The walled kitchen garden, hidden away out of sight of the idealised view."},
+  {n:"English cottage",e:"🌹",era:"1800s to 1900s",hall:"Abundance and informality: roses over the door, self-seeding annuals, herbs and vegetables jumbled among the flowers. The Arts and Crafts garden refined it into designed colour.",who:"Gertrude Jekyll's painterly borders; Vita Sackville-West at Sissinghurst.",edible:"Everything mixed together, the original ornamental-edible foodscape."},
+  {n:"Japanese",e:"⛩️",era:"c. 700 CE onward",hall:"Nature distilled to its essence and composed as a scene: raked gravel as water, a single rock as a mountain, borrowed scenery, and a path that hides and reveals. Restraint as the discipline.",who:"The Zen master Mus\u014d Soseki, who designed the moss garden at Saih\u014d-ji.",edible:"Rarely the point, though the kitchen and the tea garden sit close by."},
+  {n:"Proven\u00e7al",e:"💜",era:"traditional",hall:"The dry Mediterranean garden: gravel, silver foliage, drifts of lavender and rosemary, olive and cypress, and clipped evergreen shapes that hold the composition through a rainless summer.",who:"Nicole de V\u00e9sian, whose garden La Louve made the style modern.",edible:"Olive, fig, grape, and a wall of culinary herbs that ask for no water."},
+  {n:"New Perennial",e:"🌾",era:"1990s to now",hall:"The Dutch Wave: massed perennials and ornamental grasses chosen for structure and the way they die, celebrating seed heads and winter skeletons over tidy bloom. Naturalistic, but tightly composed.",who:"Piet Oudolf, who planted New York's High Line.",edible:"Not the aim, but a landmark for pollinator and habitat planting."},
+  {n:"Tropical modernist",e:"🌴",era:"20th century",hall:"Bold foliage, sweeping biomorphic beds, and colour used like paint, treating the garden as abstract art laid on the ground and read from above.",who:"Roberto Burle Marx, the Brazilian who made native plants modern.",edible:"Banana, papaya, and cassava woven into the ornamental scheme."},
+  {n:"Meadow and wild",e:"🌼",era:"1870s to now",hall:"The deliberate wild: naturalistic drifts of hardy plants and native meadow, low-input and high-habitat, a direct ancestor of the ecological garden.",who:"William Robinson's 'The Wild Garden'; Beatrix Farrand in America.",edible:"Berries and nuts folded into the planting, the meadow as a food forest's understory."},
+  {n:"Islamic courtyard",e:"⛲",era:"medieval",hall:"An inward garden: cool, shaded, enclosed, centred on water and geometry, a private refuge turned away from the street and the heat.",who:"The courts of the Alhambra and the Mughal gardens of India.",edible:"Citrus, pomegranate, and grape on shaded pergolas."},
+  {n:"Chinese scholar",e:"🪨",era:"c. 1000 CE onward",hall:"A composed landscape in miniature to be wandered: weathered rocks, water, pavilions, and framed views unfolding one at a time, built for contemplation and poetry.",who:"The classical gardens of Suzhou.",edible:"Lotus in the ponds, and fruit trees chosen as much for blossom as for crop."}
+];
+function renderWorld(){
+  const cards=GARDENS.map(g=>`<div class="card world-card">
+    <div class="ety-top" style="margin-bottom:4px"><span class="emoji">${g.e}</span><span class="ety-word serif">${g.n}</span><span class="ety-tag">${g.era}</span></div>
+    <div class="m-body" style="margin-bottom:10px">${g.hall}</div>
+    <div class="world-row"><span class="world-k mono">Practitioners</span><span>${g.who}</span></div>
+    <div class="world-row"><span class="world-k mono">On the plate</span><span>${g.edible}</span></div>
+  </div>`).join('');
+  return `
+  <div class="lede">
+    <div class="kicker">Gardens of the world</div>
+    <h2 class="serif">Every culture has argued with nature differently.</h2>
+    <p>A dozen traditions, each a distinct answer to the same question of how much order to impose and how much to surrender. The two poles are the French axis, where nature is made to obey, and the Japanese scene, where it is distilled and revered, with everything else arranged between them.</p>
+  </div>
+  <div class="grid g-2">${cards}</div>`;
+}
+
+/* ============================================================
+   WIRING
+============================================================ */
+(function(){
+  if(typeof EXTRA==='undefined') return;
+  const _farm = EXTRA.farm;
+  EXTRA.farm = ()=> zoneMapSection() + (_farm?_farm():'');
+  EXTRA.rooftop = rooftopExtra;
+})();
+
+</script>
+<script>
+/* ============================================================
    HERO SVG
 ============================================================ */
 (function(){
@@ -2059,9 +2393,9 @@ function renderRooftop(){
   return `
   <div class="lede">
     <div class="kicker">A real rooftop · Manhattan</div>
-    <h2 class="serif">130 E 12th Street: gardening in the sky.</h2>
-    <div class="addr mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.7 7-12a7 7 0 10-14 0c0 5.3 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span><b>East Village</b> · New York 10003 · USDA Zone 7b</span></div>
-    <p>A pre-war building near Union Square. Up on the roof the rules change completely: the constraints are not a footnote, they are the entire design. And one of them comes first.</p>
+    <h2 class="serif">A New York City rooftop: gardening in the sky.</h2>
+    <div class="addr mono"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.7 7-12a7 7 0 10-14 0c0 5.3 7 12 7 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span><b>New York City</b> · USDA Zone 7b</span></div>
+    <p>A pre-war city building. Up on the roof the rules change completely: the constraints are not a footnote, they are the entire design. And one of them comes first.</p>
   </div>
 
   <div class="callout warn">
@@ -2123,8 +2457,8 @@ function renderRooftop(){
 /* ============================================================
    ROUTER
 ============================================================ */
-const TABS=[["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],["compost","Soil & Compost"],["water","Water"],["seeds","Seeds"],["pests","Pests"],["landscape","Landscape"],["rooftop","Rooftop"]];
-const RENDERERS={etymology:renderEtymology,companions:renderCompanions,farm:renderFarm,compost:renderCompost,water:renderWater,seeds:renderSeeds,pests:renderPests,landscape:renderLandscape,rooftop:renderRooftop};
+const TABS=[["etymology","Etymology"],["companions","Companions"],["farm","The Farm"],["compost","Soil & Compost"],["water","Water"],["seeds","Seeds"],["pests","Pests"],["landscape","Landscape"],["world","World"],["rooftop","Rooftop"]];
+const RENDERERS={etymology:renderEtymology,companions:renderCompanions,farm:renderFarm,compost:renderCompost,water:renderWater,seeds:renderSeeds,pests:renderPests,landscape:renderLandscape,world:renderWorld,rooftop:renderRooftop};
 const seg=document.getElementById('seg');
 const main=document.getElementById('main');
 seg.innerHTML=TABS.map((t,i)=>`<button role="tab" data-tab="${t[0]}" aria-selected="${i===0}">${t[1]}</button>`).join('');
@@ -2148,6 +2482,8 @@ function show(tab){
     });
   }
   if(tab==="farm" && typeof buildFarmMap==="function") buildFarmMap();
+  if(tab==="farm" && typeof buildZoneMap==="function") buildZoneMap();
+  if(tab==="rooftop" && typeof initRooftopBuilder==="function") initRooftopBuilder();
   if(tab==="landscape" && typeof buildLandscapeMap==="function") buildLandscapeMap();
   const tb=document.querySelector('.topbar');
   if(window.scrollY>tb.offsetTop) window.scrollTo({top:tb.offsetTop,behavior:'smooth'});
@@ -2160,13 +2496,11 @@ seg.addEventListener('click',e=>{
 });
 
 /* THEME */
-const root=document.documentElement, tBtn=document.getElementById('themeToggle');
+const root=document.documentElement, tBtn=document.getElementById('themeBtn');
 const sunI='<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
 const moonI='<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8 8 0 119.5 4a6.3 6.3 0 0010.5 10.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
-function setTheme(t){root.setAttribute('data-theme',t);tBtn.innerHTML=t==='dark'?sunI:moonI;tBtn.setAttribute('aria-pressed',t==='dark'?'true':'false');}
-let prefersDark=false;
-try{prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;}catch(e){}
-setTheme(prefersDark ? 'dark':'light');
+function setTheme(t){root.setAttribute('data-theme',t);tBtn.innerHTML=t==='dark'?sunI:moonI;}
+setTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
 tBtn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
 
 show('etymology');
